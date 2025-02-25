@@ -1,1 +1,147 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  --primary-dark: #0a0a0a;          // Główna czerń
+  --secondary-dark: #1a1a1a;        // Drugi poziom czerni
+
+  // Podstawowe odcienie czerwieni
+  --accent-red: #ff0000;            // Intensywna czerwień
+  --accent-red-dark: #b30000;       // Ciemniejszy odcień czerwieni
+  --accent-red-light: #ff4d4d;      // Jaśniejszy odcień czerwieni
+
+  // Dodatkowe ciemne odcienie czerwieni
+  --accent-red-900: #330000;        // Bardzo ciemna czerwień
+  --accent-red-800: #4d0000;        // Głęboka czerwień
+  --accent-red-700: #660000;        // Ciemna czerwień wpadająca w burgund
+  --accent-red-600: #800000;        // Ciemny karmazyn
+  --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
+
+  // Pomarańczowe akcenty
+  --accent-orange: #ff4500;         // Intensywny pomarańcz
+  --accent-orange-dark: #cc3700;    // Ciemniejszy pomarańcz
+
+  // Kolory tekstu
+  --text-primary: #ffffff;          // Biały tekst
+  --text-secondary: #cccccc;        // Szary tekst
+
+  // Efekty hover
+  --hover-red: rgba(255, 0, 0, 0.2); // Efekt hover czerwony
+  --hover-orange: rgba(255, 69, 0, 0.2); // Efekt hover pomarańczowy
+}
+
+body {
+  background: radial-gradient(
+      circle at center,
+      var(--accent-red-800) 0%,
+      var(--accent-red-900) 25%,
+      var(--primary-dark) 50%
+  );
+  color: var(--text-primary);
+  font-family: 'Fira Code', monospace;
+  line-height: 1.6;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  overflow-x: hidden;
+
+  // Efekt rozmycia
+  &::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    pointer-events: none;
+  }
+
+  // Efekty świetlne
+  &::after {
+    content: '';
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 200vw;
+    height: 200vh;
+    background: radial-gradient(
+        circle,
+        rgba(255, 0, 0, 0.1) 0%,
+        rgba(255, 77, 77, 0.05) 30%,
+        transparent 70%
+    );
+    transform: translate(-50%, -50%);
+    z-index: -2;
+    pointer-events: none;
+    animation: pulse 15s infinite alternate;
+  }
+
+  // Dodatkowe punkty świetlne
+  .light-point {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: radial-gradient(
+        circle,
+        rgba(255, 0, 0, 0.2) 0%,
+        transparent 70%
+    );
+    filter: blur(20px);
+    animation: float 6s infinite ease-in-out;
+
+    &.one {
+      top: 20%;
+      left: 10%;
+      animation-duration: 8s;
+    }
+
+    &.two {
+      bottom: 15%;
+      right: 5%;
+      animation-duration: 10s;
+      width: 300px;
+      height: 300px;
+    }
+
+    &.three {
+      top: 5%;
+      right: 20%;
+      animation-duration: 12s;
+      background: radial-gradient(
+          circle,
+          rgba(255, 69, 0, 0.15) 0%,
+          transparent 70%
+      );
+    }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) scale(1.1);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0) scale(1);
+    opacity: 0.8;
+  }
+}

@@ -1,0 +1,61 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <div class="logo">
+      <img src="/Logo.ico" alt="Logo">
+    </div>
+
+    <div class="desktop-menu">
+      <a routerLink="/about">{{getTranslation('about')}}</a>
+      <a routerLink="/what-i-do">{{getTranslation('whatIDo')}}</a>
+      <a routerLink="/skills">{{getTranslation('skills')}}</a>
+      <a routerLink="/projects">{{getTranslation('projects')}}</a>
+      <a routerLink="/contact">{{getTranslation('contact')}}</a>
+
+      <div class="social-icons">
+        <button class="language-button" (click)="toggleLanguage()">
+          <img [src]="currentLanguage === 'pl' ? 'assets/icons/poland-logo.png' : 'assets/icons/uk-logo.png'" alt="Language">
+          <span>{{ currentLanguage === 'pl' ? 'PL' : 'ENG' }}</span>
+        </button>
+
+        <a href="https://github.com" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://linkedin.com" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="mobile-menu-button">
+      <button (click)="toggleMenu()">
+        <svg viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="isMenuOpen" class="mobile-menu">
+    <a routerLink="/about">{{getTranslation('about')}}</a>
+    <a routerLink="/what-i-do">{{getTranslation('whatIDo')}}</a>
+    <a routerLink="/skills">{{getTranslation('skills')}}</a>
+    <a routerLink="/projects">{{getTranslation('projects')}}</a>
+    <a routerLink="/contact">{{getTranslation('contact')}}</a>
+
+    <button class="language-button" (click)="toggleLanguage()">
+      <img [src]="currentFlag" alt="Language">
+      <span>{{getTranslation('changeLanguage')}}</span>
+    </button>
+
+    <div class="social-icons">
+      <a href="https://github.com/Gosqu248" target="_blank" class="social-icon">
+        <i class="fab fa-github"></i>
+        <span> GitHub</span>
+      </a>
+      <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon">
+        <i class="fab fa-linkedin-in"></i>
+        <span> LinkedIn</span>
+      </a>
+    </div>
+  </div>
+</nav>
