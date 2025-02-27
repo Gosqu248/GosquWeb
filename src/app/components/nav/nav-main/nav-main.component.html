@@ -12,8 +12,8 @@
       <a routerLink="/contact">{{getTranslation('contact')}}</a>
 
       <div class="social-icons">
-        <button class="language-button" (click)="toggleLanguage()">
-          <img [src]="currentLanguage === 'pl' ? 'assets/icons/poland-logo.png' : 'assets/icons/uk-logo.png'" alt="Language">
+        <button class="language-button" (click)="currentLanguage === 'pl' ? setLanguage('en') : setLanguage('pl')">
+          <img [src]="currentFlag" alt="Language">
           <span>{{ currentLanguage === 'pl' ? 'PL' : 'ENG' }}</span>
         </button>
 
@@ -42,20 +42,21 @@
     <a routerLink="/projects">{{getTranslation('projects')}}</a>
     <a routerLink="/contact">{{getTranslation('contact')}}</a>
 
-    <button class="language-button" (click)="toggleLanguage()">
+    <button class="language-button" (click)="currentLanguage === 'pl' ? setLanguage('en') : setLanguage('pl')">
       <img [src]="currentFlag" alt="Language">
       <span>{{getTranslation('changeLanguage')}}</span>
     </button>
 
     <div class="social-icons">
-      <a href="https://github.com/Gosqu248" target="_blank" class="social-icon">
-        <i class="fab fa-github"></i>
-        <span> GitHub</span>
-      </a>
-      <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon">
-        <i class="fab fa-linkedin-in"></i>
+        <a href="https://github.com/Gosqu248" target="_blank" class="social-icon">
+          <i class="fab fa-github"></i>
+          <span> GitHub</span>
+        </a>
+
+        <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon">
+          <i class="fab fa-linkedin-in"></i>
         <span> LinkedIn</span>
-      </a>
+        </a>
     </div>
   </div>
 </nav>

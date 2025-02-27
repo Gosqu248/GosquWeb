@@ -1,0 +1,19 @@
+<section class="about-section">
+  <div class="content-wrapper">
+    <div class="animation-container">
+      <ng-lottie
+        [options]="lottieOptions"
+        (animationCreated)="onAnimationCreated($event)"
+      ></ng-lottie>
+    </div>
+
+    <div class="text-content">
+      <h2 class="section-title gradient-text">Innovative Software Solutions</h2>
+      <p class="description">
+        At Gosq Software, we specialize in crafting cutting-edge digital experiences.
+        With {{ yearsOfExperience }}+ years in software development, our team delivers
+        robust web and mobile solutions that drive business growth.
+      </p>
+    </div>
+  </div>
+</section>

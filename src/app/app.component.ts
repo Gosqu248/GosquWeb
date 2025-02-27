@@ -6,7 +6,8 @@ import {NavMainComponent} from './components/nav/nav-main/nav-main.component';
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [
-    NavMainComponent
+    NavMainComponent,
+    RouterOutlet
   ],
   styleUrl: './app.component.scss'
 })

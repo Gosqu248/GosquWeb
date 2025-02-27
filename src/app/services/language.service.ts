@@ -24,7 +24,7 @@ export class LanguageService {
     pl: {
       about: 'O mnie',
       whatIDo: 'Czym się zajmuję',
-      skills: 'Umiejętności',
+      skills: 'Technologie',
       projects: 'Projekty',
       contact: 'Kontakt',
       changeLanguage: 'Zmień język na angielski',
@@ -32,7 +32,7 @@ export class LanguageService {
     en: {
       about: 'About me',
       whatIDo: 'What I do',
-      skills: 'Skills',
+      skills: 'Technologies',
       projects: 'Projects',
       contact: 'Contact',
       changeLanguage: 'Change language to polish',
