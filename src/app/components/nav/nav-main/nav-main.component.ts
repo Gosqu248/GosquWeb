@@ -30,10 +30,6 @@ export class NavMainComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  toggleLanguage(): void {
-    this.languageService.switchLanguage();
-  }
-
   setLanguage(language: string) {
     if (this.currentLanguage !== language) {
       this.languageService.switchLanguage();

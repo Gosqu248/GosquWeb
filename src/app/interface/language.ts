@@ -5,6 +5,16 @@ export interface Language {
   projects: string;
   contact: string;
   changeLanguage: string;
+  textAbout1: string;
+  textAbout2: string;
+  webTitle: string;
+  webDescription: string;
+  mobileTitle: string;
+  mobileDescription: string;
+  gpsTitle: string;
+  gpsDescription: string;
+  dedicatedTitle: string;
+  dedicatedDescription: string;
 }
 
 export interface Translations {

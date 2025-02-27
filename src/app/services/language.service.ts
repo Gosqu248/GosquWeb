@@ -28,6 +28,16 @@ export class LanguageService {
       projects: 'Projekty',
       contact: 'Kontakt',
       changeLanguage: 'Zmień język na angielski',
+      textAbout1: "Gosqu Software, założone przez Grzegorza Urbana, to dynamiczna firma technologiczna, która łączy kreatywność z nowoczesnymi rozwiązaniami cyfrowymi. ",
+      textAbout2: "Nasz zespół wykorzystuje najnowsze technologie, realizując projekty, które przyczyniają się do rozwoju biznesu.",
+      webTitle: 'Strony i apliakcje internetowe',
+      webDescription: 'Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach',
+      mobileTitle: 'Aplikacje mobilne',
+      mobileDescription: 'Aplikacje mobilne na systemy Android oraz iOS, zapewniające najwyższą jakość użytkowania',
+      gpsTitle: 'Systemy GPS',
+      gpsDescription: 'Zaawansowane systemy nawigacji i monitoringu GPS',
+      dedicatedTitle: 'Systemy dedykowane',
+      dedicatedDescription: 'Specjalistyczne oprogramowanie, dostosowane do indywidualnych potrzeb klienta'
     },
     en: {
       about: 'About me',
@@ -36,6 +46,16 @@ export class LanguageService {
       projects: 'Projects',
       contact: 'Contact',
       changeLanguage: 'Change language to polish',
+      textAbout1: "Gosqu Software, founded by Grzegorz Urban, is a dynamic technology company that blends creativity with modern digital solutions. ",
+      textAbout2: "Our team leverages cutting-edge technologies to deliver projects that drive business growth.",
+      webTitle: 'Websites and web applications',
+      webDescription: 'Modern websites and web applications, created with your needs in mind',
+      mobileTitle: 'Mobile applications',
+      mobileDescription: 'Mobile applications for Android and iOS systems, providing the highest quality of use',
+      gpsTitle: 'GPS systems',
+      gpsDescription: 'Advanced GPS navigation and monitoring systems',
+      dedicatedTitle: 'Dedicated systems',
+      dedicatedDescription: 'Specialized software tailored to the individual needs of the client'
     }
   }
 
