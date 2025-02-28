@@ -13,7 +13,7 @@ import { LanguageService } from '../../../services/language.service';
   styleUrls: ['./home-offers.component.scss']
 })
 export class HomeOffersComponent implements OnInit, OnDestroy {
-  expertise: { title: string; description: string }[] = [];
+  expertise: { title: string; description: string, icon:string }[] = [];
   private languageSubscription!: Subscription;
 
   constructor(private languageService: LanguageService) {}
@@ -30,19 +30,23 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
     this.expertise = [
       {
         title: this.getTranslation("webTitle"),
-        description: this.getTranslation("webDescription")
+        description: this.getTranslation("webDescription"),
+        icon: "fa-code" // Przykładowa ikona
       },
       {
         title: this.getTranslation("mobileTitle"),
-        description: this.getTranslation("mobileDescription")
+        description: this.getTranslation("mobileDescription"),
+        icon: "fa-mobile-alt"
       },
       {
         title: this.getTranslation("gpsTitle"),
-        description: this.getTranslation("gpsDescription")
+        description: this.getTranslation("gpsDescription"),
+        icon: "fa-map-marker-alt"
       },
       {
         title: this.getTranslation("dedicatedTitle"),
-        description: this.getTranslation("dedicatedDescription")
+        description: this.getTranslation("dedicatedDescription"),
+        icon: "fa-server"
       }
     ];
   }

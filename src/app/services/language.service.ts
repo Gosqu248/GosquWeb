@@ -23,14 +23,14 @@ export class LanguageService {
   translations: Translations = {
     pl: {
       about: 'O mnie',
-      whatIDo: 'Czym się zajmuję',
+      whatIDo: 'Oferta',
       skills: 'Technologie',
       projects: 'Projekty',
       contact: 'Kontakt',
       changeLanguage: 'Zmień język na angielski',
       textAbout1: "Gosqu Software, założone przez Grzegorza Urbana, to dynamiczna firma technologiczna, która łączy kreatywność z nowoczesnymi rozwiązaniami cyfrowymi. ",
       textAbout2: "Nasz zespół wykorzystuje najnowsze technologie, realizując projekty, które przyczyniają się do rozwoju biznesu.",
-      webTitle: 'Strony i apliakcje internetowe',
+      webTitle: 'Strony internetowe i apliakcje webowe',
       webDescription: 'Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach',
       mobileTitle: 'Aplikacje mobilne',
       mobileDescription: 'Aplikacje mobilne na systemy Android oraz iOS, zapewniające najwyższą jakość użytkowania',
@@ -41,7 +41,7 @@ export class LanguageService {
     },
     en: {
       about: 'About me',
-      whatIDo: 'What I do',
+      whatIDo: 'Offers',
       skills: 'Technologies',
       projects: 'Projects',
       contact: 'Contact',
