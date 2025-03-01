@@ -37,7 +37,9 @@ export class LanguageService {
       gpsTitle: 'Systemy GPS',
       gpsDescription: 'Zaawansowane systemy nawigacji i monitoringu GPS',
       dedicatedTitle: 'Systemy dedykowane',
-      dedicatedDescription: 'Specjalistyczne oprogramowanie, dostosowane do indywidualnych potrzeb klienta'
+      dedicatedDescription: 'Specjalistyczne oprogramowanie, dostosowane do indywidualnych potrzeb klienta',
+      database: 'Bazy danych',
+      others: 'Inne'
     },
     en: {
       about: 'About me',
@@ -55,7 +57,9 @@ export class LanguageService {
       gpsTitle: 'GPS systems',
       gpsDescription: 'Advanced GPS navigation and monitoring systems',
       dedicatedTitle: 'Dedicated systems',
-      dedicatedDescription: 'Specialized software tailored to the individual needs of the client'
+      dedicatedDescription: 'Specialized software tailored to the individual needs of the client',
+      database: 'Databases',
+      others: 'Others'
     }
   }
 

@@ -105,6 +105,8 @@ export class HomeTechComponent {
     }
     ];
 
+  constructor(private languageService: LanguageService) {}
+
   getStars(rating: number): string[] {
     return Array(rating).fill('★');
   }
@@ -113,4 +115,7 @@ export class HomeTechComponent {
     return Array(3 - rating).fill(0);
   }
 
+  getTranslation<K extends keyof Language>(key: K): string {
+    return this.languageService.getTranslation(key);
+  }
 }

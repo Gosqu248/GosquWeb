@@ -15,6 +15,8 @@ export interface Language {
   gpsDescription: string;
   dedicatedTitle: string;
   dedicatedDescription: string;
+  database: string;
+  others: string;
 }
 
 export interface Translations {

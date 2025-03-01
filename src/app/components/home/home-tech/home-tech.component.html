@@ -1,5 +1,5 @@
 <section class="technologies-section">
-  <h2 class="section-title">Technologie</h2>
+  <h2 class="section-title">{{getTranslation("skills")}}</h2>
 
   <div class="categories-container">
     <div class="category-group">
@@ -12,6 +12,7 @@
               <span class="tech-name">{{ tech.name }}</span>
               <div class="rating">
                 <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
+                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
               </div>
             </div>
           </div>
@@ -29,6 +30,7 @@
               <span class="tech-name">{{ tech.name }}</span>
               <div class="rating">
                 <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
+                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
               </div>
             </div>
           </div>
@@ -37,7 +39,7 @@
     </div>
 
     <div class="category-group">
-      <h3 class="category-title">Database</h3>
+      <h3 class="category-title">{{getTranslation("database")}}</h3>
       <div class="technologies-grid">
         <div class="tech-item" *ngFor="let tech of databaseTechs">
           <div class="tech-content">
@@ -46,6 +48,7 @@
               <span class="tech-name">{{ tech.name }}</span>
               <div class="rating">
                 <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
+                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
               </div>
             </div>
           </div>
@@ -54,7 +57,7 @@
     </div>
 
     <div class="category-group">
-      <h3 class="category-title">Others</h3>
+      <h3 class="category-title">{{getTranslation("others")}}</h3>
       <div class="technologies-grid">
         <div class="tech-item" *ngFor="let tech of othersTechs">
           <div class="tech-content">
@@ -63,6 +66,8 @@
               <span class="tech-name">{{ tech.name }}</span>
               <div class="rating">
                 <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
+                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
+
               </div>
             </div>
           </div>

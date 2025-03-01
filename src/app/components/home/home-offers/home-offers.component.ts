@@ -26,6 +26,12 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
     });
   }
 
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
+
   updateExpertise() {
     this.expertise = [
       {
@@ -55,9 +61,5 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
     return this.languageService.getTranslation(key);
   }
 
-  ngOnDestroy() {
-    if (this.languageSubscription) {
-      this.languageSubscription.unsubscribe();
-    }
-  }
+
 }
