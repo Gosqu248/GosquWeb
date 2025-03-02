@@ -5,5 +5,9 @@ export const routes: Routes = [
   {
     path: '',
     component: HomeMainComponent,
+  },
+  {
+    path: 'kork-pys',
+    loadComponent: () => import('./components/projects/kork-pys/kork-pys.component').then(m => m.KorkPysComponent)
   }
 ];

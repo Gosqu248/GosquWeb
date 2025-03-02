@@ -5,8 +5,33 @@
   align-items: center;
   background-color: var(--color-white);
   margin-top: 2rem;
+  position: relative;
+  overflow: hidden;
 
   @media (max-width: 768px) {
     width: 100%;
   }
+}
+
+.diagonal-wave {
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  opacity: 0.1;
+  z-index: 0;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200"><path d="M200 0 Q150 100 200 200 L0 200 Q50 100 0 0" fill="none" stroke="lightgrey" stroke-width="2"/></svg>');
+  animation: waveFlow 10s linear infinite;
+  transform: rotate(45deg);
+
+  @keyframes waveFlow {
+    0% { transform: rotate(45deg) translate(0, 0); }
+    100% { transform: rotate(45deg) translate(-100px, 100px); }
+  }
+}
+
+app-home-about, app-home-offers, app-home-tech, app-home-projects, app-home-contact {
+  position: relative;
+  z-index: 1;
 }

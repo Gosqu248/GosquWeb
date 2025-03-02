@@ -8,9 +8,9 @@
   --accent-red-light: #ff4d4d;      // Jaśniejszy odcień czerwieni
 
   // Dodatkowe ciemne odcienie czerwieni
-  --accent-red-900: #330000;        // Bardzo ciemna czerwień
+  --accent-red-900: #130000;        // Bardzo ciemna czerwień
   --accent-red-800: #4d0000;        // Głęboka czerwień
-  --accent-red-700: #660000;        // Ciemna czerwień wpadająca w burgund
+  --accent-red-700: #600000;        // Ciemna czerwień wpadająca w burgund
   --accent-red-600: #800000;        // Ciemny karmazyn
   --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
 
@@ -25,6 +25,11 @@
   // Efekty hover
   --hover-red: rgba(255, 0, 0, 0.2); // Efekt hover czerwony
   --hover-orange: rgba(255, 69, 0, 0.2); // Efekt hover pomarańczowy
+  --hover-red-900: rgba(19, 0, 0, 0.2); // Efekt hover czerwony ciemny
+  --hover-red-800: rgba(77, 0, 0, 0.2); // Efekt hover czerwony głęboki
+  --hover-red-700: rgba(96, 0, 0, 0.2); // Efekt hover czerwony ciemny burgund
+  --hover-red-600: rgba(128, 0, 0, 0.2); // Efekt hover czerwony ciemny karmazyn
+  --hover-red-500: rgba(153, 0, 0, 0.2); // Efekt hover czerwony głęboki z odcieniem brązu
 }
 
 body {
@@ -68,7 +73,7 @@ body {
     background: radial-gradient(
         circle,
         rgba(255, 0, 0, 0.1) 0%,
-        rgba(255, 77, 77, 0.05) 30%,
+        rgba(255, 77, 77, 0.1) 30%,
         transparent 70%
     );
     transform: translate(-50%, -50%);

@@ -1,1 +1,34 @@
-<p>home-projects works!</p>
+<section class="projects-section">
+  <div class="type-selector">
+    <button
+      *ngFor="let type of projectTypes"
+      class="type-button"
+      [class.active]="selectedType() === type"
+      (click)="selectedType.set(type)">
+      {{ type === 'commercial' ? 'Komercyjne' : 'Open Source' }}
+    </button>
+  </div>
+
+  <div class="projects-grid">
+    <div
+      *ngFor="let project of filteredProjects()"
+      class="project-card"
+      (click)="navigateToProject(project.route)">
+      <div class="card-content">
+        <h3 class="project-title">{{ project.title }}</h3>
+        <p class="project-desc">{{ project.shortDesc }}</p>
+        <div class="tech-stack">
+              <span
+                *ngFor="let tech of project.techStack"
+                class="tech-item">
+                {{ tech }}
+              </span>
+        </div>
+        <div class="view-details">
+          <span class="view-text">View Details</span>
+          <div class="arrow"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

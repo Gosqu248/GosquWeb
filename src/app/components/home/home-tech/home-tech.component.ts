@@ -31,7 +31,7 @@ export class HomeTechComponent {
     },
     {
       name: 'REST API',
-      icon: 'assets/rest-api-icon.svg', // Lokalna ikona
+      icon: 'assets/icons/REST.png',
       rating: 3
     },
     {
@@ -91,7 +91,7 @@ export class HomeTechComponent {
     {
       name: 'Nginx',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg',
-      rating: 2
+      rating: 1
     },
     {
       name: 'Docker',

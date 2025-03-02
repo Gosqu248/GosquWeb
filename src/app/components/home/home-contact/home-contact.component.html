@@ -1,1 +1,30 @@
-<p>home-contact works!</p>
+<div class="contact-container">
+    <h1>{{getTranslation("contact")}}</h1>
+  <div class="container-section">
+    <div class="left-container">
+      <h2 class="gosquText"> Gosqu Software - <span>Grzegorz Urban</span></h2>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span> EMAIL: </span>
+        <div class="emails">
+          <a href="mailto:grzegorzurban248@gmail.com">grzegorzurban248&#64;gmail.com</a>
+          <p> | </p>
+          <a href="mailto:software@gosqu.pl">software&#64;gosqu.pl</a>
+        </div>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-phone"></i>
+        <span> PHONE: </span>
+        <span> +48 730 174 220</span>
+      </div>
+    </div>
+    <div class="right-container">
+      <ng-lottie
+        [options]="lottieOptions"
+        (animationCreated)="onAnimationCreated($event)"
+      ></ng-lottie>
+    </div>
+  </div>
+</div>
