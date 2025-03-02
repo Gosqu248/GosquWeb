@@ -121,6 +121,24 @@ body {
   }
 }
 
+.section-title {
+  text-align: center;
+  font-size: 2.5rem;
+  color: var(--accent-orange-dark);
+  position: relative;
+  margin-bottom: 1.5rem;
+
+  &::before {
+    content: '';
+    display: block;
+    width: 10rem;
+    height: 3px;
+    border-radius: 20rem;
+    background: whitesmoke;
+    margin: auto;
+  }
+}
+
 @keyframes pulse {
   0% {
     transform: translate(-50%, -50%) scale(1);
