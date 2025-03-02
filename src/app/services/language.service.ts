@@ -39,7 +39,13 @@ export class LanguageService {
       dedicatedTitle: 'Systemy dedykowane',
       dedicatedDescription: 'Specjalistyczne oprogramowanie, dostosowane do indywidualnych potrzeb klienta',
       database: 'Bazy danych',
-      others: 'Inne'
+      others: 'Inne',
+      webApp: 'Aplikacje webowe',
+      commercial: 'Komercyjne',
+      nonCommercial: 'Prywatne',
+      viewDetails: 'Zobacz szczegóły',
+      korkDescription: 'Aplikacja webowa dla firmy budowlanej Kork-Pyś z możliwością pobrania przez klientów swoich faktur.',
+      busDescription: 'Aplikacja mobilna dla kierowców MPK Zgierz do istniejącego systemu.',
     },
     en: {
       about: 'About me',
@@ -59,7 +65,13 @@ export class LanguageService {
       dedicatedTitle: 'Dedicated systems',
       dedicatedDescription: 'Specialized software tailored to the individual needs of the client',
       database: 'Databases',
-      others: 'Others'
+      others: 'Others',
+      webApp: 'Web applications',
+      commercial: 'Commercial',
+      nonCommercial: 'Private',
+      viewDetails: 'View details',
+      korkDescription: 'Web application for the construction company Kork-Pyś with the possibility of downloading invoices by customers.',
+      busDescription: 'Mobile application for MPK Zgierz drivers for the existing system.',
     }
   }
 

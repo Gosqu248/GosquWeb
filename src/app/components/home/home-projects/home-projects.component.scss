@@ -1,10 +1,9 @@
 .projects-section {
   width: 100vw;
-  min-height: 100vh; // Dodaj wysokość viewport
   display: flex;
   flex-direction: column;
-  justify-content: center; // Wyśrodkuj pionowo
-  padding: 4rem 2rem;
+  justify-content: center;
+  padding: 5rem 2rem;
 }
 
 .type-selector {
@@ -70,6 +69,7 @@
   border: 1px solid var(--accent-red-800);
   position: relative;
   overflow: hidden;
+  min-height: 320px;
 
   &:hover {
     border-color: var(--accent-red);
@@ -85,9 +85,22 @@
   .project-title {
     color: var(--text-primary);
     font-size: 1.4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
     position: relative;
     z-index: 1;
+  }
+
+  .offer-container {
+    display: flex;
+    gap: 1.2rem;
+    margin: 0;
+
+    .offer-title {
+      color: #8c8a8a;
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+    }
   }
 
   .project-desc {
@@ -121,8 +134,9 @@
     background: linear-gradient(transparent, rgba(255,0,0,0.15));
     padding: 1.5rem;
     display: flex;
+    gap: 1rem;
     align-items: center;
-    justify-content: space-between;
+    justify-content: right;
     opacity: 0;
     transition: all 0.3s ease;
     transform: translateY(10px);

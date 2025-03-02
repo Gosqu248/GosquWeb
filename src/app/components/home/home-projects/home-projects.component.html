@@ -5,7 +5,7 @@
       class="type-button"
       [class.active]="selectedType() === type"
       (click)="selectedType.set(type)">
-      {{ type === 'commercial' ? 'Komercyjne' : 'Open Source' }}
+      {{ type === 'commercial' ? getTranslation('commercial') : getTranslation('nonCommercial') }}
     </button>
   </div>
 
@@ -16,7 +16,10 @@
       (click)="navigateToProject(project.route)">
       <div class="card-content">
         <h3 class="project-title">{{ project.title }}</h3>
-        <p class="project-desc">{{ project.shortDesc }}</p>
+        <div class="offer-container">
+          <p *ngFor="let offer of project.offer" class="offer-title">{{getTranslation(offer)}}</p>
+        </div>
+        <p class="project-desc">{{ getTranslation(project.shortDesc)}}</p>
         <div class="tech-stack">
               <span
                 *ngFor="let tech of project.techStack"
@@ -25,7 +28,7 @@
               </span>
         </div>
         <div class="view-details">
-          <span class="view-text">View Details</span>
+          <span class="view-text">{{getTranslation('viewDetails')}}</span>
           <div class="arrow"></div>
         </div>
       </div>

@@ -17,6 +17,12 @@ export interface Language {
   dedicatedDescription: string;
   database: string;
   others: string;
+  webApp: string;
+  commercial: string;
+  nonCommercial: string;
+  viewDetails: string;
+  korkDescription: string;
+  busDescription: string;
 }
 
 export interface Translations {

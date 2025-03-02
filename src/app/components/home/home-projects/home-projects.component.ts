@@ -2,14 +2,8 @@ import {Component, signal} from '@angular/core';
 import {animate, style, transition, trigger} from '@angular/animations';
 import {NgForOf} from '@angular/common';
 import {Router} from '@angular/router';
-
-interface Project {
-  title: string;
-  type: 'commercial' | 'non-commercial';
-  shortDesc: string;
-  techStack: string[];
-  route: string;
-}
+import {Project} from '../../../interface/project';
+import {LanguageService} from '../../../services/language.service';
 
 @Component({
   selector: 'app-home-projects',
@@ -36,20 +30,23 @@ export class HomeProjectsComponent {
     {
       title: 'Kork-Pyś Web',
       type: 'commercial',
-      shortDesc: 'Kompleksowa platforma usług budowlanych i ekologicznych z integracją Comarch ERP XT',
-      techStack: ['Angular', 'Spring Boot', 'Docker', 'Nginx', 'Comarch ERP XT API'],
+      offer: ['webApp'],
+      shortDesc: 'korkDescription',
+      techStack: ['Angular', 'Spring Boot', 'Docker', 'PostgreSQL', 'Nginx', 'Comarch ERP XT API'],
       route: '/kork-pys'
     },
     {
-      title: 'BusControl',
+      title: 'Bus Control',
       type: 'commercial',
-      shortDesc: 'Aplikacja mobilna dla MPK Zgierz z trackingiem pozycji autobusów',
-      techStack: ['Android Studio', 'Java', 'REST API', 'Room DB'],
+      offer: ['mobileTitle', 'gpsTitle'],
+      shortDesc: 'busDescription',
+      techStack: ['Java', 'Android Studio', 'Room DB'],
       route: '/bus-control'
     },
     {
       title: 'Gosqu Restaurant',
       type: 'non-commercial',
+      offer: ['webApp'],
       shortDesc: 'System zarządzania restauracją z płatnościami online i panelem admina',
       techStack: ['Angular', 'Spring Boot', 'PostgreSQL', 'PayU', 'tsParticles'],
       route: '/gosqu'
@@ -57,8 +54,9 @@ export class HomeProjectsComponent {
     {
       title: 'Webstaurator',
       type: 'non-commercial',
+      offer: ['webApp', 'mobileTitle'],
       shortDesc: 'Kompleksowy system zamówień food delivery z aplikacją mobilną',
-      techStack: ['Angular', 'React Native', 'Spring Boot', 'PayU', 'i18n'],
+      techStack: ['Angular', 'React Native', 'Spring Boot', 'PayU', 'i18n', 'Angular Material', 'PostgreSQL'],
       route: '/webstaurator'
     }
   ]);
@@ -66,9 +64,14 @@ export class HomeProjectsComponent {
   filteredProjects = () =>
     this.projects().filter(p => p.type === this.selectedType());
 
-  constructor(private router: Router) {}
+  constructor(private router: Router,
+              private languageService: LanguageService) {}
 
   navigateToProject(route: string) {
     this.router.navigate([route]);
+  }
+
+  getTranslation(key: any): string {
+    return this.languageService.getTranslation(key);
   }
 }
