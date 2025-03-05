@@ -44,8 +44,21 @@ export class LanguageService {
       commercial: 'Komercyjne',
       nonCommercial: 'Prywatne',
       viewDetails: 'Zobacz szczegóły',
-      korkDescription: 'Aplikacja webowa dla firmy budowlanej Kork-Pyś z możliwością pobrania przez klientów swoich faktur.',
-      busDescription: 'Aplikacja mobilna dla kierowców MPK Zgierz do istniejącego systemu.',
+      korkDescription: 'Aplikacja webowa dla firmy Kork-Pyś z możliwością pobrania przez klientów swoich faktur.',
+      busDescription: 'Aplikacja mobilna dla kierowców MPK Zgierz do systemu zarządzania komunikacją miejską.',
+      back: "Powrót",
+      viewLiveDemo: "Zobacz na żywo",
+      usedTechnologies: "Wykorzystane technologie",
+
+      //Kork Project
+      renovation: "Sekcja usług remontowo-budowlanych",
+      rental: "Sekcja wypożyczalnii sprzętu budowlanego",
+      transport: "Sekcja usułg transportowych HDS",
+      eco: "Sekcja usług związanych z utylizacją odpadów",
+      client_portal: "Portal klienta z możliwością logowania",
+      api_integration: "Integracja z systemem Comarch ERP XT",
+      personal_data: "Dostęp do danych osobowych klienta",
+      invoices: "Przeglądanie i pobieranie wystawionych faktur"
     },
     en: {
       about: 'About me',
@@ -71,7 +84,20 @@ export class LanguageService {
       nonCommercial: 'Private',
       viewDetails: 'View details',
       korkDescription: 'Web application for the construction company Kork-Pyś with the possibility of downloading invoices by customers.',
-      busDescription: 'Mobile application for MPK Zgierz drivers for the existing system.',
+      busDescription: 'Mobile application for MPK Zgierz drivers for the existing system of managing public transport.',
+      back: "Back",
+      viewLiveDemo: "View live",
+      usedTechnologies: "Used technologies",
+
+      //Kork Project
+      renovation: "Renovation and construction services section",
+      rental: "Construction equipment rental section",
+      transport: "HDS transport services section",
+      eco: "Waste disposal services section",
+      client_portal: "Customer portal with login option",
+      api_integration: "Integration with Comarch ERP XT system",
+      personal_data: "Access to customer's personal data",
+      invoices: "Viewing and downloading issued invoices"
     }
   }
 

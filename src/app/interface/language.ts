@@ -23,6 +23,18 @@ export interface Language {
   viewDetails: string;
   korkDescription: string;
   busDescription: string;
+  back: string;
+  viewLiveDemo: string;
+  usedTechnologies: string;
+
+  renovation: string;
+  rental: string;
+  transport: string;
+  eco: string;
+  client_portal: string;
+  api_integration: string;
+  personal_data: string;
+  invoices: string;
 }
 
 export interface Translations {

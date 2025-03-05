@@ -1,0 +1,27 @@
+<section class="project-glass">
+  <div class="main-container">
+   <div class="left-side">
+
+     <img class="project-image" [src]="projectDescription.imageUrls" alt="{{projectDescription.title}}">
+
+     <div class="link-container">
+       <a [href]="projectDescription.link" target="_blank" class="link">{{getTranslation("viewLiveDemo")}}</a>
+     </div>
+
+      <div class="stack-title">{{getTranslation("usedTechnologies")}}:</div>
+     <div class="stack-container">
+        <div *ngFor="let stack of projectDescription.techStack" class="stack">{{stack}}</div>
+     </div>
+   </div>
+
+    <div class="right-side">
+      <h2 class="project-title">{{projectDescription.title}}</h2>
+      <p class="project-description">{{getTranslation(projectDescription.description)}}</p>
+
+      <div class="features-container">
+        <div *ngFor="let feature of projectDescription.features" class="feature">{{getTranslation(feature)}}</div>
+      </div>
+    </div>
+
+  </div>
+</section>

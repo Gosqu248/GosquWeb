@@ -1,5 +1,5 @@
 :root {
-  --primary-dark: #0a0a0a;          // Główna czerń
+  --primary-dark: #322b2b;          // Główna czerń
   --secondary-dark: #1a1a1a;        // Drugi poziom czerni
 
   // Podstawowe odcienie czerwieni
@@ -8,8 +8,8 @@
   --accent-red-light: #ff4d4d;      // Jaśniejszy odcień czerwieni
 
   // Dodatkowe ciemne odcienie czerwieni
-  --accent-red-900: #130000;        // Bardzo ciemna czerwień
-  --accent-red-800: #4d0000;        // Głęboka czerwień
+  --accent-red-900: #573333;        // Bardzo ciemna czerwień
+  --accent-red-800: rgba(83, 1, 1, 0.93);        // Głęboka czerwień
   --accent-red-700: #600000;        // Ciemna czerwień wpadająca w burgund
   --accent-red-600: #800000;        // Ciemny karmazyn
   --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
@@ -30,6 +30,7 @@
   --hover-red-700: rgba(96, 0, 0, 0.2); // Efekt hover czerwony ciemny burgund
   --hover-red-600: rgba(128, 0, 0, 0.2); // Efekt hover czerwony ciemny karmazyn
   --hover-red-500: rgba(153, 0, 0, 0.2); // Efekt hover czerwony głęboki z odcieniem brązu
+
 }
 
 body {
