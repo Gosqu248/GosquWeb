@@ -7,7 +7,8 @@ import {ProjectDescription} from '../../../interface/project-description';
 @Component({
   selector: 'app-project-main',
   imports: [
-    NgForOf
+    NgForOf,
+    RouterLink
 
   ],
   templateUrl: './project-main.component.html',

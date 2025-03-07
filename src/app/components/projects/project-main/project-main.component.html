@@ -1,7 +1,10 @@
 <section class="project-glass">
   <div class="main-container">
    <div class="left-side">
-
+     <a class="neo-button" routerLink="/">
+       <i class="fas fa-arrow-left"></i>
+       <p>{{getTranslation('back')}}</p>
+     </a>
      <img class="project-image" [src]="projectDescription.imageUrls" alt="{{projectDescription.title}}">
 
      <div class="link-container">

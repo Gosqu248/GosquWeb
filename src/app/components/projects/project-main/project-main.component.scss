@@ -1,14 +1,20 @@
 .project-glass {
   --glass-blur: 16px;
-  --accent-1: #7f5af0;
-  --accent-2: #2cb67d;
-  --neon-glow: 0 0 15px rgba(127, 90, 240, 0.5);
+  --accent-1: #8B0000; // Ciemna czerwień
+  --accent-2: #6B6B6B; // Szary
+  --link-accent-1: #FF4500; // Pomarańczowo-czerwony
+  --link-accent-2: #FF6347; // Jasny pomarańcz
+  --neon-glow: 0 0 15px rgba(139, 0, 0, 0.5); // Czerwona poświata
   display: flex;
   justify-content: center;
-  color: #fffffe;
-  width: 100%;
+  background: radial-gradient(
+      circle,
+      rgba(255, 0, 0, 0.1) 0%,
+      rgba(255, 77, 77, 0.1) 30%,
+      transparent 70%
+  );
+  width: 100vw;
   margin: 6rem 0 8rem;
-  padding: 0 2rem;
 }
 
 .main-container {
@@ -35,6 +41,47 @@
   position: relative;
 }
 
+.neo-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-radius: 1rem;
+  background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+  color: #fffffe;
+  width: fit-content;
+  gap: 1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  font-size: 1.1rem;
+
+  &:hover {
+    box-shadow: 0 0 15px rgba(127, 90, 240, 0.5);
+    transform: translateY(-3px);
+    background: linear-gradient(45deg, var(--accent-2), var(--accent-1));
+  }
+
+  .neo-icon {
+    margin-right: 0.5rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    fill: currentColor;
+  }
+
+  .sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+  }
+}
+
 .project-image {
   width: 100%;
   border-radius: 1.5rem;
@@ -48,26 +95,32 @@
 }
 
 .link-container {
+  justify-content: flex-end;
+  position: relative;
+  display: flex;
 
   .link {
     display: inline-flex;
     align-items: center;
     justify-content: flex-end;
     gap: 0.8rem;
-    padding: 1rem 2.5rem;
+    padding: 1rem 2rem;
     border-radius: 1.2rem;
-    background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.13), rgb(255, 255, 255, 0.5)); // Nowy niebieski gradient
+    box-shadow: 0 0 15px rgba(250, 8, 15, 0.3);
     color: #fffffe;
     font-weight: 600;
     text-decoration: none;
     transition: all 0.3s ease;
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    font-size: 1.1rem;
 
     &:hover {
-      gap: 1.2rem;
+      background: linear-gradient(45deg, rgba(0, 0, 0, 0.13), rgb(255, 255, 255, 0.5));
       box-shadow:
-        0 0 25px rgba(127, 90, 240, 0.4),
-        var(--neon-glow);
-      transform: translateY(-2px);
+        0 0 35px rgba(234, 147, 167, 0.6), // Silniejsza poświata
+        0 0 25px rgba(218, 0, 0, 0.4);
+      transform: translateY(-5px); // Większy ruch przy hover
     }
   }
 }
@@ -102,11 +155,27 @@
   padding: 1rem;
 
   .project-title {
-    font-size: 2.5rem;
-    margin: 0;
-    background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+    font-size: 2.8rem;
+    margin: 0 0 1rem 0;
+    background: linear-gradient(45deg, var(--link-accent-1), var(--link-accent-2));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 20px rgba(255, 69, 0, 0.4);
+    font-family: 'Segoe UI', sans-serif;
+    letter-spacing: -0.5px;
+    position: relative;
+    display: inline-block;
+    padding: 0.2rem 0;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--link-accent-1), transparent);
+    }
   }
 
   .project-description {
@@ -140,9 +209,10 @@
 
 @media (max-width: 1024px) {
   .main-container {
-    flex-direction: column;
+    flex-direction: column-reverse;
     padding: 2rem;
     gap: 2.5rem;
+
   }
 
   .project-image {
