@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {NgForOf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {LanguageService} from '../../../services/language.service';
@@ -14,11 +14,13 @@ import {ProjectDescription} from '../../../interface/project-description';
   templateUrl: './project-main.component.html',
   styleUrl: './project-main.component.scss'
 })
-export class ProjectMainComponent {
+export class ProjectMainComponent implements OnInit {
   @Input() projectDescription!: ProjectDescription;
   constructor(private languageService: LanguageService) {
   }
-
+  ngOnInit(): void {
+    window.scrollTo(0, 0);
+  }
   getTranslation(key: any): string {
     return this.languageService.getTranslation(key);
   }

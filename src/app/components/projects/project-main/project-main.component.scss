@@ -7,19 +7,13 @@
   --neon-glow: 0 0 15px rgba(139, 0, 0, 0.5); // Czerwona poświata
   display: flex;
   justify-content: center;
-  background: radial-gradient(
-      circle,
-      rgba(255, 0, 0, 0.1) 0%,
-      rgba(255, 77, 77, 0.1) 30%,
-      transparent 70%
-  );
   width: 100vw;
   margin: 6rem 0 8rem;
 }
 
 .main-container {
   display: flex;
-  flex-direction: row;
+  flex-direction: row-reverse;
   max-width: 1300px;
   width: 100%;
   padding: 3rem;
@@ -209,7 +203,7 @@
 
 @media (max-width: 1024px) {
   .main-container {
-    flex-direction: column-reverse;
+    flex-direction: column;
     padding: 2rem;
     gap: 2.5rem;
 

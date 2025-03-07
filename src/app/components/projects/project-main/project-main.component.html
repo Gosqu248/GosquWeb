@@ -1,5 +1,14 @@
 <section class="project-glass">
   <div class="main-container">
+    <div class="right-side">
+      <h2 class="project-title">{{projectDescription.title}}</h2>
+      <p class="project-description">{{getTranslation(projectDescription.description)}}</p>
+
+      <div class="features-container">
+        <div *ngFor="let feature of projectDescription.features" class="feature">{{getTranslation(feature)}}</div>
+      </div>
+    </div>
+
    <div class="left-side">
      <a class="neo-button" routerLink="/">
        <i class="fas fa-arrow-left"></i>
@@ -16,15 +25,5 @@
         <div *ngFor="let stack of projectDescription.techStack" class="stack">{{stack}}</div>
      </div>
    </div>
-
-    <div class="right-side">
-      <h2 class="project-title">{{projectDescription.title}}</h2>
-      <p class="project-description">{{getTranslation(projectDescription.description)}}</p>
-
-      <div class="features-container">
-        <div *ngFor="let feature of projectDescription.features" class="feature">{{getTranslation(feature)}}</div>
-      </div>
-    </div>
-
   </div>
 </section>

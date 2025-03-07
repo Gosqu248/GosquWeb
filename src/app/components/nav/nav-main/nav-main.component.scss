@@ -1,7 +1,7 @@
 .navbar {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   position: fixed;
-  width: 100%;
+  width: 100vw;
   background: radial-gradient(
       circle at left,
       var(--accent-red-800) 0%,
@@ -12,6 +12,10 @@
   border-radius: 0 0 1rem 1rem;
   border-bottom: 2px solid var(--accent-red-800);
   z-index: 100;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   .navbar-container {
     max-width: 1200px;
