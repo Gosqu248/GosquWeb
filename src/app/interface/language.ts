@@ -27,7 +27,9 @@ export interface Language {
   viewLiveDemo: string;
   usedTechnologies: string;
   languages: string;
+  features: string;
 
+  //kork project
   renovation: string;
   rental: string;
   transport: string;
@@ -36,6 +38,19 @@ export interface Language {
   api_integration: string;
   personal_data: string;
   invoices: string;
+
+  //bus control project
+  downloadDatabase: string;
+  downloadVariant: string;
+  mp3: string;
+  updateDatabase: string;
+  reverseCurse: string;
+  sendCurrentLocation: string;
+  sendBusOnStop: string;
+  sendLostBusOnStop: string;
+  wifiCheck: string;
+  plannedHours: string;
+  showStops: string;
 }
 
 export interface Translations {

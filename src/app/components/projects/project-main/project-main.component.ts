@@ -1,14 +1,17 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NgForOf} from "@angular/common";
+import {NgForOf, NgIf} from "@angular/common";
 import {RouterLink} from "@angular/router";
 import {LanguageService} from '../../../services/language.service';
 import {ProjectDescription} from '../../../interface/project-description';
+import {HomeContactComponent} from '../../home/home-contact/home-contact.component';
 
 @Component({
   selector: 'app-project-main',
   imports: [
     NgForOf,
-    RouterLink
+    RouterLink,
+    NgIf,
+    HomeContactComponent
 
   ],
   templateUrl: './project-main.component.html',

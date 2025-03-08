@@ -32,7 +32,16 @@ export class HomeProjectsComponent {
       type: 'commercial',
       offer: ['webApp'],
       shortDesc: 'korkDescription',
-      techStack: ['Angular', 'Spring Boot', 'Docker', 'PostgreSQL', 'Nginx', 'Comarch ERP XT API'],
+      techStack: ['Spring Boot',
+        'Angular',
+        'PostgreSQL',
+        'REST API',
+        'JPA',
+        'JWT',
+        'Docker',
+        'Nginx',
+        'Ubuntu',
+        'Comarch ERP XT API'],
       route: '/kork-pys'
     },
     {
@@ -40,7 +49,11 @@ export class HomeProjectsComponent {
       type: 'commercial',
       offer: ['mobileTitle', 'gpsTitle'],
       shortDesc: 'busDescription',
-      techStack: ['Java', 'Android Studio', 'Room DB'],
+      techStack: [  'Java',
+        'Android',
+        'Room DB',
+        'Gradle',
+        'REST API',],
       route: '/bus-control'
     },
     {

@@ -4,6 +4,6 @@ export interface ProjectDescription {
   features: string[];
   techStack: string[];
   imageUrls: string[];
-  link: string;
+  link?: string;
 }
 

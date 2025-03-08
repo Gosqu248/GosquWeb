@@ -5,6 +5,7 @@
       <p class="project-description">{{getTranslation(projectDescription.description)}}</p>
 
       <div class="features-container">
+        <h3 class="features-title">{{getTranslation("features")}}:</h3>
         <div *ngFor="let feature of projectDescription.features" class="feature">{{getTranslation(feature)}}</div>
       </div>
     </div>
@@ -16,7 +17,7 @@
      </a>
      <img class="project-image" [src]="projectDescription.imageUrls" alt="{{projectDescription.title}}">
 
-     <div class="link-container">
+     <div *ngIf="projectDescription.link" class="link-container">
        <a [href]="projectDescription.link" target="_blank" class="link">{{getTranslation("viewLiveDemo")}}</a>
      </div>
 
@@ -27,3 +28,4 @@
    </div>
   </div>
 </section>
+<app-home-contact></app-home-contact>

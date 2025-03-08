@@ -16,18 +16,22 @@ export class KorkPysComponent  {
     title: 'Kork-Pyś Web',
     description: 'korkDescription',
     features: [
+      'api_integration',
+      'client_portal',
+      'personal_data',
+      'invoices',
       'renovation',
       'rental',
       'transport',
-      'eco',
-      'client_portal',
-      'api_integration',
-      'personal_data',
-      'invoices'
+      'eco'
     ],
     techStack: [
       'Spring Boot',
       'Angular',
+      'PostgreSQL',
+      'REST API',
+      'JPA',
+      'JWT',
       'Docker',
       'Nginx',
       'Ubuntu',

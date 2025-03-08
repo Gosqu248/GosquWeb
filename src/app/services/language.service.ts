@@ -50,6 +50,7 @@ export class LanguageService {
       viewLiveDemo: "Zobacz na żywo",
       usedTechnologies: "Wykorzystane technologie",
       languages: "Języki",
+      features: "Funkcjonalności",
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -59,12 +60,25 @@ export class LanguageService {
       client_portal: "Portal klienta z możliwością logowania",
       api_integration: "Integracja z systemem Comarch ERP XT",
       personal_data: "Dostęp do danych osobowych klienta",
-      invoices: "Przeglądanie i pobieranie wystawionych faktur"
+      invoices: "Przeglądanie i pobieranie wystawionych faktur",
+
+      //Bus Control Project
+      downloadDatabase: "Pobieranie bazy danych",
+      downloadVariant: "Pobieranie wyznaczonej linii oraz ustawianie przystanków",
+      mp3: "Zapowiedzi głosowe dla aktualnego przystanku oraz następnego",
+      updateDatabase: "Aktualizacja bazy danych z serwera",
+      reverseCurse: "Pobieranie następnej linii po dotarciu na końcowy przystanek",
+      sendCurrentLocation: "Wysyłanie biężącej lokalizacji do serwera co 200 milisekund lub co 1 metr",
+      sendBusOnStop: "Wysyłanie informacji o dotarciu autobusu na przystanek",
+      sendLostBusOnStop: "Wysyłanie niedostarczonych informacji o dotarciu autobusu na przystanek",
+      wifiCheck: "Sprawdzanie dostępności sieci WiFi w autobusie i ustawianie odpowiedniego trybu pracy aplikacji",
+      plannedHours: "Wyświetlanie planowanych godzin przyjazdu autobu na przystanek",
+      showStops: "Wyświetlanie nazw przystanków: poprzedni / aktualny / następny"
     },
     en: {
       about: 'About me',
       whatIDo: 'Offers',
-      skills: 'Technologies',
+      skills: 'Skills',
       projects: 'Projects',
       contact: 'Contact',
       changeLanguage: 'Change language to polish',
@@ -90,6 +104,7 @@ export class LanguageService {
       viewLiveDemo: "View live",
       usedTechnologies: "Used technologies",
       languages: "Languages",
+      features: "Features",
 
       //Kork Project
       renovation: "Renovation and construction services section",
@@ -99,7 +114,21 @@ export class LanguageService {
       client_portal: "Customer portal with login option",
       api_integration: "Integration with Comarch ERP XT system",
       personal_data: "Access to customer's personal data",
-      invoices: "Viewing and downloading issued invoices"
+      invoices: "Viewing and downloading issued invoices",
+
+      //Bus Control Project
+      downloadDatabase: "Downloading database",
+      downloadVariant: "Downloading the designated line and setting stops",
+      mp3: "Voice announcements for the current and next stop",
+      updateDatabase: "Updating the database from the server",
+      reverseCurse: "Downloading the next line after reaching the final stop",
+      sendCurrentLocation: "Sending the current location to the server every 200 milliseconds or every 1 meter",
+      sendBusOnStop: "Sending information about the bus reaching the stop",
+      sendLostBusOnStop: "Sending undelivered information about the bus reaching the stop",
+      wifiCheck: "Checking the availability of WiFi network on the bus and setting the appropriate application mode",
+      plannedHours: "Display of planned bus arrival times at the stop",
+      showStops: "Display of stops names: previous / current / next"
+
     }
   }
 

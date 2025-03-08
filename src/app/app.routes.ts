@@ -9,5 +9,9 @@ export const routes: Routes = [
   {
     path: 'kork-pys',
     loadComponent: () => import('./components/projects/kork-pys/kork-pys.component').then(m => m.KorkPysComponent)
+  },
+  {
+    path: 'bus-control',
+    loadComponent: () => import('./components/projects/bus-control/bus-control.component').then(m => m.BusControlComponent)
   }
 ];
