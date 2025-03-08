@@ -26,6 +26,7 @@ export interface Language {
   back: string;
   viewLiveDemo: string;
   usedTechnologies: string;
+  languages: string;
 
   renovation: string;
   rental: string;

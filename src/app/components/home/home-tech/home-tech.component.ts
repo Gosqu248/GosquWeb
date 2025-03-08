@@ -6,8 +6,13 @@ interface Technology {
   name: string;
   icon: string;
   rating: number;
-
 }
+
+interface AllTechnology {
+  desc: string;
+  techs: Technology[];
+}
+
 @Component({
   selector: 'app-home-tech',
   imports: [
@@ -18,6 +23,34 @@ interface Technology {
   styleUrl: './home-tech.component.scss'
 })
 export class HomeTechComponent {
+  languagesTechs: Technology[] = [
+    {
+      name: 'Java',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
+      rating: 3
+    },
+    {
+      name: 'JavaScript',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg',
+      rating: 3
+    },
+    {
+      name: 'TypeScript',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
+      rating: 3
+    },
+    {
+      name: 'Python',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg',
+      rating: 2
+    },
+    {
+      name: 'C++',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/cplusplus/cplusplus-original.svg',
+      rating: 1
+    },
+  ];
+
   backendTechs: Technology[] = [
     {
       name: 'Spring Boot',
@@ -25,9 +58,14 @@ export class HomeTechComponent {
       rating: 3
     },
     {
-      name: 'Java',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg',
-      rating: 3
+      name: 'Node.js',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nodejs/nodejs-original.svg',
+      rating: 2
+    },
+    {
+      name: 'Hibernate',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/hibernate/hibernate-original.svg',
+      rating: 2
     },
     {
       name: 'REST API',
@@ -39,7 +77,16 @@ export class HomeTechComponent {
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postman/postman-original.svg',
       rating: 3
     },
-
+    {
+      name: 'Swagger',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/swagger/swagger-original.svg',
+      rating: 2
+    },
+    {
+      name: "JUnit",
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/junit/junit-original.svg',
+      rating: 2
+    },
   ];
 
   databaseTechs: Technology[] = [
@@ -53,17 +100,22 @@ export class HomeTechComponent {
       name: 'MongoDB',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mongodb/mongodb-original.svg',
       rating: 1
+    },
+    {
+      name: 'MySQL',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
+      rating: 1
+    },
+    {
+      name: 'Room DB',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg',
+      rating: 2
     }
   ];
   frontendTechs: Technology[] = [
     {
       name: 'Angular',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg',
-      rating: 3
-    },
-    {
-      name: 'TypeScript',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg',
       rating: 3
     },
     {
@@ -85,13 +137,33 @@ export class HomeTechComponent {
       name: 'Android',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/android/android-original.svg',
       rating: 2
+    },
+    {
+      name: 'Bootstrap',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-plain.svg',
+      rating: 2
+    },
+    {
+      name: 'Angular Material',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angularjs/angularjs-original.svg',
+      rating: 3
     }
   ];
   othersTechs: Technology[] = [
     {
-      name: 'Nginx',
-      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg',
-      rating: 1
+      name: 'Git',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg',
+      rating: 3
+    },
+    {
+      name: 'Maven',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/maven/maven-original.svg',
+      rating: 3
+    },
+    {
+      name: 'NPM',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/npm/npm-original-wordmark.svg',
+      rating: 3
     },
     {
       name: 'Docker',
@@ -102,8 +174,36 @@ export class HomeTechComponent {
       name: 'Linux',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg',
       rating: 2
+    },
+    {
+      name: 'Nginx',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg',
+      rating: 1
     }
-    ];
+  ];
+
+  allTechs: AllTechnology[] = [
+    {
+      desc: 'languages',
+      techs: this.languagesTechs
+    },
+    {
+      desc: 'Backend',
+      techs: this.backendTechs
+    },
+    {
+      desc: 'Frontend',
+      techs: this.frontendTechs
+    },
+    {
+      desc: 'database',
+      techs: this.databaseTechs
+    },
+    {
+      desc: 'others',
+      techs: this.othersTechs
+    }
+  ];
 
   constructor(private languageService: LanguageService) {}
 
@@ -115,7 +215,7 @@ export class HomeTechComponent {
     return Array(3 - rating).fill(0);
   }
 
-  getTranslation<K extends keyof Language>(key: K): string {
+  getTranslation(key: any): string {
     return this.languageService.getTranslation(key);
   }
 }

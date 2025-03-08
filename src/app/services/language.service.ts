@@ -49,6 +49,7 @@ export class LanguageService {
       back: "Powrót",
       viewLiveDemo: "Zobacz na żywo",
       usedTechnologies: "Wykorzystane technologie",
+      languages: "Języki",
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -88,6 +89,7 @@ export class LanguageService {
       back: "Back",
       viewLiveDemo: "View live",
       usedTechnologies: "Used technologies",
+      languages: "Languages",
 
       //Kork Project
       renovation: "Renovation and construction services section",

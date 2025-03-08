@@ -12,6 +12,7 @@
   border-radius: 0 0 1rem 1rem;
   border-bottom: 2px solid var(--accent-red-800);
   z-index: 100;
+  animation: slideInFromTop 0.7s ease-out;
 
   @media (max-width: 768px) {
     width: 100%;
@@ -188,5 +189,16 @@
         font-size: 1.2rem;
       }
     }
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
   }
 }

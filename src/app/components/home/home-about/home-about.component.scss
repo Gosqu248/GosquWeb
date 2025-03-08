@@ -38,7 +38,7 @@
   margin-bottom: 2rem;
   opacity: 0;
   animation:
-    fadeInUp 0.8s ease-out forwards,
+    fadeInUp 1s ease-out 0.4s forwards,
     gradientFlow 4s ease infinite;
 }
 
@@ -47,7 +47,7 @@
   line-height: 1.8;
   margin-bottom: 3rem;
   opacity: 0;
-  animation: fadeInUp 0.8s ease-out 0.2s forwards;
+  animation: fadeInUp 1s ease-out 1s forwards;
 }
 
 

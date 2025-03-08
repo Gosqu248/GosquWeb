@@ -1,11 +1,11 @@
 <section class="technologies-section">
   <h2 class="section-title">{{getTranslation("skills")}}</h2>
 
-  <div class="categories-container">
+  <div class="categories-container" *ngFor="let allTech of allTechs">
     <div class="category-group">
-      <h3 class="category-title">Backend</h3>
+      <h3 class="category-title">{{getTranslation(allTech.desc) ? getTranslation(allTech.desc) : allTech.desc}} </h3>
       <div class="technologies-grid">
-        <div class="tech-item" *ngFor="let tech of backendTechs">
+        <div class="tech-item" *ngFor="let tech of allTech.techs">
           <div class="tech-content">
             <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
             <div class="tech-info">
@@ -19,61 +19,6 @@
         </div>
       </div>
     </div>
-
-    <div class="category-group">
-      <h3 class="category-title">Frontend</h3>
-      <div class="technologies-grid">
-        <div class="tech-item" *ngFor="let tech of frontendTechs">
-          <div class="tech-content">
-            <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
-            <div class="tech-info">
-              <span class="tech-name">{{ tech.name }}</span>
-              <div class="rating">
-                <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
-                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="category-group">
-      <h3 class="category-title">{{getTranslation("database")}}</h3>
-      <div class="technologies-grid">
-        <div class="tech-item" *ngFor="let tech of databaseTechs">
-          <div class="tech-content">
-            <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
-            <div class="tech-info">
-              <span class="tech-name">{{ tech.name }}</span>
-              <div class="rating">
-                <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
-                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="category-group">
-      <h3 class="category-title">{{getTranslation("others")}}</h3>
-      <div class="technologies-grid">
-        <div class="tech-item" *ngFor="let tech of othersTechs">
-          <div class="tech-content">
-            <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
-            <div class="tech-info">
-              <span class="tech-name">{{ tech.name }}</span>
-              <div class="rating">
-                <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
-                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
-
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
   </div>
+
 </section>
