@@ -60,9 +60,17 @@ export class HomeProjectsComponent {
       title: 'Gosqu Restaurant',
       type: 'non-commercial',
       offer: ['webApp'],
-      shortDesc: 'System zarządzania restauracją z płatnościami online i panelem admina',
-      techStack: ['Angular', 'Spring Boot', 'PostgreSQL', 'PayU', 'tsParticles'],
-      route: '/gosqu'
+      shortDesc: 'gosquDescription',
+      techStack: ['Angular',
+        'Spring Boot',
+        'PostgreSQL',
+        'JWT',
+        'REST API',
+        'tsParticles',
+        'PayU',
+        'Angular Material',
+        'SCSS'],
+      route: '/gosqu-restaurant'
     },
     {
       title: 'Webstaurator',

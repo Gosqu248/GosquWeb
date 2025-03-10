@@ -73,7 +73,21 @@ export class LanguageService {
       sendLostBusOnStop: "Wysyłanie niedostarczonych informacji o dotarciu autobusu na przystanek",
       wifiCheck: "Sprawdzanie dostępności sieci WiFi w autobusie i ustawianie odpowiedniego trybu pracy aplikacji",
       plannedHours: "Wyświetlanie planowanych godzin przyjazdu autobu na przystanek",
-      showStops: "Wyświetlanie nazw przystanków: poprzedni / aktualny / następny"
+      showStops: "Wyświetlanie nazw przystanków: poprzedni / aktualny / następny",
+
+      //Gosqu Restaurant Project
+      gosquDescription: "Nowoczesna aplikacja dla restauracji, upraszczająca przeglądanie menu, zamawianie dań i bezpieczne płatności, z zaawansowaną weryfikacją i efektywnym zarządzaniem zamówieniami.",
+      googleAuth: "Logowanie za pomocą konta Google",
+      twoFA: "Autoryzacja dwuetapowa",
+      limitedLoginAttempts: "Ograniczenie liczby prób logowania",
+      editUserData: "Edycja danych użytkownika",
+      payments: "Płatności online za pomocą PayU",
+      adminPanel: "Panel administracyjny z dodawaniem / edycją / usuwaniem pozycji z menu oraz zarządzaniem zamówieniami",
+      animatedBackgrounds: "Animowane tła",
+      menuImageUpload: "Przesyłanie zdjęć menu z komputera",
+
+
+
     },
     en: {
       about: 'About me',
@@ -127,7 +141,18 @@ export class LanguageService {
       sendLostBusOnStop: "Sending undelivered information about the bus reaching the stop",
       wifiCheck: "Checking the availability of WiFi network on the bus and setting the appropriate application mode",
       plannedHours: "Display of planned bus arrival times at the stop",
-      showStops: "Display of stops names: previous / current / next"
+      showStops: "Display of stops names: previous / current / next",
+
+      //Gosqu Restaurant Project
+      gosquDescription: "Modern application for restaurants, simplifying menu browsing, ordering dishes and secure payments, with advanced verification and efficient order management.",
+      googleAuth: "Login using Google account",
+      twoFA: "Two-step authorization",
+      limitedLoginAttempts: "Limiting the number of login attempts",
+      editUserData: "User data editing",
+      payments: "Online payments using PayU",
+      adminPanel: "Administrative panel with add / edit / delete menu items and order management",
+      animatedBackgrounds: "Animated backgrounds",
+      menuImageUpload: "Uploading menu photos from the computer",
 
     }
   }

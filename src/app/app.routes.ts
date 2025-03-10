@@ -13,5 +13,9 @@ export const routes: Routes = [
   {
     path: 'bus-control',
     loadComponent: () => import('./components/projects/bus-control/bus-control.component').then(m => m.BusControlComponent)
+  },
+  {
+    path: 'gosqu-restaurant',
+    loadComponent: () => import('./components/projects/gosqu-restaurant/gosqu-restaurant.component').then(m => m.GosquRestaurantComponent)
   }
 ];

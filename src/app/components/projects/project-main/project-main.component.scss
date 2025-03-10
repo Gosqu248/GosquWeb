@@ -8,7 +8,7 @@
   display: flex;
   justify-content: center;
   width: 100vw;
-  margin: 6rem 0 8rem;
+  margin: 3rem 0 8rem;
 }
 
 .main-container {
@@ -76,17 +76,49 @@
   }
 }
 
-.project-image {
-  width: 100%;
-  border-radius: 1.5rem;
-  object-fit: cover;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-  transition: transform 0.3s ease;
+.image-container {
+  display: flex;
+  flex-direction: row;
+  position: relative;
 
-  &:hover {
-    transform: translateY(-5px);
+  .fas {
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    background: rgba(147, 147, 147, 0.3);
+    border-radius: 50%;
+    padding: 0.5rem;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10; /* Ensure the icons stay on top */
+  }
+
+  .fas:hover {
+    background: rgba(147, 147, 147, 0.5);
+  }
+
+  .arrow-left {
+    left: 10px; /* Adjust as needed */
+  }
+
+  .arrow-right {
+    right: 10px; /* Adjust as needed */
+  }
+
+  .project-image {
+    width: 100%;
+    border-radius: 1.5rem;
+    object-fit: cover;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
   }
 }
+
+
 
 .link-container {
   justify-content: flex-end;

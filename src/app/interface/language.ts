@@ -51,6 +51,17 @@ export interface Language {
   wifiCheck: string;
   plannedHours: string;
   showStops: string;
+
+  //gosqu restaurant project
+  gosquDescription: string;
+  googleAuth: string;
+  twoFA: string;
+  limitedLoginAttempts: string;
+  editUserData: string;
+  payments: string;
+  adminPanel: string;
+  animatedBackgrounds: string;
+  menuImageUpload: string;
 }
 
 export interface Translations {

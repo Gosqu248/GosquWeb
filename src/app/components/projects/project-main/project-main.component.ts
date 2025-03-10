@@ -19,12 +19,18 @@ import {HomeContactComponent} from '../../home/home-contact/home-contact.compone
 })
 export class ProjectMainComponent implements OnInit {
   @Input() projectDescription!: ProjectDescription;
+  imageIndex = 0;
   constructor(private languageService: LanguageService) {
   }
   ngOnInit(): void {
     window.scrollTo(0, 0);
   }
+
   getTranslation(key: any): string {
     return this.languageService.getTranslation(key);
+  }
+
+  changeImage(number: number) {
+    this.imageIndex = (this.imageIndex + number) % this.projectDescription.imageUrls.length;
   }
 }

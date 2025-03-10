@@ -15,7 +15,12 @@
        <i class="fas fa-arrow-left"></i>
        <p>{{getTranslation('back')}}</p>
      </a>
-     <img class="project-image" [src]="projectDescription.imageUrls" alt="{{projectDescription.title}}">
+
+     <div class="image-container">
+        <i *ngIf="imageIndex" class="fas fa-arrow-left arrow-left" (click)="changeImage(-1)"></i>
+        <img class="project-image" [src]="projectDescription.imageUrls[imageIndex]" alt="{{projectDescription.title}}">
+        <i *ngIf="imageIndex != projectDescription.imageUrls.length -1 && projectDescription.imageUrls.length > 1" class="fas fa-arrow-right arrow-right" (click)="changeImage(1)"></i>
+     </div>
 
      <div *ngIf="projectDescription.link" class="link-container">
        <a [href]="projectDescription.link" target="_blank" class="link">{{getTranslation("viewLiveDemo")}}</a>

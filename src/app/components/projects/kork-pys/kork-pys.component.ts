@@ -39,7 +39,11 @@ export class KorkPysComponent  {
     ],
     imageUrls: [
       '/assets/img/kork.png',
-
+      '/assets/img/kork5.png',
+      '/assets/img/kork6.png',
+      '/assets/img/kork4.png',
+      '/assets/img/kork3.png',
+      '/assets/img/kork2.png',
     ],
     link: 'https://kork-pyś.pl'
   }
