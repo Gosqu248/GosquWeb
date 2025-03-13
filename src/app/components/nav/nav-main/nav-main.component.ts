@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
-import {RouterLink} from '@angular/router';
-import {NgIf} from '@angular/common';
+import {Router, RouterLink} from '@angular/router';
+import {NgIf, ViewportScroller} from '@angular/common';
 import {LanguageService} from '../../../services/language.service';
 import {Language} from '../../../interface/language';
 
@@ -21,13 +21,31 @@ export class NavMainComponent {
   currentFlag: string;
   showLanguageDropdown = false;
 
-  constructor(private languageService: LanguageService) {
+  constructor(private languageService: LanguageService, private router: Router, private viewportScroller: ViewportScroller) {
     this.currentLanguage = this.languageService.getCurrentLanguage();
     this.currentFlag = this.getCurrentFlag();
   }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  scrollTo(id: string): void {
+    if (this.router.url === '/') {
+      const element = document.getElementById(id);
+      if (element) {
+        const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
+        window.scrollTo({ top: yOffset, behavior: 'smooth' });
+      }
+    } else {
+      this.router.navigate(['/'], { fragment: id }).then(() => {
+        const element = document.getElementById(id);
+        if (element) {
+          const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({ top: yOffset, behavior: 'smooth' });
+        }
+      });
+    }
   }
 
   setLanguage(language: string) {
