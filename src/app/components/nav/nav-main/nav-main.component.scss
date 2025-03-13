@@ -27,6 +27,10 @@
     justify-content: space-between;
     align-items: center;
 
+    .logo {
+      cursor: pointer;
+    }
+
     .logo img {
       height: 4.5rem;
     }
@@ -40,6 +44,7 @@
         align-items: center;
 
         a {
+          cursor: pointer;
           color: var(--color-gray-800);
           text-decoration: none;
           position: relative;
