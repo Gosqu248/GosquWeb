@@ -38,12 +38,17 @@ export class KorkPysComponent  {
       'Comarch ERP XT API'
     ],
     imageUrls: [
-      '/assets/img/kork.png',
+      '/assets/img/kork1.png',
+      '/assets/img/kork2.png',
+      '/assets/img/kork3.png',
+      '/assets/img/kork4.png',
       '/assets/img/kork5.png',
       '/assets/img/kork6.png',
-      '/assets/img/kork4.png',
-      '/assets/img/kork3.png',
-      '/assets/img/kork2.png',
+      '/assets/img/kork7.png',
+      '/assets/img/kork8.png',
+      '/assets/img/kork9.png',
+      '/assets/img/kork10.png',
+      '/assets/img/kork11.png',
     ],
     link: 'https://kork-pyś.pl'
   }

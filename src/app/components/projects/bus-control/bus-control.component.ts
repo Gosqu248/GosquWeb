@@ -36,7 +36,7 @@ export class BusControlComponent {
       'REST API',
     ],
     imageUrls: [
-      '/assets/img/bus-control.png',
+      '/assets/img/BusControl.jpeg',
     ],
   }
 

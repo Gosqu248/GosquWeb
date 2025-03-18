@@ -272,18 +272,36 @@
 @media (max-width: 1024px) {
   .main-container {
     flex-direction: column;
-    padding: 2rem;
+    padding: 0.5rem;
     gap: 2.5rem;
-
   }
 
-  .project-image {
-    height: 300px;
+  .left-side {
+    justify-content: center;
+  }
+
+  .neo-button {
+    width: 12rem;
+    align-self: center;
   }
 
   .right-side {
     .project-title {
       font-size: 2rem;
     }
+  }
+
+  .image-container {
+    .project-image {
+      border-radius: 1rem;
+    }
+  }
+
+  .stack-title {
+    padding: 0 1.5rem;
+  }
+
+  .stack-container {
+    padding: 0 1.5rem 1rem 1.5rem;
   }
 }
