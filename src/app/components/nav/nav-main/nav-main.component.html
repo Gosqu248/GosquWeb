@@ -27,7 +27,7 @@
     </div>
 
     <div class="mobile-menu-button">
-      <button (click)="toggleMenu()">
+      <button id="menu" (click)="toggleMenu()" aria-label="menu">
         <svg viewBox="0 0 24 24" stroke="currentColor">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
@@ -48,12 +48,12 @@
     </button>
 
     <div class="social-icons">
-        <a href="https://github.com/Gosqu248" target="_blank" class="social-icon">
+        <a href="https://github.com/Gosqu248" target="_blank" class="social-icon" aria-label="Visit GitHub profile (opens in new window)">
           <i class="fab fa-github"></i>
           <span> GitHub</span>
         </a>
 
-        <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon">
+        <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon" aria-label="Visit LinkedIn profile (opens in new window)">
           <i class="fab fa-linkedin-in"></i>
         <span> LinkedIn</span>
         </a>
