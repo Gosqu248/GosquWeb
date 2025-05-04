@@ -51,6 +51,8 @@ export class LanguageService {
       usedTechnologies: "Wykorzystane technologie",
       languages: "Języki",
       features: "Funkcjonalności",
+      customized: "Dedykowane oprogramowanie dostosowane do Twoich potrzeb.",
+      innovative: "Innowacyjne technologie napędzające rozwój Twojej firmy.",
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -119,6 +121,8 @@ export class LanguageService {
       usedTechnologies: "Used technologies",
       languages: "Languages",
       features: "Features",
+      customized: "Customized software solutions for your needs.",
+      innovative: "Innovative technologies driving your business forward.",
 
       //Kork Project
       renovation: "Renovation and construction services section",

@@ -1,0 +1,69 @@
+.debug-container {
+  width: 100vw;
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  justify-content: center; // Centrowanie w poziomie
+  height: 710px;
+
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.5) drop-shadow(0 4px 6px rgba(0, 0, 0, 0.01));
+    transition: all 0.3s ease;
+
+    @media (max-width: 768px) {
+      height: 800px;
+
+    }
+  }
+
+  .text-div {
+    width: 1200px;
+    margin: 0 auto;
+    top: 50%;
+    position: absolute;
+    font-family: 'Roboto', sans-serif;
+    animation: fadeInUp 1.5s ease-out 0.2s forwards;
+
+
+    @media (max-width: 768px) {
+      width: 90%;
+      top: 40%;
+    }
+  }
+
+  .texts {
+    max-width: 800px;
+
+    @media (max-width: 768px) {
+      max-width: 80%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      color: var(--text-primary);
+      margin-bottom: 1rem;
+
+
+      @media (max-width: 768px) {
+        font-size: 2.5rem;
+      }
+    }
+
+    p {
+      font-size: 1rem;
+      color: #d5d1d1;
+    }
+  }
+}
+
+.tech-div {
+  margin: 0 auto;
+  top: 82%;
+  position: absolute;
+  font-family: 'Roboto', sans-serif;
+  animation: fadeInUp 1.5s ease-out 0.2s forwards;
+}

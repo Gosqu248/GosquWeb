@@ -4,7 +4,7 @@
 
   // Podstawowe odcienie czerwieni
   --accent-red: #ff0000;            // Intensywna czerwień
-  --accent-red-dark: #b30000;       // Ciemniejszy odcień czerwieni
+  --accent-red-dark: #cd0303;       // Ciemniejszy odcień czerwieni
   --accent-red-light: #ff4d4d;      // Jaśniejszy odcień czerwieni
 
   // Dodatkowe ciemne odcienie czerwieni
@@ -159,6 +159,20 @@ body {
   );
 }
 
+.white-container {
+  width: 99vw;
+  margin: 0 auto;
+  padding-bottom: 2rem;
+  background-color: white;
+  text-align: center;
+  border-radius: 2rem 4rem 4rem 2rem;
+
+  .section-title {
+    &::before {
+      width: 8rem;
+    }
+  }
+}
 
 @keyframes pulse {
   0% {
@@ -210,5 +224,16 @@ body {
         var(--accent-red-900) 25%,
         var(--primary-dark) 50%
     );
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

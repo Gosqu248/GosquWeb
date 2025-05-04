@@ -1,6 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {NavMainComponent} from './components/nav/nav-main/nav-main.component';
 import { Router, NavigationEnd } from '@angular/router';
 import {ViewportScroller} from '@angular/common';
 
@@ -8,7 +7,6 @@ import {ViewportScroller} from '@angular/common';
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [
-    NavMainComponent,
     RouterOutlet
   ],
   styleUrl: './app.component.scss'

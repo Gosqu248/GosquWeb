@@ -1,11 +1,20 @@
-<div class="container" id="offers">
+<div class="white-container" id="offers">
   <h2 class="section-title">{{getTranslation("whatIDo")}}</h2>
 
   <div class="expertise-container">
-    <div class="expertise-card last-card" *ngFor="let skill of expertise">
-      <h3 class="expertise-title">{{ skill.title }}</h3>
-      <i class="fas {{skill.icon}} expertise-icon"></i>
-      <p class="expertise-description" >{{ skill.description }}</p>
+    <div class="left-side">
+      <div class="titles"
+           *ngFor="let exp of expertise"
+           [ngClass]="{'selected' : selectedExp === exp.id}"
+           (click)="selectExp(exp.id)">
+        <p>0{{exp.id}}/</p>
+        <h3>{{exp.title}}</h3>
+      </div>
     </div>
+
+    <div class="right-side">
+      <app-offer-item [selectedExp]="selectedExp"></app-offer-item>
+    </div>
+
   </div>
 </div>

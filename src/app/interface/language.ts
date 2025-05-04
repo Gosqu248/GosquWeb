@@ -28,6 +28,8 @@ export interface Language {
   usedTechnologies: string;
   languages: string;
   features: string;
+  customized: string;
+  innovative: string;
 
   //kork project
   renovation: string;

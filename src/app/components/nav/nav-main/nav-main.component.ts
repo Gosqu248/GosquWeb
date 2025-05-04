@@ -21,7 +21,7 @@ export class NavMainComponent {
   currentFlag: string;
   showLanguageDropdown = false;
 
-  constructor(private languageService: LanguageService, private router: Router, private viewportScroller: ViewportScroller) {
+  constructor(private languageService: LanguageService, private router: Router) {
     this.currentLanguage = this.languageService.getCurrentLanguage();
     this.currentFlag = this.getCurrentFlag();
   }

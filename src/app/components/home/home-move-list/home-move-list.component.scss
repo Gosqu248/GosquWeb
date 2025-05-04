@@ -1,0 +1,36 @@
+.move-list-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  margin: 3.5rem 0 0 0;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.move-list {
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+  padding: 1rem 0;
+  width: max-content; // Pozwala na pełną szerokość wszystkich elementów
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 150px;
+  margin: 0;
+  border-radius: 8px;
+  transition: color 0.3s ease;
+  color: #757373;
+  white-space: nowrap;
+
+  &:hover {
+    color: white;
+  }
+}
+
+.tech-icon {
+  width: 35px;
+  height: 35px;
+}
