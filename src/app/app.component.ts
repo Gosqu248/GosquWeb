@@ -2,12 +2,13 @@ import {Component, OnInit} from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Router, NavigationEnd } from '@angular/router';
 import {ViewportScroller} from '@angular/common';
+import {NavMainComponent} from './components/nav/nav-main/nav-main.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   imports: [
-    RouterOutlet
+    RouterOutlet,
   ],
   styleUrl: './app.component.scss'
 })
