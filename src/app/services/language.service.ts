@@ -24,7 +24,7 @@ export class LanguageService {
     pl: {
       about: 'O mnie',
       whatIDo: 'Oferta',
-      skills: 'Technologie',
+      skills: 'Stos technologiczny',
       projects: 'Projekty',
       contact: 'Kontakt',
       changeLanguage: 'Zmień język na angielski',
@@ -53,6 +53,8 @@ export class LanguageService {
       features: "Funkcjonalności",
       customized: "Dedykowane oprogramowanie dostosowane do Twoich potrzeb.",
       innovative: "Innowacyjne technologie napędzające rozwój Twojej firmy.",
+      cloudDevOps: 'Chmura i DevOps',
+      tools: 'Narzędzia',
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -94,7 +96,7 @@ export class LanguageService {
     en: {
       about: 'About me',
       whatIDo: 'Offers',
-      skills: 'Skills',
+      skills: 'Technology stack',
       projects: 'Projects',
       contact: 'Contact',
       changeLanguage: 'Change language to polish',
@@ -123,6 +125,8 @@ export class LanguageService {
       features: "Features",
       customized: "Customized software solutions for your needs.",
       innovative: "Innovative technologies driving your business forward.",
+      cloudDevOps: 'Cloud & DevOps',
+      tools: 'Tools',
 
       //Kork Project
       renovation: "Renovation and construction services section",

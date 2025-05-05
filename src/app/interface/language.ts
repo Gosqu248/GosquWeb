@@ -30,6 +30,8 @@ export interface Language {
   features: string;
   customized: string;
   innovative: string;
+  cloudDevOps: string;
+  tools: string;
 
   //kork project
   renovation: string;

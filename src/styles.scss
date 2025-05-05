@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
 :root {
   --primary-dark: #322b2b;          // Główna czerń
   --secondary-dark: #1a1a1a;        // Drugi poziom czerni
@@ -10,7 +12,7 @@
   // Dodatkowe ciemne odcienie czerwieni
   --accent-red-900: #573333;        // Bardzo ciemna czerwień
   --accent-red-800: rgba(83, 1, 1, 0.93);        // Głęboka czerwień
-  --accent-red-700: #600000;        // Ciemna czerwień wpadająca w burgund
+  --accent-red-700: #000000;        // Ciemna czerwień wpadająca w burgund
   --accent-red-600: #800000;        // Ciemny karmazyn
   --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
 
@@ -160,18 +162,42 @@ body {
 }
 
 .white-container {
-  width: 99vw;
+  width: 95vw;
   margin: 0 auto;
   padding-bottom: 2rem;
-  background-color: white;
+  background-color: rgba(255, 255, 255, 1);
   text-align: center;
   border-radius: 2rem 4rem 4rem 2rem;
+  font-family: 'Manrope', sans-serif;
+
+  .title-container {
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+    text-shadow: 2px -2px 0 rgba(0,0,0,0.2);
+
+  }
 
   .section-title {
+    text-align: left;
+    margin-left: 3rem;
+    font-size: 5rem;
+
     &::before {
       width: 8rem;
     }
   }
+}
+
+
+
+.categories-container {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  max-width: 1400px;
+  gap: 1rem;
 }
 
 @keyframes pulse {

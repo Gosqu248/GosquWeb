@@ -1,18 +1,51 @@
-<section class="white-container" id="skills">
-  <h2 class="section-title">{{getTranslation("skills")}}</h2>
+<div class="white-container" id="skills">
+  <div class="title-container">
+    <h2
+      class="section-title"
+      [attr.data-text]="getTranslation('skills')">
+      {{ getTranslation("skills") }}
+    </h2>
+  </div>
 
-  <div class="categories-container" *ngFor="let allTech of allTechs">
-    <div class="category-group">
-      <h3 class="category-title">{{getTranslation(allTech.desc) ? getTranslation(allTech.desc) : allTech.desc}} </h3>
-      <div class="technologies-grid">
-        <div class="tech-item" *ngFor="let tech of allTech.techs">
-          <div class="tech-content">
-            <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
-            <div class="tech-info">
-              <span class="tech-name">{{ tech.name }}</span>
-              <div class="rating">
-                <span *ngFor="let star of getStars(tech.rating)" [class.filled]="star === '★'">★</span>
-                <span *ngFor="let star of getEmptyStars(tech.rating)" class="empty">☆</span>
+
+  <div class="categories-container">
+    <div class="left-side">
+      <div class="titles"
+           *ngFor="let tech of allTechs"
+           [ngClass]="{'selected' : selectedTech === tech.desc}"
+           (click)="selectTech(tech.desc)">
+        <p>0{{tech.id}}/</p>
+        <h3>{{getTranslation(tech.desc) ? getTranslation(tech.desc) : tech.desc}}</h3>
+      </div>
+    </div>
+
+    <div class="right-side">
+      <div class="tech-display" *ngIf="selectedTechGroup">
+        <div *ngIf="selectedTechGroup.subgroups">
+          <div *ngFor="let subgroup of selectedTechGroup.subgroups" class="subgroup-container">
+            <h3 class="subgroup-title">{{subgroup.name}}</h3>
+            <div class="technologies-grid">
+              <div class="tech-item" *ngFor="let tech of subgroup.technologies">
+                <div class="tech-content">
+                  <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
+                  <div class="tech-info">
+                    <span class="tech-name">{{ tech.name }}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div *ngIf="selectedTechGroup.techs">
+          <h3 class="subgroup-title">{{selectedTechGroup.desc}}</h3>
+          <div class="technologies-grid">
+            <div class="tech-item" *ngFor="let tech of selectedTechGroup.techs">
+              <div class="tech-content">
+                <img [src]="tech.icon" [alt]="tech.name + ' logo'" class="tech-icon">
+                <div class="tech-info">
+                  <span class="tech-name">{{ tech.name }}</span>
+                </div>
               </div>
             </div>
           </div>
@@ -20,5 +53,4 @@
       </div>
     </div>
   </div>
-
-</section>
+</div>
