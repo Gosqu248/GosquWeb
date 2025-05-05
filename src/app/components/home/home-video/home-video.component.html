@@ -1,19 +1,23 @@
 <section class="debug-container">
-  <video #videoPlayer
-         width="100%"
-         muted
-         preload="auto"
-         playsinline>
-    <source src="assets/video/backgroundVid.mp4" type="video/mp4">
+  <video
+    width="100%"
+    autoplay
+    loop
+    preload="auto"
+    playsinline>
+    <source src="assets/video/codeVid.mp4" type="video/mp4">
     Twoja przeglądarka nie wspiera tagu video
   </video>
-    <div class="text-div">
-        <div class="texts">
-            <h1>{{getTranslation('customized')}}</h1>
-            <p>{{getTranslation('innovative')}}</p>
-        </div>
+
+
+  <div class="text-div">
+    <div class="texts">
+      <h1>{{ getTranslation('customized') }}</h1>
+      <p>{{ getTranslation('innovative') }}</p>
     </div>
-    <div class="tech-div">
-        <app-home-move-list></app-home-move-list>
-    </div>
+  </div>
+
+  <div class="tech-div">
+    <app-home-move-list></app-home-move-list>
+  </div>
 </section>
