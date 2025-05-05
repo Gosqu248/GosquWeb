@@ -174,10 +174,8 @@
 }
 
 .right-side {
-  width: 500px;
-  height: 500px;
+  flex: 1;
   display: flex;
-  background-color: red;
   flex-direction: column;
   gap: 2rem;
   padding: 1rem;
@@ -250,6 +248,7 @@
         }
       }
 
+      // Dodatkowa animacja dla całego elementu
       &::after {
         content: '';
         position: absolute;
