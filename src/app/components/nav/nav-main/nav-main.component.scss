@@ -2,11 +2,26 @@
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100vw;
-
   padding-bottom: 0.1rem;
   border-radius: 0 0 1rem 1rem;
   z-index: 100;
-  animation: slideInFromTop 0.7s ease-out;
+
+  /* Base transition for all state changes */
+  transition: transform 0.7s ease-out, opacity 0.7s ease-out;
+
+  /* Default state - hidden */
+  transform: translateY(-100%);
+  opacity: 0;
+
+  &.navbar-visible {
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  &.navbar-hidden {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
 
   @media (max-width: 768px) {
     width: 100%;
@@ -188,16 +203,5 @@
         font-size: 1.2rem;
       }
     }
-  }
-}
-
-@keyframes slideInFromTop {
-  from {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
   }
 }

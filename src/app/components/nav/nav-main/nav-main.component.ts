@@ -1,6 +1,6 @@
-import {Component} from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 import {Router, RouterLink} from '@angular/router';
-import {NgIf, ViewportScroller} from '@angular/common';
+import {NgClass, NgIf, ViewportScroller} from '@angular/common';
 import {LanguageService} from '../../../services/language.service';
 import {Language} from '../../../interface/language';
 
@@ -9,7 +9,8 @@ import {Language} from '../../../interface/language';
   templateUrl: './nav-main.component.html',
   imports: [
     RouterLink,
-    NgIf
+    NgIf,
+    NgClass
   ],
   styleUrl: './nav-main.component.scss'
 })
@@ -20,6 +21,7 @@ export class NavMainComponent {
   currentLanguage: string;
   currentFlag: string;
   showLanguageDropdown = false;
+  isVisible: boolean = true;
 
   constructor(private languageService: LanguageService, private router: Router) {
     this.currentLanguage = this.languageService.getCurrentLanguage();
@@ -46,6 +48,11 @@ export class NavMainComponent {
         }
       });
     }
+  }
+
+  @HostListener('window:scroll', [])
+  onWindowsScroll(): void {
+    this.isVisible = window.scrollY < 150;
   }
 
   setLanguage(language: string) {

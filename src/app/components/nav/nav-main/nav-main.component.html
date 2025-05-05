@@ -1,4 +1,4 @@
-<nav class="navbar">
+<nav class="navbar" [ngClass]="{'navbar-visible': isVisible, 'navbar-hidden': !isVisible}">
   <div class="navbar-container">
     <div class="logo" routerLink="/">
       <img src="/Logo.ico" alt="Logo">
@@ -48,15 +48,15 @@
     </button>
 
     <div class="social-icons">
-        <a href="https://github.com/Gosqu248" target="_blank" class="social-icon" aria-label="Visit GitHub profile (opens in new window)">
-          <i class="fab fa-github"></i>
-          <span> GitHub</span>
-        </a>
+      <a href="https://github.com/Gosqu248" target="_blank" class="social-icon" aria-label="Visit GitHub profile (opens in new window)">
+        <i class="fab fa-github"></i>
+        <span> GitHub</span>
+      </a>
 
-        <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon" aria-label="Visit LinkedIn profile (opens in new window)">
-          <i class="fab fa-linkedin-in"></i>
+      <a href="https://www.linkedin.com/in/grzegorz-urban-gosqu248/" target="_blank" class="social-icon" aria-label="Visit LinkedIn profile (opens in new window)">
+        <i class="fab fa-linkedin-in"></i>
         <span> LinkedIn</span>
-        </a>
+      </a>
     </div>
   </div>
 </nav>

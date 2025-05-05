@@ -21,7 +21,7 @@ export class HomeVideoComponent implements AfterViewInit{
         .play()
         .then(() => console.log('Wideo zaczęło grać'))
         .catch(err => console.error('play() odrzucone:', err));
-    }, 2000);
+    }, 500);
   }
 
   getTranslation<K extends keyof Language>(key: K) {

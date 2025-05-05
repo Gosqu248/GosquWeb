@@ -37,6 +37,6 @@ export class HomeMoveListComponent implements OnInit {
   displayTechs: Technology[] = [];
 
   ngOnInit(): void {
-    this.displayTechs = [...this.techs];
+    this.displayTechs = [...this.techs,...this.techs];
   }
 }
