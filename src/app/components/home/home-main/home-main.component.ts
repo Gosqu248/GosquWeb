@@ -16,7 +16,6 @@ import {NavMainComponent} from '../../nav/nav-main/nav-main.component';
     HomeContactComponent,
     HomeOffersComponent,
     HomeVideoComponent,
-    NavMainComponent,
   ],
   templateUrl: './home-main.component.html',
   styleUrl: './home-main.component.scss'
