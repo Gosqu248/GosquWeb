@@ -118,18 +118,9 @@
     min-height: 80px;
   }
 
-  .tech-stack {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-
-    .tech-item {
-      background: var(--accent-red-900);
-      color: var(--accent-red-light);
-      padding: 0.4rem 0.8rem;
-      border-radius: 20px;
-      font-size: 0.8rem;
-      border: 1px solid var(--accent-red-800);
+  .stack-container {
+    button {
+      background-color: rgba(255, 255, 255, 0.8);
     }
   }
 

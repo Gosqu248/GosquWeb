@@ -17,28 +17,7 @@
 }
 
 .stack-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-bottom: 1.5rem;
   padding: 2rem 2rem 0;
-
-  button {
-    background-color: #ffffff;
-    color: #333;
-    border-radius: 0.76rem;
-    border: 1px solid #bab8b8;
-    padding: 0.5rem 1rem;
-    font-size: 0.75rem;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-    cursor: default;
-    transition: all 0.2s ease;
-
-    &:hover {
-      border: 1px solid var(--accent-red-dark);
-    }
-  }
 }
 
 .content-container {

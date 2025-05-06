@@ -12,7 +12,7 @@
   // Dodatkowe ciemne odcienie czerwieni
   --accent-red-900: #573333;        // Bardzo ciemna czerwień
   --accent-red-800: rgba(83, 1, 1, 0.93);        // Głęboka czerwień
-  --accent-red-700: #000000;        // Ciemna czerwień wpadająca w burgund
+  --accent-red-700: #f88686;        // Ciemna czerwień wpadająca w burgund
   --accent-red-600: #800000;        // Ciemny karmazyn
   --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
 
@@ -21,7 +21,7 @@
   --accent-orange-dark: #cc3700;    // Ciemniejszy pomarańcz
 
   // Kolory tekstu
-  --text-primary: #ffffff;          // Biały tekst
+  --text-primary: #ffeeee;          // Biały tekst
   --text-secondary: #cccccc;        // Szary tekst
 
   // Efekty hover
@@ -162,7 +162,7 @@ body {
 }
 
 .white-container {
-  width: 95vw;
+  width: 100vw;
   margin: 0 auto;
   padding-bottom: 2rem;
   background-color: rgba(255, 255, 255, 1);
@@ -189,7 +189,29 @@ body {
   }
 }
 
+.stack-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-bottom: 1.5rem;
 
+  button {
+    background-color: #ffffff;
+    color: #333;
+    border-radius: 0.76rem;
+    border: 1px solid #bab8b8;
+    padding: 0.5rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+    cursor: default;
+    transition: all 0.2s ease;
+
+    &:hover {
+      border: 1px solid var(--accent-red-dark);
+    }
+  }
+}
 
 .categories-container {
   margin: 0 auto;

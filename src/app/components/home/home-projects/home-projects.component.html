@@ -22,12 +22,10 @@
           <p *ngFor="let offer of project.offer" class="offer-title">{{getTranslation(offer)}}</p>
         </div>
         <p class="project-desc">{{ getTranslation(project.shortDesc)}}</p>
-        <div class="tech-stack">
-              <span
-                *ngFor="let tech of project.techStack"
-                class="tech-item">
-                {{ tech }}
-              </span>
+        <div class="stack-container">
+          <button *ngFor="let stack of project.techStack">
+            {{stack}}
+          </button>
         </div>
         <div class="view-details">
           <span class="view-text">{{getTranslation('viewDetails')}}</span>

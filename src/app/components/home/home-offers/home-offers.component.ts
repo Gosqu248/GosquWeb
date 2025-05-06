@@ -42,7 +42,7 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
         id: 1,
         title: this.getTranslation("webTitle"),
         description: this.getTranslation("webDescription"),
-        icon: "fa-code" // Przykładowa ikona
+        icon: "fa-code"
       },
       {
         id: 2,
