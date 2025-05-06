@@ -36,11 +36,11 @@
   </div>
 
   <div *ngIf="isMenuOpen" class="mobile-menu">
-    <a routerLink="/about">{{getTranslation('about')}}</a>
-    <a routerLink="/what-i-do">{{getTranslation('whatIDo')}}</a>
-    <a routerLink="/skills">{{getTranslation('skills')}}</a>
-    <a routerLink="/projects">{{getTranslation('projects')}}</a>
-    <a routerLink="/contact">{{getTranslation('contact')}}</a>
+    <a (click)="scrollTo('about')">{{getTranslation('about')}}</a>
+    <a (click)="scrollTo('offers')">{{getTranslation('whatIDo')}}</a>
+    <a (click)="scrollTo('projects')">{{getTranslation('projects')}}</a>
+    <a (click)="scrollTo('skills')">{{getTranslation('skills')}}</a>
+    <a (click)="scrollTo('contact')">{{getTranslation('contact')}}</a>
 
     <button class="language-button" (click)="currentLanguage === 'pl' ? setLanguage('en') : setLanguage('pl')">
       <img [src]="currentFlag" alt="Language">

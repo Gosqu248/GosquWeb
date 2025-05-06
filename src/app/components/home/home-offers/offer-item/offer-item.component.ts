@@ -22,26 +22,26 @@ export class OfferItemComponent implements OnInit, OnChanges{
   offerItems: OfferItem[] = [
     {
       id: 1,
-      stacks: ["TYPESCRIPT", "JAVA", "ANGULAR", "SPRINGBOOT"],
-      content: "Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach",
+      stacks: ["TypeScript", "Angular", "Angular Material", "HTML", "SCSS", "Java", "Spring Boot", "REST API"],
+      content: "Nowoczesne, responsywne aplikacje webowe tworzone z wykorzystaniem najnowszych technologii frontendowych i backendowych. Płynne interfejsy użytkownika, szybkie ładowanie stron oraz perfekcyjne działanie na wszystkich urządzeniach - dostosowane dokładnie do Twoich potrzeb biznesowych.",
       image: "/img/laptop.png"
     },
     {
       id: 2,
-      stacks: ["Java", "Kotlin", "Android"],
-      content: "Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach",
+      stacks: ["React Native", "Android", "Room DB", "TypeScript", "Node.js", "Spring Boot", "MongoDB"],
+      content: "Wydajne i intuicyjne aplikacje mobilne na systemy Android oraz iOS, zapewniające najwyższą jakość użytkowania. Zoptymalizowane pod kątem szybkości działania, niskiego zużycia baterii oraz płynnych animacji - wszystko to zapakowane w atrakcyjny i funkcjonalny interfejs użytkownika.",
       image: "/img/phone.png"
     },
     {
       id: 3,
-      stacks: ["Python", "Django", "Flask"],
-      content: "Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach",
+      stacks: ["Spring Boot", "REST API", "Angular", "Android", "Kafka", "Redis", "Docker", "AWS", "PostgreSQL"],
+      content: "Zaawansowane systemy nawigacji i monitoringu GPS z wykorzystaniem technologii real-time. Precyzyjne śledzenie, analiza danych przestrzennych oraz integracja z istniejącymi systemami, dostępne zarówno na urządzeniach mobilnych jak i platformach webowych. Idealne dla firm transportowych, logistycznych oraz służb ratunkowych.",
       image: "/img/GPS.png"
     },
     {
       id: 4,
-      stacks: ["Java", "Spring Boot", "REST API"],
-      content: "Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach",
+      stacks: ["Spring Boot", "REST API", "Kafka", "Redis", "Docker", "AWS", "Kubernetes", "Hibernate", "JUnit", "Swagger"],
+      content: "Specjalistyczne oprogramowanie dostosowane do indywidualnych potrzeb biznesowych. Architektura mikroserwisowa, skalowalność, wysoka dostępność oraz bezpieczeństwo danych. Kompleksowe rozwiązania serwerowe i infrastrukturalne wspierające rozwój Twojego biznesu w chmurze i on-premise.",
       image: "/img/laptop2.png"
     }
   ];

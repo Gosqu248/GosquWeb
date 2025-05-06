@@ -175,16 +175,22 @@ body {
     width: 100%;
     max-width: 1400px;
     text-shadow: 2px -2px 0 rgba(0,0,0,0.2);
+    border-bottom: #d3d3d3 1px solid;
 
   }
 
   .section-title {
     text-align: left;
     margin-left: 3rem;
-    font-size: 5rem;
+    font-size: 3.5rem;
 
     &::before {
       width: 8rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 3rem;
+      margin-left: 1rem;
     }
   }
 }
@@ -209,6 +215,8 @@ body {
 
     &:hover {
       border: 1px solid var(--accent-red-dark);
+      transform: translateY(-5px);
+
     }
   }
 }
@@ -220,6 +228,11 @@ body {
   width: 100%;
   max-width: 1400px;
   gap: 1rem;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @keyframes pulse {

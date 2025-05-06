@@ -9,6 +9,7 @@ import {NavMainComponent} from './components/nav/nav-main/nav-main.component';
   templateUrl: './app.component.html',
   imports: [
     RouterOutlet,
+    NavMainComponent,
   ],
   styleUrl: './app.component.scss'
 })

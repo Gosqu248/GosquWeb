@@ -28,9 +28,10 @@
 
      <div class="stack-title">{{getTranslation("usedTechnologies")}}:</div>
      <div class="stack-container">
-        <div *ngFor="let stack of projectDescription.techStack" class="stack">{{stack}}</div>
+       <button *ngFor="let stack of projectDescription.techStack">
+         {{stack}}
+       </button>
      </div>
    </div>
   </div>
 </section>
-<app-home-contact></app-home-contact>

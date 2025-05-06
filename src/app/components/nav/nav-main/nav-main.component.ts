@@ -39,6 +39,7 @@ export class NavMainComponent {
         const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
         window.scrollTo({ top: yOffset, behavior: 'smooth' });
       }
+      this.toggleMenu();
     } else {
       this.router.navigate(['/'], { fragment: id }).then(() => {
         const element = document.getElementById(id);
@@ -47,6 +48,7 @@ export class NavMainComponent {
           window.scrollTo({ top: yOffset, behavior: 'smooth' });
         }
       });
+      this.toggleMenu();
     }
   }
 

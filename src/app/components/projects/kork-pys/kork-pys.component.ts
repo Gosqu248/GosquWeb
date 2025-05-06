@@ -1,13 +1,15 @@
 import { Component } from '@angular/core';
 import {ProjectDescription} from '../../../interface/project-description';
 import {ProjectMainComponent} from '../project-main/project-main.component';
+import {HomeContactComponent} from "../../home/home-contact/home-contact.component";
 
 @Component({
   selector: 'app-kork-pys',
-  imports: [
-    ProjectMainComponent
+    imports: [
+        ProjectMainComponent,
+        HomeContactComponent
 
-  ],
+    ],
   templateUrl: './kork-pys.component.html',
   styleUrl: './kork-pys.component.scss'
 })
