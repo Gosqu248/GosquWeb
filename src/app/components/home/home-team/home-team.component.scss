@@ -1,0 +1,41 @@
+.team-section {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 0;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.member-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  animation: fadeInUp 0.6s ease;
+}
+
+.avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: var(--accent-red-700);
+  margin: 0 auto 1rem;
+}
+
+.member-name {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.member-role {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}

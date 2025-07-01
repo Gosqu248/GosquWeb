@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {NgForOf, NgIf} from "@angular/common";
+import {animate, style, transition, trigger} from '@angular/animations';
 import {RouterLink} from "@angular/router";
 import {LanguageService} from '../../../services/language.service';
 import {ProjectDescription} from '../../../interface/project-description';
@@ -10,6 +11,14 @@ import {ProjectDescription} from '../../../interface/project-description';
     NgForOf,
     RouterLink,
     NgIf,
+  ],
+  animations: [
+    trigger('fadeIn', [
+      transition(':enter', [
+        style({ opacity: 0, transform: 'translateY(20px)' }),
+        animate('400ms ease-out', style({ opacity: 1, transform: 'translateY(0)' }))
+      ])
+    ])
   ],
   templateUrl: './project-main.component.html',
   styleUrl: './project-main.component.scss'
