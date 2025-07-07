@@ -16,14 +16,23 @@ export class HomeVideoComponent implements AfterViewInit{
   constructor(private languageService: LanguageService) {}
 
   ngAfterViewInit() {
-    setTimeout(() => {
-      this.videoPlayer.nativeElement
-        .play()
-        .then(() => console.log('Wideo zaczęło grać'))
-        .catch(err => console.error('play() odrzucone:', err));
-    }, 500);
+    if (this.videoPlayer && this.videoPlayer.nativeElement) {
+      this.videoPlayer.nativeElement.muted = true;
+
+      setTimeout(() => {
+        this.videoPlayer.nativeElement
+          .play()
+          .then(() => console.log('Wideo zaczęło grać'))
+          .catch(err => console.error('play() odrzucone:', err));
+      }, 500);
+    }
   }
 
+  unmute() {
+    if (this.videoPlayer && this.videoPlayer.nativeElement) {
+      this.videoPlayer.nativeElement.muted = false;
+    }
+  }
   getTranslation<K extends keyof Language>(key: K) {
     return this.languageService.getTranslation(key);
   }
