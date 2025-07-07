@@ -1,9 +1,10 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {AnimationOptions, LottieComponent} from 'ngx-lottie';
 import {Language} from '../../../interface/language';
 import {LanguageService} from '../../../services/language.service';
 import {NgForOf} from '@angular/common';
 import {Router} from '@angular/router';
+import {Subscription} from 'rxjs';
 
 
 @Component({
@@ -17,18 +18,31 @@ import {Router} from '@angular/router';
   styleUrl: './home-about.component.scss'
 
 })
-export class HomeAboutComponent implements OnInit{
+export class HomeAboutComponent implements OnInit, OnDestroy{
   lottieOptions: AnimationOptions = {
     path: 'assets/lottie/coding.json',
   }
-
-
   specializations: string[] = [];
+  private languageSubscription: Subscription;
 
   constructor(private languageService: LanguageService,
               private router: Router) {}
 
   ngOnInit() {
+    this.updateSpecializations();
+
+    this.languageSubscription = this.languageService.languageChangeSubject.subscribe(() => {
+      this.updateSpecializations();
+    });
+  }
+
+  ngOnDestroy() {
+    if (this.languageSubscription) {
+      this.languageSubscription.unsubscribe();
+    }
+  }
+
+  private updateSpecializations() {
     this.specializations = [
       this.getTranslation('www'),
       this.getTranslation('web'),
