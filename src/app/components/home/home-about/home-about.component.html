@@ -36,19 +36,17 @@
       ></ng-lottie>
     </div>
 
-
-
     <div class="text-content">
       <div class="space-y-8 animate-fade-in-up">
         <div class="relative inline-block">
-          <h1 class="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight">
+          <h1 class="text-6xl md:text-8xl font-bold text-white leading-tight tracking-tight font-sans">
             <span class="block relative">
-              <span class="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x shadow-2xl">
+              <span class="bg-gradient-to-r from-cyan-400 via-purple-500 to-pink-500 bg-clip-text text-transparent animate-gradient-x shadow-2xl font-black">
                 Gosqu
               </span>
               <div class="absolute -inset-2 bg-gradient-to-r from-cyan-400/30 via-purple-500/30 to-pink-500/30 rounded-lg blur-xl opacity-40 animate-pulse-glow"></div>
             </span>
-            <span class="block mt-3 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent animate-slide-up" style="animation-delay: 0.3s;">
+            <span class="block mt-3 bg-gradient-to-r from-slate-200 to-slate-400 bg-clip-text text-transparent animate-slide-up font-light tracking-wide" style="animation-delay: 0.3s;">
               Software
             </span>
           </h1>
@@ -60,10 +58,31 @@
         </div>
       </div>
 
-      <p class="description">
-        {{getTranslation("textAbout1")}}
-        {{getTranslation("textAbout2")}}
-      </p>
+      <div class="description mt-8">
+          <p class="mb-4 text-lg leading-relaxed text-slate-200 font-normal tracking-wide">
+           {{getTranslation("textAbout1")}}
+          </p>
+        <p class="text-lg leading-relaxed text-slate-300 font-normal tracking-wide">
+          {{getTranslation("textAbout2")}}
+        </p>
+      </div>
     </div>
   </div>
+
 </section>
+
+<div class="absolute top-1/4 left-5 opacity-30 animate-float animate-code-float" style="animation-delay: 1s; animation-duration: 6s;">
+  <div class="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent font-mono text-sm font-bold transform hover:scale-110 transition-transform shadow-lg">&lt;Angular/&gt;</div>
+</div>
+<div class="absolute top-1/3 right-8 opacity-30 animate-float animate-code-float" style="animation-delay: 2s; animation-duration: 8s;">
+  <div class="bg-gradient-to-r from-green-400 to-emerald-500 bg-clip-text text-transparent font-mono text-sm font-bold transform hover:scale-110 transition-transform shadow-lg">Spring Boot</div>
+</div>
+<div class="absolute bottom-1/3 left-12 opacity-30 animate-float animate-code-float" style="animation-delay: 3s; animation-duration: 7s;">
+  <div class="bg-gradient-to-r from-orange-400 to-red-500 bg-clip-text text-transparent font-mono text-sm font-bold transform hover:scale-110 transition-transform shadow-lg">Java</div>
+</div>
+<div class="absolute top-1/2 right-1/4 opacity-30 animate-float animate-code-float" style="animation-delay: 4s; animation-duration: 9s;">
+  <div class="bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent font-mono text-sm font-bold transform hover:scale-110 transition-transform shadow-lg">TypeScript</div>
+</div>
+<div class="absolute bottom-1/4 right-12 opacity-30 animate-float animate-code-float" style="animation-delay: 5s; animation-duration: 10s;">
+  <div class="bg-gradient-to-r from-pink-400 to-rose-500 bg-clip-text text-transparent font-mono text-sm font-bold transform hover:scale-110 transition-transform shadow-lg">React Native</div>
+</div>
