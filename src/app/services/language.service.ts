@@ -46,6 +46,11 @@ export class LanguageService {
       readyFor: 'Gotowy na rozpoczęcie projektu?',
       contactUs: 'Skontaktuj się z nami już dziś i przekonaj się, jak Gosqu Software może pomóc Twojemu biznesowi osiągnąć cele technologiczne.',
       tellAboutYourProject: 'Porozmawiajmy o Twoim projekcie',
+      yearsOfExperience: 'Lat doświadczenia',
+      doneProjects: 'Zrealizowanych projektów',
+      techSupport: 'Wsparcie techniczne',
+      technologies: 'Technologii',
+      engagement: 'Zaangażowanie',
 
       webTitle: 'Strony internetowe i apliakcje webowe',
       webDescription: 'Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach',
@@ -135,6 +140,11 @@ export class LanguageService {
       readyFor: 'Ready to start the project?',
       contactUs: 'Contact us today and see how Gosqu Software can help your business achieve its technological goals.',
       tellAboutYourProject: 'Let\'s talk about your project',
+      yearsOfExperience: 'Years of experience',
+      doneProjects: 'Completed projects',
+      techSupport: 'Technical support',
+      technologies: 'Technologies',
+      engagement: 'Engagement',
 
       webTitle: 'Websites and web applications',
       webDescription: 'Modern websites and web applications, created with your needs in mind',

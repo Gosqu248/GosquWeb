@@ -19,6 +19,11 @@ export interface Language {
   readyFor: string;
   contactUs: string;
   tellAboutYourProject: string;
+  yearsOfExperience: string;
+  doneProjects: string;
+  techSupport: string;
+  technologies: string;
+  engagement: string;
 
   webTitle: string;
   webDescription: string;

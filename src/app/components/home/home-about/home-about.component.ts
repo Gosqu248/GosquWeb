@@ -22,7 +22,7 @@ export class HomeAboutComponent implements OnInit, OnDestroy{
   lottieOptions: AnimationOptions = {
     path: 'assets/lottie/coding.json',
   }
-  specializations: string[] = [];
+  stats: {number: string, label: string}[] = [];
   private languageSubscription: Subscription;
 
   constructor(private languageService: LanguageService,
@@ -43,15 +43,12 @@ export class HomeAboutComponent implements OnInit, OnDestroy{
   }
 
   private updateSpecializations() {
-    this.specializations = [
-      this.getTranslation('www'),
-      this.getTranslation('web'),
-      this.getTranslation('mobile'),
-      this.getTranslation('gps'),
-      this.getTranslation('dedicated'),
-      this.getTranslation('ecomerce'),
-      this.getTranslation('api'),
-      this.getTranslation('optimization'),
+    this.stats = [
+      { number: '2+', label: this.getTranslation('yearsOfExperience') },
+      { number: '10+', label: this.getTranslation('doneProjects') },
+      { number: '24/7', label: this.getTranslation('techSupport') },
+      { number: '10+', label: this.getTranslation('technologies') },
+      { number: '100%', label: this.getTranslation('engagement') }
     ];
   }
 
