@@ -65,7 +65,20 @@ export interface Language {
   orderTracking: string;
   multiCurrency: string;
 
+  our: string;
+  offer: string;
+  how: string;
+  work: string;
 
+  realizationProcess: string;
+  analyze: string;
+  analyzeDescription: string;
+  design: string;
+  designDescription: string;
+  development: string;
+  developmentDescription: string;
+  deploy: string;
+  deployDescription: string;
 
 
   database: string;

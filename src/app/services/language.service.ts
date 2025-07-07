@@ -92,6 +92,20 @@ export class LanguageService {
       orderTracking: 'Śledzenie zamówień',
       multiCurrency: 'Obsługa wielu walut',
 
+      our: 'Nasza',
+      offer: 'oferta',
+      how: 'Jak',
+      work: 'pracujemy',
+
+      realizationProcess: 'Sprawdzony proces realizacji projektów krok po kroku',
+      analyze: 'Analiza',
+      analyzeDescription: 'Szczegółowa analiza wymagań i określenie zakresu projektu',
+      design: 'Projektowanie',
+      designDescription: 'Tworzenie mockupów, prototypów i architektury systemu',
+      development: 'Rozwój',
+      developmentDescription: 'Implementacja rozwiązania z użyciem nowoczesnych technologii',
+      deploy: 'Wdrożenie',
+      deployDescription: 'Deploy, testy oraz przekazanie projektu do użytkowania',
 
       database: 'Bazy danych',
       others: 'Inne',
@@ -218,6 +232,21 @@ export class LanguageService {
       inventoryManagement: 'Inventory management',
       orderTracking: 'Order tracking',
       multiCurrency: 'Multi-currency support',
+
+      our: 'Our',
+      offer: 'offer',
+      how: 'How',
+      work: 'we work',
+
+      realizationProcess: 'Proven project implementation process step by step',
+      analyze: 'Analysis',
+      analyzeDescription: 'Detailed requirements analysis and project scope definition',
+      design: 'Design',
+      designDescription: 'Creating mockups, prototypes and system architecture',
+      development: 'Development',
+      developmentDescription: 'Implementing the solution using modern technologies',
+      deploy: 'Deployment',
+      deployDescription: 'Deploy, testing and handover of the project for use',
 
       database: 'Databases',
       others: 'Others',
