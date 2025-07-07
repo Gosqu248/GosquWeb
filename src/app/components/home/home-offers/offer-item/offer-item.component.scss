@@ -17,12 +17,13 @@
 }
 
 .stack-container {
-  padding: 2rem 2rem 0;
+  padding: 1.5rem 2rem 0;
 }
 
 .content-container {
   display: flex;
   justify-content: center;
+  padding: 0.5rem 0;
 
   span {
     width: 90%;
@@ -34,21 +35,50 @@
   }
 }
 
+.features-container {
+  padding: 0.8rem 2rem 0 2rem;
+
+  .features-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .feature-item {
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--secondary-dark);
+    font-family: 'Roboto', sans-serif;
+
+    .feature-icon {
+      width: 1rem;
+      height: 1rem;
+      color: var(--accent-primary);
+      margin-right: 0.5rem;
+      flex-shrink: 0;
+    }
+  }
+}
+
 .more-container {
   padding: 0 2rem;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .image-wrapper {
   position: relative;
   margin-top: auto;
-  height: 280px;
+  height: 180px;
 }
 
 .image-container {
   background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   width: 100%;
-  height: 80%;
+  height: 100%;
   position: absolute;
   bottom: 0;
   z-index: 1;
@@ -78,7 +108,7 @@
 
 .offer-image-container {
   position: absolute;
-  bottom: 10%;
+  bottom: 40%;
   left: 20%;
   width: 100%;
   height: 100%;
@@ -102,11 +132,10 @@
 }
 
 @media (max-width: 992px) {
-  .stack-container, .content-container, .more-container {
+  .stack-container, .content-container, .more-container, .features-container {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
-
 }
 
 @media (max-width: 768px) {
@@ -119,10 +148,22 @@
     font-size: 0.7rem;
   }
 
+  .features-container {
+    padding: 0.8rem 1.5rem;
+
+    .feature-item {
+      font-size: 0.8rem;
+
+      .feature-icon {
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
-  .stack-container, .content-container, .more-container {
+  .stack-container, .content-container, .more-container, .features-container {
     padding-left: 1.2rem;
     padding-right: 1.2rem;
   }
@@ -135,6 +176,16 @@
     gap: 0.5rem;
   }
 
+  .features-container {
+    padding: 0.6rem 1.2rem;
 
+    .feature-item {
+      font-size: 0.75rem;
 
+      .feature-icon {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+    }
+  }
 }

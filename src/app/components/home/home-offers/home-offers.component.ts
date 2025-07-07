@@ -57,7 +57,7 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
         title: this.getTranslation("webApp"),
         content: this.getTranslation("webDescription"),
         stacks: ["TypeScript", "Angular", "Angular Material", "HTML", "SCSS", "Java", "Spring Boot", "REST API"],
-        image: "/img/laptop.png",
+        image: "/img/laptop2.png",
         features: [
           this.getTranslation("PWA"),
           this.getTranslation("SPA"),
@@ -127,6 +127,17 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
         ]
       }
     ];
+
+    // Ustawienie pierwszej oferty jako domyślnej lub aktualizacja istniejącej
+    if (this.selectedOffer().id) {
+      const currentSelectedId = this.selectedOffer().id;
+      const updatedOffer = this.offerItems.find(offer => offer.id === currentSelectedId);
+      if (updatedOffer) {
+        this.selectedOffer.set(updatedOffer);
+      }
+    } else {
+      this.selectedOffer.set(this.offerItems[0]);
+    }
   }
 
   getTranslation<K extends keyof Language>(key: K): string {
@@ -135,6 +146,6 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
 
 
   selectExp(offerItem: OfferItem) {
-    this.selectedOffer() !== offerItem ? this.selectedOffer.set(offerItem) : null;
+    this.selectedOffer() !== offerItem ? this.selectedOffer.set(offerItem) : this.offerItems[0];
   }
 }
