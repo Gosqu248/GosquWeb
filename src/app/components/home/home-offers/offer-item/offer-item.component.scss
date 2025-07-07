@@ -1,18 +1,18 @@
 .offer-item-container {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-  border: 1px solid #bab8b8;
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 
   &:hover {
-    transform: translateY(-5px);
-    border: 1px solid var(--accent-red-dark);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    transform: translateY(-8px);
+    border: 1px solid var(--accent-primary);
+    box-shadow: 0 20px 40px rgba(59, 130, 246, 0.2);
   }
 }
 
@@ -28,8 +28,9 @@
     width: 90%;
     text-align: left;
     font-size: 1.1rem;
-    color: #5e5c5c;
+    color: var(--secondary-dark);
     font-family: 'Roboto', sans-serif;
+    line-height: 1.6;
   }
 }
 
@@ -45,7 +46,7 @@
 }
 
 .image-container {
-  background-color: var(--accent-red-dark);
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
   width: 100%;
   height: 80%;
   position: absolute;

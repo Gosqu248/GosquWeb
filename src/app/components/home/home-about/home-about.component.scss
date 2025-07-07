@@ -1,6 +1,6 @@
 .about-section {
   padding: 2rem 2rem;
-  color: white;
+  color: var(--text-primary);
   display: flex;
 }
 
@@ -19,8 +19,12 @@
   margin-top: 5rem;
   position: relative;
   border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
-  backdrop-filter: blur(10px);
+  background: linear-gradient(135deg,
+    rgba(59, 130, 246, 0.1) 0%,
+    rgba(139, 92, 246, 0.05) 100%
+  );
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(59, 130, 246, 0.2);
   animation: float 6s ease-in-out infinite;
 }
 
@@ -37,6 +41,11 @@
   font-size: 2.5rem;
   margin-bottom: 2rem;
   opacity: 0;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary), var(--accent-tertiary));
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
   animation:
     fadeInUp 1s ease-out 0.4s forwards,
     gradientFlow 4s ease infinite;
@@ -47,33 +56,13 @@
   line-height: 1.8;
   margin-bottom: 3rem;
   opacity: 0;
+  color: var(--text-secondary);
   animation: fadeInUp 1s ease-out 1s forwards;
 }
 
-
-.gradient-text {
-  text-align: center;
-  background: linear-gradient(45deg,
-    #6366f1,
-    #8b5cf6,
-    #ec4899,
-    #6366f1);
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-}
-
 @keyframes gradientFlow {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
 }
 
 @keyframes float {

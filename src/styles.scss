@@ -1,54 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
 
 :root {
-  --primary-dark: #322b2b;          // Główna czerń
-  --secondary-dark: #1a1a1a;        // Drugi poziom czerni
+  // Nowa paleta kolorów - Modern Blue/Purple Theme
+  --primary-dark: #0f0f23;          // Głęboki granatowy
+  --secondary-dark: #1a1b3a;        // Ciemny fioletowy
+  --tertiary-dark: #2d2d44;         // Średni ciemny niebieski
 
-  // Podstawowe odcienie czerwieni
-  --accent-red: #ff0000;            // Intensywna czerwień
-  --accent-red-dark: #cd0303;       // Ciemniejszy odcień czerwieni
-  --accent-red-light: #ff4d4d;      // Jaśniejszy odcień czerwieni
+  // Podstawowe akcenty - niebieski/fioletowy
+  --accent-primary: #3b82f6;        // Jasny niebieski
+  --accent-secondary: #8b5cf6;      // Fioletowy
+  --accent-tertiary: #06b6d4;       // Cyan
 
-  // Dodatkowe ciemne odcienie czerwieni
-  --accent-red-900: #573333;        // Bardzo ciemna czerwień
-  --accent-red-800: rgba(83, 1, 1, 0.93);        // Głęboka czerwień
-  --accent-red-700: #f88686;        // Ciemna czerwień wpadająca w burgund
-  --accent-red-600: #800000;        // Ciemny karmazyn
-  --accent-red-500: #990000;        // Głęboka czerwień z odcieniem brązu
+  // Gradientowe akcenty
+  --accent-blue-900: #1e293b;       // Bardzo ciemny niebieski
+  --accent-blue-800: #1e40af;       // Głęboki niebieski
+  --accent-blue-700: #1d4ed8;       // Ciemny niebieski
+  --accent-blue-600: #2563eb;       // Niebieski
+  --accent-blue-500: #3b82f6;       // Jasny niebieski
 
-  // Pomarańczowe akcenty
-  --accent-orange: #ff4500;         // Intensywny pomarańcz
-  --accent-orange-dark: #cc3700;    // Ciemniejszy pomarańcz
+  // Fioletowe akcenty
+  --accent-purple-900: #312e81;     // Bardzo ciemny fioletowy
+  --accent-purple-800: #5b21b6;     // Głęboki fioletowy
+  --accent-purple-700: #6d28d9;     // Ciemny fioletowy
+  --accent-purple-600: #7c3aed;     // Fioletowy
+  --accent-purple-500: #8b5cf6;     // Jasny fioletowy
+
+  // Cyan/Teal akcenty
+  --accent-cyan: #06b6d4;           // Cyan
+  --accent-teal: #14b8a6;           // Teal
 
   // Kolory tekstu
-  --text-primary: #ffeeee;          // Biały tekst
-  --text-secondary: #cccccc;        // Szary tekst
+  --text-primary: #f8fafc;          // Bardzo jasny tekst
+  --text-secondary: #cbd5e1;        // Szary tekst
+  --text-accent: #38bdf8;           // Akcentowy niebieski tekst
 
   // Efekty hover
-  --hover-red: rgba(255, 0, 0, 0.2); // Efekt hover czerwony
-  --hover-orange: rgba(255, 69, 0, 0.2); // Efekt hover pomarańczowy
-  --hover-red-900: rgba(19, 0, 0, 0.2); // Efekt hover czerwony ciemny
-  --hover-red-800: rgba(77, 0, 0, 0.2); // Efekt hover czerwony głęboki
-  --hover-red-700: rgba(96, 0, 0, 0.2); // Efekt hover czerwony ciemny burgund
-  --hover-red-600: rgba(128, 0, 0, 0.2); // Efekt hover czerwony ciemny karmazyn
-  --hover-red-500: rgba(153, 0, 0, 0.2); // Efekt hover czerwony głęboki z odcieniem brązu
+  --hover-blue: rgba(59, 130, 246, 0.2);     // Efekt hover niebieski
+  --hover-purple: rgba(139, 92, 246, 0.2);   // Efekt hover fioletowy
+  --hover-cyan: rgba(6, 182, 212, 0.2);      // Efekt hover cyan
+  --hover-dark: rgba(30, 41, 59, 0.8);       // Efekt hover ciemny
 
 }
 
 body {
   display: flex;
-  background: radial-gradient(
-      circle at center,
-      var(--accent-red-800) 0%,
-      var(--accent-red-900) 25%,
-      var(--primary-dark) 50%
+  background: linear-gradient(
+      135deg,
+      var(--primary-dark) 0%,
+      var(--accent-blue-900) 25%,
+      var(--accent-purple-900) 50%,
+      var(--secondary-dark) 75%,
+      var(--primary-dark) 100%
   );
-  background: -webkit-radial-gradient(
-      circle at center,
-      var(--accent-red-800) 0%,
-      var(--accent-red-900) 25%,
-      var(--primary-dark) 50%
+  // Fallback dla starszych przeglądarek
+  background: -webkit-linear-gradient(
+      135deg,
+      var(--primary-dark) 0%,
+      var(--accent-blue-900) 25%,
+      var(--accent-purple-900) 50%,
+      var(--secondary-dark) 75%,
+      var(--primary-dark) 100%
   );
+  background-attachment: fixed;
   color: var(--text-primary);
   font-family: 'Fira Code', monospace;
   line-height: 1.6;
@@ -58,7 +71,7 @@ body {
   position: relative;
   overflow-x: hidden;
 
-  // Efekt rozmycia
+  // Efekt rozmycia z nową kolorystyką
   &::before {
     content: '';
     position: fixed;
@@ -68,11 +81,21 @@ body {
     height: 100%;
     z-index: -1;
     pointer-events: none;
+    background: radial-gradient(
+        circle at 20% 20%,
+        rgba(59, 130, 246, 0.1) 0%,
+        transparent 50%
+    ),
+    radial-gradient(
+        circle at 80% 80%,
+        rgba(139, 92, 246, 0.1) 0%,
+        transparent 50%
+    );
     -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
   }
 
-  // Efekty świetlne
+  // Nowe efekty świetlne
   &::after {
     content: '';
     position: fixed;
@@ -82,13 +105,14 @@ body {
     height: 200vh;
     background: radial-gradient(
         circle,
-        rgba(255, 0, 0, 0.1) 0%,
-        rgba(255, 77, 77, 0.1) 30%,
+        rgba(59, 130, 246, 0.08) 0%,
+        rgba(139, 92, 246, 0.06) 30%,
+        rgba(6, 182, 212, 0.04) 50%,
         transparent 70%
     );
     z-index: -2;
     pointer-events: none;
-    animation: pulse 15s infinite alternate;
+    animation: pulse 20s infinite alternate;
     -webkit-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
   }
@@ -99,7 +123,7 @@ body {
     height: 200px;
     background: radial-gradient(
         circle,
-        rgba(255, 0, 0, 0.2) 0%,
+        rgba(59, 130, 246, 0.15) 0%,
         transparent 70%
     );
     filter: blur(20px);
@@ -109,6 +133,11 @@ body {
       top: 20%;
       left: 10%;
       animation-duration: 8s;
+      background: radial-gradient(
+          circle,
+          rgba(139, 92, 246, 0.15) 0%,
+          transparent 70%
+      );
     }
 
     &.two {
@@ -117,6 +146,11 @@ body {
       animation-duration: 10s;
       width: 300px;
       height: 300px;
+      background: radial-gradient(
+          circle,
+          rgba(6, 182, 212, 0.12) 0%,
+          transparent 70%
+      );
     }
 
     &.three {
@@ -125,7 +159,7 @@ body {
       animation-duration: 12s;
       background: radial-gradient(
           circle,
-          rgba(255, 69, 0, 0.15) 0%,
+          rgba(59, 130, 246, 0.1) 0%,
           transparent 70%
       );
     }
@@ -135,7 +169,7 @@ body {
 .section-title {
   text-align: center;
   font-size: 2.5rem;
-  color: var(--accent-orange-dark);
+  color: var(--accent-primary);
   position: relative;
   margin-bottom: 1.5rem;
 
@@ -145,7 +179,7 @@ body {
     width: 10rem;
     height: 3px;
     border-radius: 20rem;
-    background: whitesmoke;
+    background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
     margin: auto;
   }
 }
@@ -153,11 +187,11 @@ body {
 .projects-container {
   width: 100vw;
   padding-top: 2rem;
-  background: radial-gradient(
-      circle at center,
-      var(--accent-red-800) 0%,
-      var(--accent-red-900) 25%,
-      var(--primary-dark) 50%
+  background: linear-gradient(
+      135deg,
+      var(--accent-blue-800) 0%,
+      var(--accent-purple-800) 50%,
+      var(--primary-dark) 100%
   );
 }
 
@@ -165,7 +199,7 @@ body {
   width: 100vw;
   margin: 0 auto;
   padding-bottom: 2rem;
-  background-color: rgba(255, 255, 255, 1);
+  background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
   text-align: center;
   border-radius: 2rem 4rem 4rem 2rem;
   font-family: 'Manrope', sans-serif;
@@ -174,15 +208,15 @@ body {
     margin: 0 auto;
     width: 100%;
     max-width: 1400px;
-    text-shadow: 2px -2px 0 rgba(0,0,0,0.2);
-    border-bottom: #d3d3d3 1px solid;
-
+    text-shadow: 2px -2px 0 rgba(0,0,0,0.1);
+    border-bottom: var(--accent-primary) 1px solid;
   }
 
   .section-title {
     text-align: left;
     margin-left: 3rem;
     font-size: 3.5rem;
+    color: var(--accent-blue-700);
 
     &::before {
       width: 8rem;
@@ -202,21 +236,22 @@ body {
   margin-bottom: 1.5rem;
 
   button {
-    background-color: #ffffff;
-    color: #333;
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+    color: #ffffff;
     border-radius: 0.76rem;
-    border: 1px solid #bab8b8;
+    border: 1px solid var(--accent-primary);
     padding: 0.5rem 1rem;
     font-size: 0.75rem;
     font-weight: 800;
     letter-spacing: 0.5px;
     cursor: default;
-    transition: all 0.2s ease;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 4px rgba(59, 130, 246, 0.2);
 
     &:hover {
-      border: 1px solid var(--accent-red-dark);
+      border: 1px solid var(--accent-secondary);
       transform: translateY(-5px);
-
+      box-shadow: 0 4px 8px rgba(139, 92, 246, 0.3);
     }
   }
 }
@@ -235,55 +270,33 @@ body {
   }
 }
 
+// Dodanie animacji pulse
 @keyframes pulse {
-  0% {
-    -webkit-transform: translate(-50%, -50%) scale(1);
-    transform: translate(-50%, -50%) scale(1);
-  }
-  50% {
-    transform: translate(-50%, -50%) scale(1.2);
-    opacity: 1;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 0.8;
-  }
+  0% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
+  50% { opacity: 0.8; transform: translate(-50%, -50%) scale(1.05); }
+  100% { opacity: 0.6; transform: translate(-50%, -50%) scale(1); }
 }
 
+// Dodanie animacji float
 @keyframes float {
-  0% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
-  }
-  50% {
-    transform: translateY(-20px) scale(1.1);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(0) scale(1);
-    opacity: 0.8;
-  }
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-10px) rotate(2deg); }
+  50% { transform: translateY(-20px) rotate(0deg); }
+  75% { transform: translateY(-10px) rotate(-2deg); }
 }
 
 @supports (-webkit-touch-callout: none) {
   body {
-    padding-top: env(safe-area-inset-top); /* iOS 11.2+ */
-    background-color: var(--primary-dark); /* Fallback */
+    padding-top: env(safe-area-inset-top);
+    background-color: var(--primary-dark);
   }
 
-  /* Zmień kolor paska */
   meta[name="apple-mobile-web-app-status-bar-style"] {
-    background: radial-gradient(
-        circle at center,
-        var(--accent-red-800) 0%,
-        var(--accent-red-900) 25%,
-        var(--primary-dark) 50%
-    );
-    background: -webkit-radial-gradient(
-        circle at center,
-        var(--accent-red-800) 0%,
-        var(--accent-red-900) 25%,
-        var(--primary-dark) 50%
+    background: linear-gradient(
+        135deg,
+        var(--primary-dark) 0%,
+        var(--accent-blue-900) 50%,
+        var(--accent-purple-900) 100%
     );
   }
 }
