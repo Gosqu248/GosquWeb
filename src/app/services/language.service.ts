@@ -22,8 +22,8 @@ export class LanguageService {
 
   translations: Translations = {
     pl: {
-      about: 'O mnie',
-      whatIDo: 'Oferta',
+      about: 'O nas',
+      whatIDo: 'Moja Oferta',
       skills: 'Stos technologiczny',
       projects: 'Projekty',
       contact: 'Kontakt',
@@ -111,8 +111,8 @@ export class LanguageService {
 
     },
     en: {
-      about: 'About me',
-      whatIDo: 'Offers',
+      about: 'About us',
+      whatIDo: 'My offer',
       skills: 'Technology stack',
       projects: 'Projects',
       contact: 'Contact',
