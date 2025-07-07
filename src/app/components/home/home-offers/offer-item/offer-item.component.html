@@ -1,16 +1,16 @@
 <div class="offer-item-container">
   <div class="stack-container">
-    <button *ngFor="let stack of selectedItem.stacks">
+    <button *ngFor="let stack of selectedOffer.stacks">
       {{stack}}
     </button>
   </div>
   <div class="content-container">
-    <span>{{selectedItem.content}} </span>
+    <span>{{selectedOffer.content}} </span>
   </div>
   <div class="more-container"></div>
   <div class="image-wrapper">
     <div class="offer-image-container">
-      <img [src]="selectedItem.image" class="offer-image" alt="">
+      <img [src]="selectedOffer.image" class="offer-image" alt="">
     </div>
     <div class="image-container"></div>
   </div>

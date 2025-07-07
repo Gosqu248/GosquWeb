@@ -6,16 +6,16 @@
   <div class="categories-container">
     <div class="left-side">
       <div class="titles"
-           *ngFor="let exp of expertise"
-           [ngClass]="{'selected' : selectedExp === exp.id}"
-           (click)="selectExp(exp.id)">
+           *ngFor="let exp of offerItems"
+           [ngClass]="{'selected' : selectedOffer().id === exp.id}"
+           (click)="selectExp(exp)">
         <p>0{{exp.id}}/</p>
         <h3>{{exp.title}}</h3>
       </div>
     </div>
 
     <div class="right-side">
-      <app-offer-item [selectedExp]="selectedExp"></app-offer-item>
+      <app-offer-item  [selectedOffer]="selectedOffer()"></app-offer-item>
     </div>
 
   </div>
