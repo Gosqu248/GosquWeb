@@ -1,16 +1,28 @@
 <div class="offer-item-container">
   <div class="stack-container">
-    <button *ngFor="let stack of selectedItem.stacks">
+    <button *ngFor="let stack of selectedOffer.stacks">
       {{stack}}
     </button>
   </div>
   <div class="content-container">
-    <span>{{selectedItem.content}} </span>
+    <span>{{selectedOffer.content}} </span>
   </div>
+
+  <div class="features-container" *ngIf="selectedOffer.features && selectedOffer.features.length > 0">
+    <ul class="features-list">
+      <li *ngFor="let feature of selectedOffer.features" class="feature-item">
+        <svg class="feature-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
+        </svg>
+        {{ feature }}
+      </li>
+    </ul>
+  </div>
+
   <div class="more-container"></div>
   <div class="image-wrapper">
     <div class="offer-image-container">
-      <img [src]="selectedItem.image" class="offer-image" alt="">
+      <img [src]="selectedOffer.image" class="offer-image" alt="">
     </div>
     <div class="image-container"></div>
   </div>

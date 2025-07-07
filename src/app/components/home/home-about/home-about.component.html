@@ -115,22 +115,15 @@
 
       <!-- Right Column - Enhanced Specializations -->
       <div class="space-y-6">
-        <h4 class="text-xl font-semibold text-white animate-slide-in-right" style="animation-delay: 1s;">
-          {{getTranslation('specialization')}}
-        </h4>
-        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <div *ngFor="let spec of specializations; let i = index"
-               class="group flex items-center space-x-3 p-4 bg-slate-800/30 rounded-lg border border-slate-700/50 hover:border-purple-500/50 transition-all duration-500 hover:scale-105 hover:bg-purple-500/10 animate-spec-card"
-               [style.animation-delay]="(1.2 + i * 0.1) + 's'">
-            <div class="w-3 h-3 bg-purple-400 rounded-full animate-pulse-dot group-hover:animate-ping"></div>
-            <span class="text-gray-300 group-hover:text-purple-200 transition-colors duration-300">{{ spec }}</span>
-            <div class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-              <svg class="w-4 h-4 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
-              </svg>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
+            <div *ngFor="let stat of stats; let i = index"
+                 class="text-center p-6 bg-slate-800/50 backdrop-blur-sm rounded-xl border border-purple-500/20 hover:border-purple-500/40 transition-all hover:scale-105 group animate-stat-card"
+                 [style.animation-delay]="(0.6 + i * 0.1) + 's'">
+              <div class="text-3xl font-bold text-purple-400 mb-2 group-hover:text-purple-300 transition-colors duration-300 animate-number-count">{{ stat.number }}</div>
+              <div class="text-gray-300 text-sm">{{ stat.label }}</div>
+              <div class="w-full h-0.5 bg-gradient-to-r from-transparent via-purple-500 to-transparent mt-3 opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           </div>
-        </div>
       </div>
 
       <div class="relative">

@@ -19,8 +19,14 @@ export interface Language {
   readyFor: string;
   contactUs: string;
   tellAboutYourProject: string;
+  yearsOfExperience: string;
+  doneProjects: string;
+  techSupport: string;
+  technologies: string;
+  engagement: string;
 
   webTitle: string;
+  wwwDescription: string;
   webDescription: string;
   mobileTitle: string;
   mobileDescription: string;
@@ -28,6 +34,40 @@ export interface Language {
   gpsDescription: string;
   dedicatedTitle: string;
   dedicatedDescription: string;
+  ecomerceDescription: string;
+
+  responsive: string;
+  SEO: string;
+  fastLoading: string;
+  adminPanels: string;
+  PWA: string;
+  SPA: string;
+  API: string;
+  safety: string;
+  scaleArchitecture: string;
+  IOSAndroid: string;
+  ReactFlutter: string;
+  notification: string;
+  offlineMode: string;
+  appStore: string;
+  realTime: string;
+  geoFencing: string;
+  routeOptimization: string;
+  fleetManagement: string;
+  customMaps: string;
+  customERPTMS: string;
+  businessAutomation: string;
+  thirdPartyIntegration: string;
+  databaseDesign: string;
+  cloudDeployment: string;
+  paymentIntegration: string;
+  inventoryManagement: string;
+  orderTracking: string;
+  multiCurrency: string;
+
+
+
+
   database: string;
   others: string;
   webApp: string;
