@@ -7,6 +7,19 @@ export interface Language {
   changeLanguage: string;
   textAbout1: string;
   textAbout2: string;
+  specialization: string;
+  www: string;
+  web: string;
+  mobile: string;
+  gps: string;
+  dedicated: string;
+  ecomerce: string;
+  api: string;
+  optimization: string;
+  readyFor: string;
+  contactUs: string;
+  tellAboutYourProject: string;
+
   webTitle: string;
   webDescription: string;
   mobileTitle: string;

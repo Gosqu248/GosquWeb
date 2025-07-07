@@ -34,6 +34,19 @@ export class LanguageService {
       textAbout2: "Specjalizujemy się w nowoczesnych technologiach,\n" +
         "              tworząc skalowalne aplikacje webowe, mobilne oraz systemy dedykowane,\n" +
         "              w tym zaawansowane rozwiązania GPS/TMS dla branży logistycznej.",
+      specialization: "Nasze specjalizacje technologiczne:",
+      www: "Strony internetowe (responsywne)",
+      web: "Aplikacje webowe (SPA/PWA)",
+      mobile: "Aplikacje mobilne (iOS/Android)",
+      gps: "Systemy GPS i geolokalizacja",
+      dedicated: "Systemy dedykowane (TMS/ERP)",
+      ecomerce: "E-commerce i sklepy online",
+      api: "API i integracje zewnętrzne",
+      optimization: "Optymalizacja wydajności",
+      readyFor: 'Gotowy na rozpoczęcie projektu?',
+      contactUs: 'Skontaktuj się z nami już dziś i przekonaj się, jak Gosqu Software może pomóc Twojemu biznesowi osiągnąć cele technologiczne.',
+      tellAboutYourProject: 'Porozmawiajmy o Twoim projekcie',
+
       webTitle: 'Strony internetowe i apliakcje webowe',
       webDescription: 'Nowoczesne witryny oraz aplikacje webowe, tworzone z myślą o Twoich potrzebach',
       mobileTitle: 'Aplikacje mobilne',
@@ -110,6 +123,19 @@ export class LanguageService {
       textAbout2: "We specialize in modern technologies,\n" +
         "              creating scalable web, mobile and dedicated systems,\n" +
         "              Including advanced GPS/TMS solutions for the logistics industry.",
+      specialization: "Our technological specializations:",
+      www: "Websites (responsive)",
+      web: "Web applications (SPA/PWA)",
+      mobile: "Mobile applications (iOS/Android)",
+      gps: "GPS systems and geolocation",
+      dedicated: "Dedicated systems (TMS/ERP)",
+      ecomerce: "E-commerce and online stores",
+      api: "API and external integrations",
+      optimization: "Performance optimization",
+      readyFor: 'Ready to start the project?',
+      contactUs: 'Contact us today and see how Gosqu Software can help your business achieve its technological goals.',
+      tellAboutYourProject: 'Let\'s talk about your project',
+
       webTitle: 'Websites and web applications',
       webDescription: 'Modern websites and web applications, created with your needs in mind',
       mobileTitle: 'Mobile applications',
