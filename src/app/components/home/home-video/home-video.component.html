@@ -1,12 +1,5 @@
 <section  class="debug-container">
-  <video
-    #videoPlayer
-    width="100%"
-    muted
-    loop
-    preload="metadata"
-    playsinline
-  >
+  <video #videoPlayer playsinline muted preload="auto">
     <source src="assets/video/codeVid2.mp4" type="video/mp4">
     Twoja przeglądarka nie wspiera tagu video
   </video>
@@ -17,7 +10,6 @@
       <p>{{ getTranslation('innovative') }}</p>
     </div>
   </div>
-
   <div class="tech-div">
     <app-home-move-list></app-home-move-list>
   </div>
