@@ -1,37 +1,137 @@
-<section class="project-glass">
-  <div class="main-container">
-    <div class="right-side">
-      <h2 class="project-title">{{projectDescription.title}}</h2>
-      <p class="project-description">{{getTranslation(projectDescription.description)}}</p>
+<div class="project-showcase" (keydown)="onKeyDown($event)" tabindex="0"
+     [attr.aria-label]="getTranslation('projectShowcase')">
 
-      <div class="features-container">
-        <h3 class="features-title">{{getTranslation("features")}}:</h3>
-        <div *ngFor="let feature of projectDescription.features" class="feature">{{getTranslation(feature)}}</div>
+  <!-- Hero Section -->
+  <section class="hero-section" #heroSection>
+    <div class="hero-content">
+      <nav class="breadcrumb">
+        <a class="back-button" routerLink="/" [attr.aria-label]="getTranslation('backToHome')">
+          <i class="fas fa-arrow-left" aria-hidden="true"></i>
+          <span>{{ getTranslation('back') }}</span>
+        </a>
+      </nav>
+
+      <div class="hero-grid" *ngIf="projectDescription">
+        <div class="project-info">
+          <h1 class="project-title">{{ projectDescription.title }}</h1>
+          <p class="project-description">{{ getTranslation(projectDescription.description) }}</p>
+
+          <div class="project-actions" *ngIf="projectDescription.link">
+            <a [href]="projectDescription.link" target="_blank" rel="noopener noreferrer"
+               class="primary-button" [attr.aria-label]="getTranslation('viewLiveDemo') + ' - ' + projectDescription.title">
+              <i class="fas fa-external-link-alt" aria-hidden="true"></i>
+              <span>{{ getTranslation("viewLiveDemo") }}</span>
+            </a>
+          </div>
+        </div>
+
+        <div class="image-showcase" *ngIf="projectDescription.imageUrls?.length">
+          <div class="image-gallery">
+            <div class="main-image-container">
+              <button *ngIf="hasMultipleImages() && imageIndex > 0"
+                      class="nav-arrow nav-arrow--left"
+                      (click)="changeImage(-1)"
+                      [attr.aria-label]="getTranslation('previousImage')"
+                      type="button">
+                <i class="fas fa-chevron-left" aria-hidden="true"></i>
+              </button>
+
+              <img class="main-image"
+                   [src]="projectDescription.imageUrls[imageIndex]"
+                   [alt]="getCurrentImageAlt()"
+                   loading="lazy"
+                   (error)="onImageError($event)"
+                   (load)="onImageLoad($event)"
+                   (touchstart)="onTouchStart($event)"
+                   (touchend)="onTouchEnd($event)">
+
+              <button *ngIf="hasMultipleImages() && imageIndex < projectDescription.imageUrls.length - 1"
+                      class="nav-arrow nav-arrow--right"
+                      (click)="changeImage(1)"
+                      [attr.aria-label]="getTranslation('nextImage')"
+                      type="button">
+                <i class="fas fa-chevron-right" aria-hidden="true"></i>
+              </button>
+            </div>
+
+            <div *ngIf="hasMultipleImages()" class="image-indicators" role="tablist"
+                 [attr.aria-label]="getTranslation('imageNavigation')">
+              <button *ngFor="let _ of projectDescription.imageUrls; let i = index; trackBy: trackByIndex"
+                      class="indicator"
+                      [class.active]="i === imageIndex"
+                      (click)="setImageIndex(i)"
+                      [attr.aria-label]="getImageIndicatorLabel(i)"
+                      [attr.aria-selected]="i === imageIndex"
+                      role="tab"
+                      type="button">
+              </button>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+  </section>
 
-   <div class="left-side">
-     <a class="neo-button" routerLink="/">
-       <i class="fas fa-arrow-left"></i>
-       <p>{{getTranslation('back')}}</p>
-     </a>
+  <!-- Features Section -->
+  <section class="features-section" *ngIf="projectDescription?.features?.length"
+           [attr.aria-labelledby]="'features-title'">
+    <div class="container">
+      <h2 id="features-title" class="section-title">{{ getTranslation("features") }}</h2>
+      <div class="features-grid" role="list">
+        <div *ngFor="let feature of projectDescription.features; let i = index; trackBy: trackByFeature"
+             class="feature-card"
+             [style.animation-delay]="(i * 0.1) + 's'"
+             role="listitem">
+          <div class="feature-icon" aria-hidden="true">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <p class="feature-text">{{ getTranslation(feature) }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <div class="image-container">
-        <i *ngIf="imageIndex" class="fas fa-arrow-left arrow-left" (click)="changeImage(-1)"></i>
-        <img class="project-image" [src]="projectDescription.imageUrls[imageIndex]" alt="{{projectDescription.title}}">
-        <i *ngIf="imageIndex != projectDescription.imageUrls.length -1 && projectDescription.imageUrls.length > 1" class="fas fa-arrow-right arrow-right" (click)="changeImage(1)"></i>
-     </div>
+  <!-- Tech Stack Section -->
+  <section class="tech-section" *ngIf="projectDescription?.techStack?.length"
+           [attr.aria-labelledby]="'tech-title'">
+    <div class="container">
+      <div class="tech-header">
+        <h2 id="tech-title" class="section-title">
+          <i class="fas fa-tools tech-title-icon"></i>
+          {{ getTranslation("usedTechnologies") }}
+        </h2>
+        <p class="tech-subtitle">{{ getTranslation("technologiesUsedInProject") }}</p>
+      </div>
 
-     <div *ngIf="projectDescription.link" class="link-container">
-       <a [href]="projectDescription.link" target="_blank" class="link">{{getTranslation("viewLiveDemo")}}</a>
-     </div>
+      <div class="tech-showcase">
+        <div class="tech-carousel">
+          <div class="tech-grid" role="list">
+            <div *ngFor="let tech of projectDescription.techStack; let i = index; trackBy: trackByTech"
+                 class="tech-item"
+                 [class.tech-item--primary]="i % 3 === 0"
+                 [class.tech-item--secondary]="i % 3 === 1"
+                 [class.tech-item--accent]="i % 3 === 2"
+                 [style.animation-delay]="(i * 0.1) + 's'"
+                 role="listitem">
+              <div class="tech-item-inner">
+                <div class="tech-icon-wrapper">
+                  <i class="tech-icon" [ngClass]="getTechIcon(tech)"></i>
+                </div>
+                <div class="tech-content">
+                  <h3 class="tech-name">{{ tech }}</h3>
+                  <span class="tech-category">{{ getTechCategory(tech) }}</span>
+                </div>
+                <div class="tech-glow"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-     <div class="stack-title">{{getTranslation("usedTechnologies")}}:</div>
-     <div class="stack-container">
-       <button *ngFor="let stack of projectDescription.techStack">
-         {{stack}}
-       </button>
-     </div>
-   </div>
+  <!-- Loading State -->
+  <div *ngIf="isLoading" class="loading-overlay" aria-hidden="true">
+    <div class="loading-spinner"></div>
   </div>
-</section>
+</div>

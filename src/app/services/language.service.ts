@@ -126,6 +126,8 @@ export class LanguageService {
       developmentDescription: 'Implementacja rozwiązania z użyciem nowoczesnych technologii',
       deploy: 'Wdrożenie',
       deployDescription: 'Deploy, testy oraz przekazanie projektu do użytkowania',
+      projectsSubtitle: 'Zobacz kilka z naszych zrealizowanych projektów',
+      webstauratorDescription: 'Kompleksowa platforma do zamawiania jedzenia online i zarządzania restauracjami, oferująca klientom intuicyjny sposób szukania restauracji, przeglądania menu, składania zamówień i dokonywania płatności, a restauracjom zaawansowane narzędzia do przetwarzania zamówień i zarządzania w czasie rzeczywistym.',
 
       database: 'Bazy danych',
       others: 'Inne',
@@ -285,6 +287,9 @@ export class LanguageService {
       readyToStartDesc: "Contact us today and begin your business digital transformation with Gosqu Software experts.",
       competitivePrices: "Competitive prices",
       competitivePricesDesc: "We offer attractive prices while maintaining the highest quality of services, ensuring optimal value for money.",
+      projectsSubtitle: 'See some of our completed projects',
+      webstauratorDescription: 'Comprehensive platform for ordering food online and managing restaurants, offering customers an intuitive way to search for restaurants, browse menus, place orders and make payments, and providing restaurants with advanced tools for processing orders and real-time management.',
+
 
       database: 'Databases',
       others: 'Others',

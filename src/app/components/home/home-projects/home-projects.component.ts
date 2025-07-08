@@ -49,7 +49,7 @@ export class HomeProjectsComponent {
       type: 'commercial',
       offer: ['mobileTitle', 'gpsTitle'],
       shortDesc: 'busDescription',
-      techStack: [  'Java',
+      techStack: ['Java',
         'Android',
         'Room DB',
         'Gradle',
@@ -76,7 +76,7 @@ export class HomeProjectsComponent {
       title: 'Webstaurator',
       type: 'non-commercial',
       offer: ['webApp', 'mobileTitle'],
-      shortDesc: 'Kompleksowy system zamówień food delivery z aplikacją mobilną',
+      shortDesc: 'webstauratorDescription',
       techStack: ['Angular', 'React Native', 'Spring Boot', 'PayU', 'i18n', 'Angular Material', 'PostgreSQL'],
       route: '/webstaurator'
     }
@@ -86,7 +86,8 @@ export class HomeProjectsComponent {
     this.projects().filter(p => p.type === this.selectedType());
 
   constructor(private router: Router,
-              private languageService: LanguageService) {}
+              private languageService: LanguageService) {
+  }
 
   navigateToProject(route: string) {
     this.router.navigate([route]);
@@ -96,3 +97,5 @@ export class HomeProjectsComponent {
     return this.languageService.getTranslation(key);
   }
 }
+
+

@@ -99,6 +99,8 @@ export interface Language {
   competitivePricesDesc: string;
   readyToStart: string;
   readyToStartDesc: string;
+  projectsSubtitle: string;
+  webstauratorDescription: string;
 
   database: string;
   others: string;
