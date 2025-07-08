@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
 import {ProjectMainComponent} from "../project-main/project-main.component";
 import {ProjectDescription} from '../../../interface/project-description';
+import {HomeContactComponent} from '../../home/home-contact/home-contact.component';
 
 @Component({
   selector: 'app-bus-control',
-    imports: [
-        ProjectMainComponent
-    ],
+  imports: [
+    ProjectMainComponent,
+    HomeContactComponent
+  ],
   templateUrl: './bus-control.component.html',
   styleUrl: './bus-control.component.scss'
 })
