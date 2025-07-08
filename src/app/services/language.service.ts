@@ -159,7 +159,23 @@ export class LanguageService {
       animatedBackgrounds: "Animowane tła",
       menuImageUpload: "Przesyłanie zdjęć menu z komputera",
 
-
+      // Why Us section
+      whyChooseUs: "Dlaczego my?",
+      whyChooseUsSubtitle: "Poznaj powody, dla czego warto wybrać Gosqu Software",
+      expertTeam: "Doświadczony zespół",
+      expertTeamDesc: "Nasz zespół składa się z doświadczonych programistów i specjalistów IT z wieloletnim doświadczeniem w branży technologicznej.",
+      modernTech: "Nowoczesne technologie",
+      modernTechDesc: "Wykorzystujemy najnowsze technologie i frameworks, aby dostarczać wydajne i skalowalne rozwiązania dopasowane do przyszłości.",
+      fullSupport: "Pełne wsparcie 24/7",
+      fullSupportDesc: "Oferujemy kompleksowe wsparcie techniczne i konserwację przez całą dobę, zapewniając ciągłość działania Twojego biznesu.",
+      provenResults: "Sprawdzone rezultaty",
+      provenResultsDesc: "Nasze portfolio obejmuje ponad 10 udanych projektów dla różnych branż, co potwierdza naszą skuteczność i profesjonalizm.",
+      flexibleApproach: "Elastyczne podejście",
+      flexibleApproachDesc: "Dostosowujemy nasze metody pracy do specyficznych potrzeb każdego klienta, oferując personalizowane rozwiązania.",
+      timelyDelivery: "Terminowa realizacja",
+      timelyDeliveryDesc: "Dotrzymujemy ustalonych terminów realizacji projektów, stosując sprawdzone metodologie zarządzania projektami.",
+      readyToStart: "Gotowy na rozpoczęcie współpracy?",
+      readyToStartDesc: "Skontaktuj się z nami już dziś i rozpocznij transformację cyfrową swojego biznesu z ekspertami Gosqu Software.",
 
     },
     en: {
@@ -300,6 +316,23 @@ export class LanguageService {
       animatedBackgrounds: "Animated backgrounds",
       menuImageUpload: "Uploading menu photos from the computer",
 
+      // Why Us section
+      whyChooseUs: "Why us?",
+      whyChooseUsSubtitle: "Discover the reasons why you should choose Gosqu Software",
+      expertTeam: "Expert team",
+      expertTeamDesc: "Our team consists of experienced programmers and IT specialists with years of experience in the technology industry.",
+      modernTech: "Modern technologies",
+      modernTechDesc: "We use the latest technologies and frameworks to deliver efficient and scalable solutions tailored for the future.",
+      fullSupport: "Full 24/7 support",
+      fullSupportDesc: "We offer comprehensive technical support and maintenance around the clock, ensuring business continuity.",
+      provenResults: "Proven results",
+      provenResultsDesc: "Our portfolio includes over 10 successful projects for various industries, confirming our effectiveness and professionalism.",
+      flexibleApproach: "Flexible approach",
+      flexibleApproachDesc: "We adapt our working methods to the specific needs of each client, offering personalized solutions.",
+      timelyDelivery: "Timely delivery",
+      timelyDeliveryDesc: "We meet established project deadlines by applying proven project management methodologies.",
+      readyToStart: "Ready to start cooperation?",
+      readyToStartDesc: "Contact us today and begin your business digital transformation with Gosqu Software experts.",
     }
   }
 

@@ -132,6 +132,24 @@ export interface Language {
   adminPanel: string;
   animatedBackgrounds: string;
   menuImageUpload: string;
+
+  // Why Us section
+  whyChooseUs: string;
+  whyChooseUsSubtitle: string;
+  expertTeam: string;
+  expertTeamDesc: string;
+  modernTech: string;
+  modernTechDesc: string;
+  fullSupport: string;
+  fullSupportDesc: string;
+  provenResults: string;
+  provenResultsDesc: string;
+  flexibleApproach: string;
+  flexibleApproachDesc: string;
+  timelyDelivery: string;
+  timelyDeliveryDesc: string;
+  readyToStart: string;
+  readyToStartDesc: string;
 }
 
 export interface Translations {
