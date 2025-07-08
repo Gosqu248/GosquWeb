@@ -1,12 +1,12 @@
 import { Component, Input, OnInit, ElementRef, ViewChild, AfterViewInit, OnDestroy, HostListener } from '@angular/core';
-import { NgForOf, NgIf } from "@angular/common";
+import { NgForOf, NgIf, NgClass } from "@angular/common";
 import { RouterLink } from "@angular/router";
 import { LanguageService } from '../../../services/language.service';
 import { ProjectDescription } from '../../../interface/project-description';
 
 @Component({
   selector: 'app-project-main',
-  imports: [NgForOf, RouterLink, NgIf],
+  imports: [NgForOf, RouterLink, NgIf, NgClass],
   templateUrl: './project-main.component.html',
   styleUrl: './project-main.component.scss'
 })
@@ -137,6 +137,132 @@ export class ProjectMainComponent implements OnInit, AfterViewInit, OnDestroy {
 
   trackByTech(index: number, tech: string): string {
     return tech;
+  }
+
+  // Tech Stack methods for new design
+  getTechIcon(tech: string): string {
+    const techIcons: { [key: string]: string } = {
+      // Frontend Technologies
+      'Angular': 'fab fa-angular',
+      'React': 'fab fa-react',
+      'Vue': 'fab fa-vuejs-alt',
+      'JavaScript': 'fab fa-js-square',
+      'TypeScript': 'fas fa-code',
+      'HTML': 'fab fa-html5',
+      'CSS': 'fab fa-css3-alt',
+      'SCSS': 'fab fa-sass',
+      'Bootstrap': 'fab fa-bootstrap',
+      'Tailwind': 'fas fa-wind',
+
+      // Backend Technologies
+      'Java': 'fab fa-java',
+      'Spring Boot': 'fas fa-leaf',
+      'Spring': 'fas fa-leaf',
+      'Node.js': 'fab fa-node-js',
+      'Python': 'fab fa-python',
+      'C#': 'fas fa-code',
+      '.NET': 'fas fa-code',
+      'PHP': 'fab fa-php',
+
+      // Databases
+      'MySQL': 'fas fa-database',
+      'PostgreSQL': 'fas fa-database',
+      'MongoDB': 'fas fa-database',
+      'SQLite': 'fas fa-database',
+      'Redis': 'fas fa-database',
+
+      // Cloud & DevOps
+      'AWS': 'fab fa-aws',
+      'Docker': 'fab fa-docker',
+      'Kubernetes': 'fas fa-dharmachakra',
+      'Jenkins': 'fas fa-cogs',
+      'GitHub': 'fab fa-github',
+      'Git': 'fab fa-git-alt',
+
+      // Mobile
+      'Android': 'fab fa-android',
+      'iOS': 'fab fa-apple',
+      'React Native': 'fab fa-react',
+      'Flutter': 'fas fa-mobile-alt',
+
+      // Tools & Others
+      'IntelliJ': 'fas fa-code',
+      'VS Code': 'fas fa-code',
+      'Gradle': 'fas fa-cogs',
+      'Maven': 'fas fa-cogs',
+      'REST API': 'fas fa-exchange-alt',
+      'GraphQL': 'fas fa-project-diagram',
+      'Figma': 'fab fa-figma',
+      'Photoshop': 'fas fa-palette'
+    };
+
+    return techIcons[tech] || 'fas fa-code';
+  }
+
+  getTechCategory(tech: string): string {
+    const techCategories: { [key: string]: string } = {
+      // Frontend
+      'Angular': 'Frontend',
+      'React': 'Frontend',
+      'Vue': 'Frontend',
+      'JavaScript': 'Frontend',
+      'TypeScript': 'Frontend',
+      'HTML': 'Frontend',
+      'CSS': 'Frontend',
+      'SCSS': 'Frontend',
+      'Bootstrap': 'Frontend',
+      'Tailwind': 'Frontend',
+
+      // Backend
+      'Java': 'Backend',
+      'Spring Boot': 'Backend',
+      'Spring': 'Backend',
+      'Node.js': 'Backend',
+      'Python': 'Backend',
+      'C#': 'Backend',
+      '.NET': 'Backend',
+      'PHP': 'Backend',
+
+      // Database
+      'MySQL': 'Database',
+      'PostgreSQL': 'Database',
+      'MongoDB': 'Database',
+      'SQLite': 'Database',
+      'Redis': 'Database',
+
+      // Cloud & DevOps
+      'AWS': 'Cloud',
+      'Docker': 'DevOps',
+      'Kubernetes': 'DevOps',
+      'Jenkins': 'DevOps',
+      'GitHub': 'Version Control',
+      'Git': 'Version Control',
+
+      // Mobile
+      'Android': 'Mobile',
+      'iOS': 'Mobile',
+      'React Native': 'Mobile',
+      'Flutter': 'Mobile',
+
+      // Tools
+      'IntelliJ': 'Tools',
+      'VS Code': 'Tools',
+      'Gradle': 'Build Tools',
+      'Maven': 'Build Tools',
+      'REST API': 'API',
+      'GraphQL': 'API',
+      'Figma': 'Design',
+      'Photoshop': 'Design'
+    };
+
+    return techCategories[tech] || 'Technology';
+  }
+
+  getUniqueCategories(): string[] {
+    if (!this.projectDescription?.techStack) return [];
+
+    const categories = this.projectDescription.techStack.map(tech => this.getTechCategory(tech));
+    return [...new Set(categories)];
   }
 
   // Private helper methods

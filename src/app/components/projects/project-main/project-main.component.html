@@ -95,13 +95,36 @@
   <section class="tech-section" *ngIf="projectDescription?.techStack?.length"
            [attr.aria-labelledby]="'tech-title'">
     <div class="container">
-      <h2 id="tech-title" class="section-title">{{ getTranslation("usedTechnologies") }}</h2>
-      <div class="tech-grid" role="list">
-        <div *ngFor="let tech of projectDescription.techStack; let i = index; trackBy: trackByTech"
-             class="tech-card"
-             [style.animation-delay]="(i * 0.05) + 's'"
-             role="listitem">
-          <span class="tech-name">{{ tech }}</span>
+      <div class="tech-header">
+        <h2 id="tech-title" class="section-title">
+          <i class="fas fa-tools tech-title-icon"></i>
+          {{ getTranslation("usedTechnologies") }}
+        </h2>
+        <p class="tech-subtitle">{{ getTranslation("technologiesUsedInProject") }}</p>
+      </div>
+
+      <div class="tech-showcase">
+        <div class="tech-carousel">
+          <div class="tech-grid" role="list">
+            <div *ngFor="let tech of projectDescription.techStack; let i = index; trackBy: trackByTech"
+                 class="tech-item"
+                 [class.tech-item--primary]="i % 3 === 0"
+                 [class.tech-item--secondary]="i % 3 === 1"
+                 [class.tech-item--accent]="i % 3 === 2"
+                 [style.animation-delay]="(i * 0.1) + 's'"
+                 role="listitem">
+              <div class="tech-item-inner">
+                <div class="tech-icon-wrapper">
+                  <i class="tech-icon" [ngClass]="getTechIcon(tech)"></i>
+                </div>
+                <div class="tech-content">
+                  <h3 class="tech-name">{{ tech }}</h3>
+                  <span class="tech-category">{{ getTechCategory(tech) }}</span>
+                </div>
+                <div class="tech-glow"></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
