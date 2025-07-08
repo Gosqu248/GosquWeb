@@ -1,0 +1,5 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://gosqu-software.pl/sitemap.xml
+

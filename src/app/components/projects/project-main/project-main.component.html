@@ -31,7 +31,6 @@
               <button *ngIf="hasMultipleImages() && imageIndex > 0"
                       class="nav-arrow nav-arrow--left"
                       (click)="changeImage(-1)"
-                      [attr.aria-label]="getTranslation('previousImage')"
                       type="button">
                 <i class="fas fa-chevron-left" aria-hidden="true"></i>
               </button>
@@ -48,14 +47,12 @@
               <button *ngIf="hasMultipleImages() && imageIndex < projectDescription.imageUrls.length - 1"
                       class="nav-arrow nav-arrow--right"
                       (click)="changeImage(1)"
-                      [attr.aria-label]="getTranslation('nextImage')"
                       type="button">
                 <i class="fas fa-chevron-right" aria-hidden="true"></i>
               </button>
             </div>
 
-            <div *ngIf="hasMultipleImages()" class="image-indicators" role="tablist"
-                 [attr.aria-label]="getTranslation('imageNavigation')">
+            <div *ngIf="hasMultipleImages()" class="image-indicators" role="tablist">
               <button *ngFor="let _ of projectDescription.imageUrls; let i = index; trackBy: trackByIndex"
                       class="indicator"
                       [class.active]="i === imageIndex"
