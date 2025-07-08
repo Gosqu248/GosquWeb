@@ -3,7 +3,6 @@ import {AnimationOptions, LottieComponent} from 'ngx-lottie';
 import {Language} from '../../../interface/language';
 import {LanguageService} from '../../../services/language.service';
 import {NgForOf} from '@angular/common';
-import {Router} from '@angular/router';
 import {Subscription} from 'rxjs';
 
 
