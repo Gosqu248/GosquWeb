@@ -25,8 +25,7 @@ export class HomeAboutComponent implements OnInit, OnDestroy{
   stats: {number: string, label: string}[] = [];
   private languageSubscription: Subscription;
 
-  constructor(private languageService: LanguageService,
-              private router: Router) {}
+  constructor(private languageService: LanguageService) {}
 
   ngOnInit() {
     this.updateSpecializations();
@@ -51,25 +50,6 @@ export class HomeAboutComponent implements OnInit, OnDestroy{
       { number: '100%', label: this.getTranslation('engagement') }
     ];
   }
-
-  scrollTo(id: string): void {
-    if (this.router.url === '/') {
-      const element = document.getElementById(id);
-      if (element) {
-        const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
-        window.scrollTo({ top: yOffset, behavior: 'smooth' });
-      }
-    } else {
-      this.router.navigate(['/'], { fragment: id }).then(() => {
-        const element = document.getElementById(id);
-        if (element) {
-          const yOffset = element.getBoundingClientRect().top + window.pageYOffset;
-          window.scrollTo({ top: yOffset, behavior: 'smooth' });
-        }
-      });
-    }
-  }
-
 
   getTranslation<K extends keyof Language>(key: K) {
     return this.languageService.getTranslation(key);
