@@ -76,7 +76,7 @@ export class HomeProjectsComponent {
       title: 'Webstaurator',
       type: 'non-commercial',
       offer: ['webApp', 'mobileTitle'],
-      shortDesc: 'Kompleksowy system zamówień food delivery z aplikacją mobilną',
+      shortDesc: 'webstauratorDescription',
       techStack: ['Angular', 'React Native', 'Spring Boot', 'PayU', 'i18n', 'Angular Material', 'PostgreSQL'],
       route: '/webstaurator'
     }

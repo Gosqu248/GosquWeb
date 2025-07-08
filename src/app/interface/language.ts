@@ -100,6 +100,7 @@ export interface Language {
   readyToStart: string;
   readyToStartDesc: string;
   projectsSubtitle: string;
+  webstauratorDescription: string;
 
   database: string;
   others: string;
