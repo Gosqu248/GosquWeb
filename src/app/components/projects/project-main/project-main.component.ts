@@ -145,14 +145,14 @@ export class ProjectMainComponent implements OnInit, AfterViewInit, OnDestroy {
       // Frontend Technologies
       'Angular': 'fab fa-angular',
       'React': 'fab fa-react',
-      'Vue': 'fab fa-vuejs-alt',
+      'Vue': 'fab fa-vuejs',
       'JavaScript': 'fab fa-js-square',
-      'TypeScript': 'fas fa-code',
+      'TypeScript': 'fab fa-ts',
       'HTML': 'fab fa-html5',
       'CSS': 'fab fa-css3-alt',
       'SCSS': 'fab fa-sass',
       'Bootstrap': 'fab fa-bootstrap',
-      'Tailwind': 'fas fa-wind',
+      'Tailwind': 'fab fa-tailwind',
 
       // Backend Technologies
       'Java': 'fab fa-java',
@@ -160,8 +160,8 @@ export class ProjectMainComponent implements OnInit, AfterViewInit, OnDestroy {
       'Spring': 'fas fa-leaf',
       'Node.js': 'fab fa-node-js',
       'Python': 'fab fa-python',
-      'C#': 'fas fa-code',
-      '.NET': 'fas fa-code',
+      'C#': 'fab fa-csharp',
+      '.NET': 'fab fa-dotnet',
       'PHP': 'fab fa-php',
 
       // Databases
@@ -179,24 +179,15 @@ export class ProjectMainComponent implements OnInit, AfterViewInit, OnDestroy {
       'GitHub': 'fab fa-github',
       'Git': 'fab fa-git-alt',
 
-      // Mobile
-      'Android': 'fab fa-android',
-      'iOS': 'fab fa-apple',
-      'React Native': 'fab fa-react',
-      'Flutter': 'fas fa-mobile-alt',
-
-      // Tools & Others
-      'IntelliJ': 'fas fa-code',
-      'VS Code': 'fas fa-code',
-      'Gradle': 'fas fa-cogs',
-      'Maven': 'fas fa-cogs',
-      'REST API': 'fas fa-exchange-alt',
-      'GraphQL': 'fas fa-project-diagram',
-      'Figma': 'fab fa-figma',
-      'Photoshop': 'fas fa-palette'
+      // Additional Technologies
+      'Gradle': 'fab fa-gradle',
+      'Nginx': 'fab fa-nginx',
+      'Webpack': 'fab fa-webpack',
+      'Babel': 'fab fa-babel',
+      'GraphQL': 'fab fa-graphql',
+      'Firebase': 'fab fa-firebase',
     };
-
-    return techIcons[tech] || 'fas fa-code';
+    return techIcons[tech] || 'fas fa-tools';
   }
 
   getTechCategory(tech: string): string {

@@ -146,7 +146,7 @@ export class LanguageService {
       innovative: "Innowacyjne technologie napędzające rozwój Twojej firmy.",
       cloudDevOps: 'Chmura i DevOps',
       tools: 'Narzędzia',
-      haveProject: 'Masz projekt w głowie? Skontaktuj` się ze mną i omówmy szczegóły!',
+      haveProject: 'Masz projekt w głowie? Skontaktuj się ze mną i omówmy szczegóły!',
       phone: 'TELEFON:',
       location: 'LOKALIZACJA:',
       tarnow: 'Tarnów, Polska',
