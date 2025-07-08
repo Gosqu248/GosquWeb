@@ -5,13 +5,15 @@ import { LanguageService } from '../../../services/language.service';
 import {NgClass, NgForOf} from '@angular/common';
 import {OfferItemComponent} from './offer-item/offer-item.component';
 import {OfferItem} from '../../../interface/offer-item';
+import {HowWorkComponent} from './how-work/how-work.component';
 
 @Component({
   selector: 'app-home-offers',
   imports: [
     NgForOf,
     OfferItemComponent,
-    NgClass
+    NgClass,
+    HowWorkComponent
   ],
   templateUrl: './home-offers.component.html',
   styleUrls: ['./home-offers.component.scss']
@@ -128,7 +130,6 @@ export class HomeOffersComponent implements OnInit, OnDestroy {
       }
     ];
 
-    // Ustawienie pierwszej oferty jako domyślnej lub aktualizacja istniejącej
     if (this.selectedOffer().id) {
       const currentSelectedId = this.selectedOffer().id;
       const updatedOffer = this.offerItems.find(offer => offer.id === currentSelectedId);

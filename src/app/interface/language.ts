@@ -65,8 +65,40 @@ export interface Language {
   orderTracking: string;
   multiCurrency: string;
 
+  our: string;
+  offer: string;
+  how: string;
+  work: string;
 
+  realizationProcess: string;
+  analyze: string;
+  analyzeDescription: string;
+  design: string;
+  designDescription: string;
+  development: string;
+  developmentDescription: string;
+  deploy: string;
+  deployDescription: string;
 
+  // Why Us section
+  whyChooseUs: string;
+  whyChooseUsSubtitle: string;
+  expertTeam: string;
+  expertTeamDesc: string;
+  modernTech: string;
+  modernTechDesc: string;
+  fullSupport: string;
+  fullSupportDesc: string;
+  provenResults: string;
+  provenResultsDesc: string;
+  flexibleApproach: string;
+  flexibleApproachDesc: string;
+  timelyDelivery: string;
+  timelyDeliveryDesc: string;
+  competitivePrices: string;
+  competitivePricesDesc: string;
+  readyToStart: string;
+  readyToStartDesc: string;
 
   database: string;
   others: string;
