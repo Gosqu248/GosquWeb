@@ -146,6 +146,7 @@ export class LanguageService {
       innovative: "Innowacyjne technologie napędzające rozwój Twojej firmy.",
       cloudDevOps: 'Chmura i DevOps',
       tools: 'Narzędzia',
+      haveProject: 'Masz projekt w głowie? Skontaktuj się ze mną i omówmy szczegóły!',
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -308,6 +309,7 @@ export class LanguageService {
       innovative: "Innovative technologies driving your business forward.",
       cloudDevOps: 'Cloud & DevOps',
       tools: 'Tools',
+      haveProject: 'Do you have a project in mind? Contact me and let\'s discuss the details!',
 
       //Kork Project
       renovation: "Renovation and construction services section",

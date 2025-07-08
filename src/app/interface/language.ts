@@ -119,6 +119,7 @@ export interface Language {
   innovative: string;
   cloudDevOps: string;
   tools: string;
+  haveProject: string;
 
   //kork project
   renovation: string;
