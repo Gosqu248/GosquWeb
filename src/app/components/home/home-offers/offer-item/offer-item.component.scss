@@ -22,6 +22,7 @@
 
 .content-container {
   display: flex;
+  margin-top: 1rem;
   justify-content: center;
 
   span {
@@ -123,6 +124,10 @@
     object-fit: contain;
     transition: transform 0.3s ease;
     filter: brightness(1.03);
+
+    @media(max-width: 768px) {
+      max-height: 250px;
+    }
 
     &:hover {
       transform: translateY(-5px);
