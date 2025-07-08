@@ -119,7 +119,10 @@ export class HomeTechComponent implements OnInit {
       name: 'MySQL',
       icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg',
     },
-
+    {
+      name: 'Firebase',
+      icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/firebase/firebase-original.svg',
+    },
   ];
 
   cloudDevOpsTechs: Technology[] = [
