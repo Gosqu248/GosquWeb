@@ -1,59 +1,116 @@
-# GosquWeb
+# Gosqu Software - Corporate Website
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.0.7.
+Modern, responsive website for Gosqu Software - a company specializing in creating advanced technological solutions.
 
-## Development server
+## 🚀 Technologies
 
-To start a local development server, run:
+- **Angular 19** - Latest version of Angular framework
+- **TypeScript** - Static typing for JavaScript
+- **Tailwind CSS** - Utility-first CSS framework
+- **SCSS** - CSS preprocessors for advanced styling
+- **Angular CLI** - Development tools
 
+## ✨ Features
+
+- 🌍 **Multilingual** - Polish and English language support
+- 📱 **Responsive** - Full adaptation to all devices
+- 🎨 **Modern design** - Gradients, animations and visual effects
+- 🔧 **Corporate sections**:
+  - Homepage with animations
+  - About us
+  - Services offering
+  - Project portfolio
+  - Technologies
+  - Contact
+
+## 🛠️ Local Development
+
+### Requirements
+- Node.js (version 18 or newer)
+- Angular CLI (`npm install -g @angular/cli`)
+
+### Installation
+```bash
+# Clone repository
+git clone [repository-url]
+cd GosquWeb
+
+# Install dependencies
+npm install
+```
+
+### Running development server
 ```bash
 ng serve
 ```
+Navigate to `http://localhost:4200/` to view the application.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### Building the project
 ```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
+# Development build
 ng build
+
+# Production build
+ng build --configuration production
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## 📁 Project Structure
 
-## Running unit tests
+```
+src/
+├── app/
+│   ├── components/
+│   │   ├── home/           # Homepage components
+│   │   │   ├── home-about/     # About us section
+│   │   │   ├── home-contact/   # Contact section
+│   │   │   ├── home-main/      # Main banner
+│   │   │   ├── home-offers/    # Services offering
+│   │   │   ├── home-projects/  # Project portfolio
+│   │   │   └── home-tech/      # Technologies
+│   │   ├── nav/            # Navigation
+│   │   └── projects/       # Project details
+│   ├── services/           # Services (languages, etc.)
+│   └── interface/          # TypeScript interfaces
+└── assets/                 # Static assets
+    ├── icons/             # Technology icons
+    ├── img/               # Project images
+    ├── logo/              # Company logo
+    └── video/             # Video materials
+```
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+## 🌐 Deployment
 
+The project can be deployed on various platforms:
+
+### Docker
 ```bash
-ng test
+# Build Docker image
+docker build -t gosqu-web .
+
+# Run container
+docker run -p 80:80 gosqu-web
 ```
 
-## Running end-to-end tests
+### Static hosting
+After running `ng build --configuration production`, the contents of the `dist/` directory can be deployed to any static hosting platform.
 
-For end-to-end (e2e) testing, run:
+## 🔧 Configuration
 
-```bash
-ng e2e
-```
+### Languages
+The language service supports switching between Polish and English. Translations are managed in the `LanguageService` component.
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+### Customization
+- **Logo**: Replace files in `assets/logo/`
+- **Colors**: Modify Tailwind configuration in `tailwind.config.js`
+- **Content**: Update translations in the language service
 
-## Additional Resources
+## 📞 Contact
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Gosqu Software**
+- 🌐 Website: [gosqu.com](https://gosqu.com)
+- 📧 Email: contact@gosqu.com
+- 💼 LinkedIn: [Gosqu Software](https://linkedin.com/company/gosqu)
+
+## 📄 License
+
+© 2024 Gosqu Software. All rights reserved.
