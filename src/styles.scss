@@ -201,16 +201,17 @@ body {
 }
 
 .section-title {
-  width: 100%;
-  text-align: center;
-  background: linear-gradient(75deg, var(--accent-secondary2), var(--accent-primary2));
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary2));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  position: relative;
-  margin-bottom: 1.5rem;
-  font-size: 3.5rem;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
 
   &::before {
     width: 8rem;

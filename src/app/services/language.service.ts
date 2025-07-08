@@ -126,7 +126,7 @@ export class LanguageService {
       developmentDescription: 'Implementacja rozwiązania z użyciem nowoczesnych technologii',
       deploy: 'Wdrożenie',
       deployDescription: 'Deploy, testy oraz przekazanie projektu do użytkowania',
-      projectsSubtitle: 'Zobacz nasze wybrane realizacje',
+      projectsSubtitle: 'Zobacz kilka z naszych zrealizowanych projektów',
 
       database: 'Bazy danych',
       others: 'Inne',
@@ -286,7 +286,7 @@ export class LanguageService {
       readyToStartDesc: "Contact us today and begin your business digital transformation with Gosqu Software experts.",
       competitivePrices: "Competitive prices",
       competitivePricesDesc: "We offer attractive prices while maintaining the highest quality of services, ensuring optimal value for money.",
-      projectsSubtitle: 'See our selected projects',
+      projectsSubtitle: 'See some of our completed projects',
 
 
       database: 'Databases',

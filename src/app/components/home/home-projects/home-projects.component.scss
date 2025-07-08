@@ -18,7 +18,15 @@
     pointer-events: none;
   }
 }
-
+.section-subtitle {
+  font-size: 1.2rem;
+  color: rgba(148, 163, 184, 0.8);
+  font-weight: 400;
+  font-family: 'Manrope', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
 .type-selector {
   display: flex;
   justify-content: center;

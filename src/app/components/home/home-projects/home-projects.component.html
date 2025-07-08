@@ -1,7 +1,10 @@
 <section class="projects-section" id="projects">
   <div class="title-container">
     <h2 class="section-title">{{getTranslation("projects")}}</h2>
+    <p class="section-subtitle">{{getTranslation("projectsSubtitle")}}</p>
   </div>
+
+
   <div class="type-selector">
     <button
       *ngFor="let type of projectTypes"
@@ -28,9 +31,10 @@
             {{stack}}
           </button>
         </div>
+
         <div class="view-details">
           <span class="view-text">{{getTranslation('viewDetails')}}</span>
-          <div class="arrow"></div>
+          <div class="arrow" aria-hidden="true"></div>
         </div>
       </div>
     </div>
