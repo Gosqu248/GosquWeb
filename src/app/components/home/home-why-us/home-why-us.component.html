@@ -1,0 +1,38 @@
+<div class="why-container" id="why-us">
+  <!-- Animated background elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-20 left-10 w-4 h-4 bg-cyan-400/60 rounded-full animate-ping shadow-lg shadow-cyan-400/50"
+         style="animation-delay: 0s; animation-duration: 3s;"></div>
+    <div class="absolute top-40 right-20 w-6 h-6 bg-gradient-to-r from-purple-400 to-pink-400 rotate-45 animate-pulse shadow-xl shadow-purple-400/40"
+         style="animation-delay: 1s; animation-duration: 4s;"></div>
+    <div class="absolute bottom-32 left-20 w-3 h-3 bg-emerald-400/70 rounded-full animate-bounce shadow-md shadow-emerald-400/50"
+         style="animation-delay: 2s;"></div>
+    <div class="absolute bottom-20 right-40 w-8 h-8 border-2 border-yellow-400/40 rounded-full animate-spin shadow-lg shadow-yellow-400/30"
+         style="animation-duration: 15s;"></div>
+  </div>
+
+  <div class="title-container">
+    <h2 class="section-title">{{getTranslation("whyChooseUs")}}</h2>
+    <p class="section-subtitle">{{getTranslation("whyChooseUsSubtitle")}}</p>
+  </div>
+
+  <div class="why-us-grid">
+    <div class="why-us-card"
+         *ngFor="let item of whyUsItems; let i = index"
+         [style.animation-delay]="(i * 0.2) + 's'">
+      <div class="card-icon">
+        <span class="icon-emoji">{{item.icon}}</span>
+        <div class="icon-glow"></div>
+      </div>
+
+      <div class="card-content">
+        <h3 class="card-title">{{item.title}}</h3>
+        <p class="card-description">{{item.description}}</p>
+      </div>
+
+      <div class="card-number">
+        <span>0{{item.id}}</span>
+      </div>
+    </div>
+  </div>
+</div>

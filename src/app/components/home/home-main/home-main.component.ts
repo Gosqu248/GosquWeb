@@ -5,7 +5,7 @@ import {HomeProjectsComponent} from '../home-projects/home-projects.component';
 import {HomeContactComponent} from '../home-contact/home-contact.component';
 import {HomeOffersComponent} from '../home-offers/home-offers.component';
 import {HomeVideoComponent} from '../home-video/home-video.component';
-import {NavMainComponent} from '../../nav/nav-main/nav-main.component';
+import {HomeWhyUsComponent} from '../home-why-us/home-why-us.component';
 
 @Component({
   selector: 'app-home-main',
@@ -16,6 +16,7 @@ import {NavMainComponent} from '../../nav/nav-main/nav-main.component';
     HomeContactComponent,
     HomeOffersComponent,
     HomeVideoComponent,
+    HomeWhyUsComponent,
   ],
   templateUrl: './home-main.component.html',
   styleUrl: './home-main.component.scss'
