@@ -146,6 +146,12 @@ export class LanguageService {
       innovative: "Innowacyjne technologie napędzające rozwój Twojej firmy.",
       cloudDevOps: 'Chmura i DevOps',
       tools: 'Narzędzia',
+      haveProject: 'Masz projekt w głowie? Skontaktuj` się ze mną i omówmy szczegóły!',
+      phone: 'TELEFON:',
+      location: 'LOKALIZACJA:',
+      tarnow: 'Tarnów, Polska',
+      availability: 'DOSTĘPNOŚĆ:',
+      monSat: 'Pon - Sob',
 
       //Kork Project
       renovation: "Sekcja usług remontowo-budowlanych",
@@ -308,6 +314,12 @@ export class LanguageService {
       innovative: "Innovative technologies driving your business forward.",
       cloudDevOps: 'Cloud & DevOps',
       tools: 'Tools',
+      haveProject: 'Do you have a project in mind? Contact me and let\'s discuss the details!',
+      phone: 'PHONE:',
+      location: 'LOCATION:',
+      tarnow: 'Tarnów, Poland',
+      availability: 'AVAILABILITY:',
+      monSat: 'Mon - Sat',
 
       //Kork Project
       renovation: "Renovation and construction services section",

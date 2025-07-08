@@ -119,6 +119,12 @@ export interface Language {
   innovative: string;
   cloudDevOps: string;
   tools: string;
+  haveProject: string;
+  phone: string;
+  location: string;
+  tarnow: string;
+  availability: string;
+  monSat: string;
 
   //kork project
   renovation: string;
