@@ -1,11 +1,13 @@
 import {Component} from '@angular/core';
 import {ProjectDescription} from '../../../interface/project-description';
 import {ProjectMainComponent} from '../project-main/project-main.component';
+import {HomeContactComponent} from '../../home/home-contact/home-contact.component';
 
 @Component({
   selector: 'app-gosqu-restaurant',
   imports: [
-    ProjectMainComponent
+    ProjectMainComponent,
+    HomeContactComponent
   ],
   templateUrl: './gosqu-restaurant.component.html',
   styleUrl: './gosqu-restaurant.component.scss'
