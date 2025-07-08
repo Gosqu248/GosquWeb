@@ -52,8 +52,7 @@
               </button>
             </div>
 
-            <div *ngIf="hasMultipleImages()" class="image-indicators" role="tablist"
-                 [attr.aria-label]="getTranslation('imageNavigation')">
+            <div *ngIf="hasMultipleImages()" class="image-indicators" role="tablist">
               <button *ngFor="let _ of projectDescription.imageUrls; let i = index; trackBy: trackByIndex"
                       class="indicator"
                       [class.active]="i === imageIndex"
