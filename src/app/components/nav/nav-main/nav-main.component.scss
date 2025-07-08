@@ -56,12 +56,14 @@
     .desktop-menu {
       display: none;
 
+
+
       @media (min-width: 768px) {
         display: flex;
         gap: 1.5rem;
         align-items: center;
 
-        a {
+        p {
           cursor: pointer;
           color: var(--text-primary);
           text-decoration: none;

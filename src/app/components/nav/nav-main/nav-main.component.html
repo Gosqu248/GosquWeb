@@ -5,11 +5,11 @@
     </div>
 
     <div class="desktop-menu">
-      <a (click)="scrollTo('about')">{{getTranslation('about')}}</a>
-      <a (click)="scrollTo('offers')">{{getTranslation('whatIDo')}}</a>
-      <a (click)="scrollTo('projects')">{{getTranslation('projects')}}</a>
-      <a (click)="scrollTo('skills')">{{getTranslation('skills')}}</a>
-      <a (click)="scrollTo('contact')">{{getTranslation('contact')}}</a>
+      <p (click)="scrollTo('about')">{{getTranslation('about')}}</p>
+      <p (click)="scrollTo('offers')">{{getTranslation('whatIDo')}}</p>
+      <p (click)="scrollTo('projects')">{{getTranslation('projects')}}</p>
+      <p (click)="scrollTo('skills')">{{getTranslation('skills')}}</p>
+      <p (click)="scrollTo('contact')">{{getTranslation('contact')}}</p>
 
       <div class="social-icons">
         <button class="language-button" (click)="currentLanguage === 'pl' ? setLanguage('en') : setLanguage('pl')">
@@ -36,11 +36,11 @@
   </div>
 
   <div *ngIf="isMenuOpen" class="mobile-menu">
-    <a (click)="scrollTo('about')">{{getTranslation('about')}}</a>
-    <a (click)="scrollTo('offers')">{{getTranslation('whatIDo')}}</a>
-    <a (click)="scrollTo('projects')">{{getTranslation('projects')}}</a>
-    <a (click)="scrollTo('skills')">{{getTranslation('skills')}}</a>
-    <a (click)="scrollTo('contact')">{{getTranslation('contact')}}</a>
+    <p (click)="scrollTo('about')">{{getTranslation('about')}}</p>
+    <p (click)="scrollTo('offers')">{{getTranslation('whatIDo')}}</p>
+    <p (click)="scrollTo('projects')">{{getTranslation('projects')}}</p>
+    <p (click)="scrollTo('skills')">{{getTranslation('skills')}}</p>
+    <p (click)="scrollTo('contact')">{{getTranslation('contact')}}</p>
 
     <button class="language-button" (click)="currentLanguage === 'pl' ? setLanguage('en') : setLanguage('pl')">
       <img [src]="currentFlag" alt="Language">
