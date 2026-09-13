@@ -1,0 +1,101 @@
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  padding: 1.25rem var(--space-gutter);
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background var(--duration-normal) ease, border-color var(--duration-normal) ease;
+}
+
+.site-header.is-scrolled {
+  background: rgb(11 13 15 / 0.82);
+  border-bottom-color: var(--color-line);
+  backdrop-filter: blur(14px);
+}
+
+.site-header__brand {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  font-family: var(--font-bricolage);
+  font-weight: 700;
+  font-size: 1.0625rem;
+  letter-spacing: -0.02em;
+}
+
+.site-header__nav {
+  display: none;
+  gap: 1.875rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.site-header__nav a {
+  padding-block: 0.5rem;
+  transition: color var(--duration-fast) ease;
+}
+
+.site-header__nav a:hover {
+  color: var(--color-text);
+}
+
+.site-header__actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-left: auto;
+}
+
+.site-header__cta {
+  display: none;
+  min-height: 40px;
+  padding: 0.625rem 1.125rem;
+  font-size: 0.84375rem;
+}
+
+.site-header__toggle {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 0.875rem;
+  color: var(--color-text);
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-sm);
+  background: transparent;
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-control);
+  cursor: pointer;
+}
+
+.site-header__mobile {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0.5rem var(--space-gutter) 1.5rem;
+  background: rgb(11 13 15 / 0.97);
+  border-bottom: 1px solid var(--color-line);
+  backdrop-filter: blur(14px);
+}
+
+.site-header__mobile a {
+  padding-block: 0.875rem;
+  min-height: 44px;
+  border-bottom: 1px solid var(--color-line);
+}
+
+@media (min-width: 1024px) {
+  .site-header__nav,
+  .site-header__cta {
+    display: flex;
+  }
+
+  .site-header__toggle,
+  .site-header__mobile {
+    display: none;
+  }
+}

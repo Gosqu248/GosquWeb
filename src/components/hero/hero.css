@@ -1,0 +1,360 @@
+/* Sekcja jest wysoka, a jej wnetrze przyklejone — to scroll napedza sekwencje. */
+.hero {
+  position: relative;
+  height: 200vh;
+}
+
+@media (min-width: 768px) {
+  .hero {
+    height: 320vh;
+  }
+}
+
+/* Bez ruchu nie ma po co przewijac trzech ekranow. */
+.hero--static {
+  height: auto;
+}
+
+.hero__viewport {
+  position: sticky;
+  top: 0;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero--static .hero__viewport {
+  position: static;
+  min-height: 0;
+  padding-block: var(--space-section);
+}
+
+/* ---------- warstwa medialna ---------- */
+.hero-media {
+  position: absolute;
+  inset: 0;
+  background: #06080a;
+  overflow: hidden;
+}
+
+.hero-plate,
+.hero-plate__drift {
+  position: absolute;
+  inset: 0;
+}
+
+.hero-plate__drift {
+  inset: -6%;
+  animation: hero-kenburns 26s var(--ease-out-expo) infinite alternate;
+}
+
+.hero-plate__drift.is-paused,
+.hero-plate__grid.is-paused {
+  animation-play-state: paused;
+}
+
+.hero-plate__haze {
+  position: absolute;
+  display: block;
+}
+
+.hero-plate__haze--blue {
+  top: -18%;
+  left: 8%;
+  width: min(620px, 60%);
+  aspect-ratio: 1.3;
+  background: radial-gradient(ellipse at center, rgb(30 123 245 / 0.3), transparent 66%);
+}
+
+.hero-plate__haze--violet {
+  bottom: -22%;
+  right: 4%;
+  width: min(680px, 62%);
+  aspect-ratio: 1.3;
+  background: radial-gradient(ellipse at center, rgb(160 32 240 / 0.24), transparent 68%);
+}
+
+.hero-plate__grid {
+  position: absolute;
+  inset-inline: -30%;
+  bottom: -20%;
+  height: 130%;
+  display: block;
+  background-image:
+    repeating-linear-gradient(0deg, rgb(90 150 220 / 0.16) 0 1px, transparent 1px 64px),
+    repeating-linear-gradient(90deg, rgb(90 150 220 / 0.1) 0 1px, transparent 1px 64px);
+  transform: perspective(620px) rotateX(66deg);
+  transform-origin: 50% 100%;
+  animation: hero-grid 3.6s linear infinite;
+  mask-image: linear-gradient(to top, #000 0%, transparent 72%);
+}
+
+.hero-plate__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='140' height='140'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/></filter><rect width='140' height='140' filter='url(%23n)'/></svg>");
+}
+
+.hero-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Bez tego kontrast tekstu nad ruchomym obrazem nie utrzyma 4.5:1. */
+.hero-scrim {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgb(6 8 10 / 0.94) 0%,
+    rgb(6 8 10 / 0.82) 38%,
+    rgb(6 8 10 / 0.42) 68%,
+    rgb(6 8 10 / 0.66) 100%
+  );
+}
+
+/* WCAG 2.2.2 — material dluzszy niz 5 s musi dac sie zatrzymac. */
+.hero-media__control {
+  position: absolute;
+  right: var(--space-gutter);
+  bottom: 2rem;
+  min-width: 44px;
+  min-height: 44px;
+  padding: 0 1rem;
+  color: var(--color-text);
+  font-family: var(--font-plex-sans);
+  font-size: var(--text-sm);
+  background: rgb(11 13 15 / 0.6);
+  border: 1px solid rgb(255 255 255 / 0.24);
+  border-radius: 999px;
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: background var(--duration-fast) ease, border-color var(--duration-fast) ease;
+}
+
+.hero-media__control:hover {
+  background: rgb(11 13 15 / 0.85);
+  border-color: rgb(255 255 255 / 0.45);
+}
+
+/* ---------- tresc ---------- */
+.hero__content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding-inline: var(--space-gutter);
+  padding-block: var(--space-section);
+}
+
+@media (min-width: 1024px) {
+  .hero__content {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.625rem;
+  max-width: 44rem;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-plex-mono);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: #c6cfd8;
+}
+
+.hero__rule {
+  width: 28px;
+  height: 2px;
+  background: var(--gradient-spectrum);
+}
+
+.hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  font-size: var(--text-hero);
+}
+
+.hero__line {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+  text-shadow: 0 2px 24px rgb(0 0 0 / 0.55);
+}
+
+.hero__line[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__line--muted {
+  color: #c6cfd8;
+}
+
+.hero__line--accent {
+  background: linear-gradient(90deg, #4fa0ff, #c46bff, #ff5fc0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  text-shadow: none;
+}
+
+.hero__tail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  opacity: 0;
+  transform: translateY(14px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.hero__tail[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__lead {
+  max-width: 32rem;
+  font-size: var(--text-lead);
+  color: var(--color-text-on-media);
+  text-shadow: 0 1px 12px rgb(0 0 0 / 0.6);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.875rem;
+}
+
+/* ---------- diagram ---------- */
+.hero__diagram {
+  width: min(320px, 100%);
+  padding: 1.25rem;
+  background: rgb(11 13 15 / 0.62);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  border-radius: 0.875rem;
+  backdrop-filter: blur(14px);
+}
+
+/* Na telefonie diagram schodzi pod tresc i zajmuje pelna szerokosc. */
+@media (max-width: 1023px) {
+  .hero__diagram {
+    width: 100%;
+  }
+}
+
+.hero__diagram-title {
+  margin-bottom: 0.875rem;
+  font-family: var(--font-plex-mono);
+  font-size: 0.59375rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: #9ba5af;
+}
+
+/* ---------- pasek postepu ---------- */
+.hero__progress {
+  position: absolute;
+  left: var(--space-gutter);
+  top: 50%;
+  translate: 0 -50%;
+  width: 3px;
+  height: 40%;
+  background: rgb(255 255 255 / 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.hero__progress span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-spectrum);
+  transform-origin: top;
+}
+
+/* Pionowy pasek zjadalby szerokosc, ktorej na telefonie nie ma. */
+@media (max-width: 1023px) {
+  .hero__progress {
+    display: none;
+  }
+}
+
+.hero--static .hero__progress {
+  display: none;
+}
+
+/* ---------- przyciski ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.9375rem 1.75rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: transform var(--duration-fast) var(--ease-out-expo), background var(--duration-fast) ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+}
+
+/* Sciety narwoznik to echo chamferowanego monogramu GS. */
+.button--primary {
+  color: var(--color-bg);
+  background: var(--color-text);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 11px) 0,
+    100% 11px,
+    100% 100%,
+    11px 100%,
+    0 calc(100% - 11px)
+  );
+}
+
+.button--ghost {
+  color: #fff;
+  font-weight: 500;
+  background: rgb(255 255 255 / 0.06);
+  border: 1px solid rgb(255 255 255 / 0.28);
+  border-radius: var(--radius-control);
+}
+
+.button--ghost:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+
+@keyframes hero-kenburns {
+  from { transform: scale(1.04); }
+  to { transform: scale(1.14); }
+}
+
+@keyframes hero-grid {
+  from { transform: perspective(620px) rotateX(66deg) translateY(0); }
+  to { transform: perspective(620px) rotateX(66deg) translateY(64px); }
+}

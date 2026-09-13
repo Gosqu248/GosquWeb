@@ -1,0 +1,273 @@
+/* ---------- tasma technologii ---------- */
+.marquee {
+  overflow: hidden;
+  padding-block: 1.125rem;
+  background: var(--color-surface-1);
+  border-block: 1px solid var(--color-line);
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 28s linear infinite;
+}
+
+.marquee__group {
+  display: flex;
+  gap: 0.875rem;
+  margin: 0;
+  padding: 0 0.4375rem;
+  list-style: none;
+}
+
+@keyframes marquee-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ---------- oferta ---------- */
+.offer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: var(--space-tile);
+  min-height: 13rem;
+}
+
+@media (min-width: 1100px) {
+  .offer {
+    grid-column: span var(--span);
+  }
+}
+
+.offer__dot {
+  display: block;
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 4px;
+}
+
+.offer__title {
+  font-size: var(--text-h3);
+  font-weight: 700;
+}
+
+.offer__text {
+  max-width: 30rem;
+  font-size: 0.9375rem;
+  color: var(--color-text-muted);
+}
+
+.offer__chips {
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- proces ---------- */
+.process {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: var(--grid-gap);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.process__step {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: var(--space-tile);
+}
+
+.process__number {
+  font-family: var(--font-bricolage);
+  font-size: 2.125rem;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.process__title {
+  font-size: 1.1875rem;
+  font-weight: 700;
+}
+
+.process__text {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+/* ---------- realizacje ---------- */
+.project {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  grid-column: span 1;
+}
+
+@media (min-width: 1100px) {
+  .project { grid-column: span 4; }
+  .project--featured { grid-column: span 8; }
+}
+
+.project__banner {
+  height: 11.875rem;
+  background:
+    linear-gradient(to top, rgb(11 13 15 / 0.92), rgb(11 13 15 / 0.15)),
+    linear-gradient(135deg, var(--brand-blue) 0%, var(--brand-violet) 55%, var(--brand-magenta) 100%);
+}
+
+.project__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: var(--space-tile);
+}
+
+.project__kind {
+  font-family: var(--font-plex-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.project__title {
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.project--featured .project__title {
+  font-size: var(--text-h3);
+}
+
+.project__text {
+  font-size: 0.90625rem;
+  color: var(--color-text-muted);
+}
+
+.project__chips {
+  margin: auto 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- technologie ---------- */
+.tech-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+  gap: var(--grid-gap);
+}
+
+.tech-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: var(--space-tile);
+}
+
+.tech-group__label {
+  font-family: var(--font-plex-mono);
+  font-size: 0.65625rem;
+  font-weight: 500;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.tech-group ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* ---------- kontakt ---------- */
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  padding: clamp(1.75rem, 1rem + 3vw, 3.5rem);
+  background: linear-gradient(135deg, #1c2129 0%, var(--color-surface-1) 55%);
+}
+
+@media (min-width: 900px) {
+  .contact {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3.5rem;
+  }
+}
+
+.contact__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+  max-width: 32rem;
+}
+
+.contact__lead {
+  font-size: var(--text-lead);
+  color: var(--color-text-muted);
+}
+
+.contact__details {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 0;
+  min-width: 17rem;
+}
+
+.contact__row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3125rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--color-line);
+}
+
+.contact__row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.contact__label {
+  font-family: var(--font-plex-mono);
+  font-size: 0.625rem;
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.contact__value {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.contact__value a:hover {
+  color: var(--color-accent);
+}
+
+/* ---------- stopka ---------- */
+.site-footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2.75rem var(--space-gutter);
+  font-size: 0.84375rem;
+  color: var(--color-text-faint);
+}
+
+.site-footer__links {
+  display: flex;
+  gap: 1.625rem;
+  margin-left: auto;
+}
+
+.site-footer__links a:hover {
+  color: var(--color-text);
+}

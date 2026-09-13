@@ -1,0 +1,134 @@
+/* Prymitywy wspoldzielone przez sekcje. Jedno zrodlo prawdy dla kafla i chipa. */
+
+.section {
+  padding-block: var(--space-section);
+  padding-inline: var(--space-gutter);
+}
+
+.section__head {
+  display: flex;
+  flex-direction: column;
+  gap: 0.875rem;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 900px) {
+  .section__head--split {
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+.section__eyebrow {
+  font-family: var(--font-plex-mono);
+  font-size: var(--text-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+}
+
+.section__title {
+  font-size: var(--text-h2);
+  font-weight: 700;
+}
+
+.section__note {
+  max-width: 24rem;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 900px) {
+  .section__note {
+    text-align: right;
+  }
+}
+
+/* Glebia z warstw i cieni, nigdy z rozmytych kul. */
+.tile {
+  background: var(--color-surface-1);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-tile);
+  box-shadow: var(--shadow-tile);
+  transition:
+    transform var(--duration-normal) var(--ease-out-expo),
+    border-color var(--duration-normal) ease;
+}
+
+.tile--interactive:hover {
+  transform: translateY(-3px);
+  border-color: var(--color-line-strong);
+}
+
+.tile--raised {
+  background: linear-gradient(160deg, #1a1f25, var(--color-surface-1) 60%);
+}
+
+.chip {
+  display: inline-block;
+  padding: 0.3125rem 0.5625rem;
+  font-family: var(--font-plex-mono);
+  font-size: 0.71875rem;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-chip);
+}
+
+.chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Jedyne miejsce, gdzie gradient marki idzie przez cala szerokosc. */
+.hairline {
+  height: 1px;
+  border: 0;
+  margin: 0;
+  background: var(--gradient-spectrum);
+  opacity: 0.55;
+}
+
+/* Widoczna luka na dane, ktorych nie mamy. Lepsza niz zmyslona tresc. */
+.placeholder {
+  display: inline-block;
+  padding: 0 0.375rem;
+  color: #ffb27a;
+  background: rgb(255 120 40 / 0.1);
+  border: 1px dashed rgb(255 140 60 / 0.45);
+  border-radius: 4px;
+  font-size: 0.8125rem;
+}
+
+.icon-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-line);
+  border-radius: 0.75rem;
+}
+
+.bento {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: var(--grid-gap);
+}
+
+@media (min-width: 700px) {
+  .bento {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1100px) {
+  .bento {
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+  }
+}
