@@ -1,23 +1,18 @@
 import { TECH_GROUPS } from "@/content/tech";
 import { Reveal } from "@/components/ui/Reveal";
+import { SectionHead } from "@/components/ui/SectionHead";
 
 export function TechSection() {
   return (
     <section className="section" id="technologie" aria-labelledby="technologie-heading">
-      <div className="section__head">
-        <p className="section__eyebrow">04 — Technologie</p>
-        <h2 className="section__title" id="technologie-heading">
-          Stos technologiczny
-        </h2>
-      </div>
-
-      <div className="tile tech-sheet">
+      <SectionHead id="technologie-heading" eyebrow="04 — Stos" title="Technologie." />
+      <div className="tech-grid">
         {TECH_GROUPS.map((group, index) => (
-          <Reveal key={group.id} delay={index * 60} className="tech-sheet__row">
-            <span className="tech-sheet__label">{group.label}</span>
-            <ul className="chip-row tech-sheet__chips">
+          <Reveal key={group.id} as="div" className="card tech-card" delay={(index % 3) * 70}>
+            <h3 className="tech-card__title">{group.label}</h3>
+            <ul className="chip-list">
               {group.items.map((item) => (
-                <li key={item} className="chip">
+                <li key={item} className="chip chip--dark">
                   {item}
                 </li>
               ))}

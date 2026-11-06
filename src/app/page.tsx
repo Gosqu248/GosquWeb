@@ -2,10 +2,12 @@ import { ContactSection } from "@/components/contact/ContactSection";
 import { Hero } from "@/components/hero/Hero";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { SiteHeader } from "@/components/layout/SiteHeader";
+import { ClosingMarquee } from "@/components/marquee/ClosingMarquee";
+import { TechMarquee } from "@/components/marquee/TechMarquee";
 import { OffersSection } from "@/components/offers/OffersSection";
 import { ProcessSection } from "@/components/process/ProcessSection";
 import { ProjectsSection } from "@/components/projects/ProjectsSection";
-import { TechMarquee } from "@/components/marquee/TechMarquee";
+import { StatementSection } from "@/components/statement/StatementSection";
 import { TechSection } from "@/components/tech/TechSection";
 
 export default function HomePage() {
@@ -16,13 +18,12 @@ export default function HomePage() {
         <Hero />
         <TechMarquee />
         <OffersSection />
-        <hr className="hairline" />
-        <ProcessSection />
-        <hr className="hairline" />
+        <StatementSection />
         <ProjectsSection />
-        <hr className="hairline" />
+        <ProcessSection />
         <TechSection />
         <ContactSection />
+        <ClosingMarquee />
       </main>
       <SiteFooter />
     </>

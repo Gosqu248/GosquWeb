@@ -1,67 +1,67 @@
-export type Project = {
+export type CurrentProject = {
   id: string;
+  kicker: string;
   title: string;
-  kind: string;
-  description: string | null;
-  stack: readonly string[];
-  featured?: boolean;
+  description: string;
+  /** Brak href = projekt objety NDA, bez linku. */
+  href?: string;
+  linkLabel?: string;
+  icon?: "bolt" | "car";
 };
 
-/**
- * `description: null` i pusty `stack` oznaczaja dane, ktorych jeszcze nie mamy.
- * Interfejs renderuje je jako widoczna luke, nigdy jako zmyslona tresc.
- */
-export const PROJECTS: readonly Project[] = [
+/** Projekty, nad ktorymi pracuje sie teraz. Pierwszy jest wyrozniony duzym kaflem. */
+export const FEATURED_PROJECT: CurrentProject = {
+  id: "lingish",
+  kicker: "Edukacja · produkt własny",
+  title: "Lingish.eu",
+  description: "Platforma kursowa online. Ostatni większy projekt, zbudowany od podstaw.",
+  href: "https://lingish.eu",
+  linkLabel: "Zobacz lingish.eu",
+};
+
+export const NDA_PROJECTS: readonly CurrentProject[] = [
+  {
+    id: "ev",
+    kicker: "E-mobility · korporacja",
+    title: "Ładowarki EV",
+    description: "Rozwój systemu w domenie ładowania samochodów elektrycznych dla dużej firmy.",
+    icon: "bolt",
+  },
+  {
+    id: "dealers",
+    kicker: "Motoryzacja · korporacja",
+    title: "Sieć dealerska",
+    description: "System do zarządzania dealerami dla firmy z branży motoryzacyjnej.",
+    icon: "car",
+  },
+] as const;
+
+export type PastProject = {
+  id: string;
+  title: string;
+  description: string;
+  kind: string;
+};
+
+export const PAST_PROJECTS: readonly PastProject[] = [
+  { id: "jodogym", title: "JodoGym.pl", description: "Web + mobile", kind: "Komercyjny" },
+  { id: "lawish", title: "Lawish.eu", description: "Platforma online", kind: "Komercyjny" },
   {
     id: "kork-pys",
-    title: "Kork-Pyś — portal klienta i integracja z ERP",
+    title: "Kork-Pyś",
+    description: "Portal klienta: zlecenia, wynajem, dane klientów",
     kind: "Komercyjny",
-    description:
-      "Portal dla firmy remontowo-transportowej: obsługa zleceń, wynajmu i danych klientów, z dwukierunkową synchronizacją faktur do Comarch ERP XT.",
-    stack: ["Spring Boot", "Angular", "PostgreSQL", "JWT", "Docker", "Nginx"],
-    featured: true,
   },
   {
     id: "bus-control",
     title: "Bus Control",
-    kind: "Komercyjny · GPS",
-    description:
-      "Androidowy system kontroli kursów autobusowych: pozycja w czasie rzeczywistym, obsługa przystanków i praca bez zasięgu.",
-    stack: ["Java", "Android", "Room DB"],
-  },
-  {
-    id: "jodogym",
-    title: "JodoGym.pl",
-    kind: "Komercyjny · Web + Mobile",
-    description: null,
-    stack: [],
-  },
-  {
-    id: "lawish",
-    title: "Lawish.eu",
+    description: "Kontrola kursów autobusowych na Androidzie",
     kind: "Komercyjny",
-    description: null,
-    stack: [],
-  },
-  {
-    id: "lingish",
-    title: "Lingish.eu",
-    kind: "Komercyjny · Platforma kursowa",
-    description: null,
-    stack: [],
-  },
-  {
-    id: "gosqu-restaurant",
-    title: "Gosqu Restaurant",
-    kind: "Własny · R&D",
-    description: "Zamówienia online z logowaniem Google, 2FA i płatnościami PayU.",
-    stack: ["Angular", "Spring Boot", "PayU"],
   },
   {
     id: "webstaurator",
     title: "Webstaurator",
+    description: "Platforma gastronomiczna web + mobile",
     kind: "Własny · R&D",
-    description: "Platforma gastronomiczna web + mobile z wielojęzycznością i płatnościami.",
-    stack: ["Angular", "React Native", "i18n"],
   },
 ] as const;

@@ -1,29 +1,16 @@
 import type { Metadata } from "next";
-import { Bricolage_Grotesque, IBM_Plex_Mono, IBM_Plex_Sans } from "next/font/google";
+import { Archivo } from "next/font/google";
 import "./globals.css";
 
 /**
  * latin-ext jest konieczny — bez niego polskie znaki diakrytyczne
  * (ł, ą, ę, ś, ć, ż, ź, ń, ó) spadaja na font zapasowy i lamia rytm tekstu.
+ * Jedna rodzina na caly serwis, jak w systemie Modernist.
  */
-const bricolage = Bricolage_Grotesque({
-  variable: "--font-bricolage",
+const archivo = Archivo({
+  variable: "--font-archivo",
   subsets: ["latin", "latin-ext"],
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
-
-const plexSans = IBM_Plex_Sans({
-  variable: "--font-plex-sans",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500", "600"],
-  display: "swap",
-});
-
-const plexMono = IBM_Plex_Mono({
-  variable: "--font-plex-mono",
-  subsets: ["latin", "latin-ext"],
-  weight: ["400", "500"],
+  weight: ["400", "600", "700", "800"],
   display: "swap",
 });
 
@@ -83,10 +70,7 @@ const organizationSchema = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="pl"
-      className={`${bricolage.variable} ${plexSans.variable} ${plexMono.variable}`}
-    >
+    <html lang="pl" className={archivo.variable}>
       <body>
         {children}
         <script

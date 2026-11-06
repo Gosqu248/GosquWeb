@@ -1,74 +1,58 @@
 /**
- * Bento Depth — grafit.
- * Wartosci przeniesione 1:1 z zaakceptowanych makiet (design/System.dc.html).
+ * Modernist — ciemna wersja.
+ * Wartosci przeniesione z design systemu Modernist (gosqu-site/_ds) oraz z "Gosqu Site v2".
+ * Plasko, siatka, zero zaokraglen, mocne 2px linie, jeden akcent.
  */
 :root {
-  /* --- powierzchnie: glebia powstaje z warstw, nie z rozmytych kul --- */
-  --color-bg: #0b0d0f;
-  --color-surface-1: #131619;
-  --color-surface-2: #191d22;
-  --color-surface-3: #21262c;
-  --color-line: #272d34;
-  --color-line-strong: #363e47;
+  /* --- powierzchnie --- */
+  --color-bg: #201e1d;
+  --color-bg-deep: #171515;
+  --color-surface: #2b2827;
+  --color-line: #444141;
+  --color-line-strong: #f3f2f2;
 
   /* --- tekst --- */
-  --color-text: #eceff2;
-  --color-text-muted: #a3acb6;
-  --color-text-faint: #6b747e;
-  --color-text-on-media: #d3dae1;
+  --color-text: #f3f2f2;
+  --color-text-soft: #d7d3d3;
+  --color-text-muted: #9b9797;
+  --color-text-faint: #6b6464;
 
-  /* --- spektrum marki, prosto z monogramu GS --- */
-  --brand-orange: #ff4d2e;
-  --brand-magenta: #e415a0;
-  --brand-violet: #a020f0;
-  --brand-blue: #1e7bf5;
-  --brand-cyan: #22dff5;
-  --color-accent: var(--brand-cyan);
-
-  /* Gradient pojawia sie najwyzej trzy razy na ekranie i nigdy jako tlo. */
-  --gradient-spectrum: linear-gradient(
-    90deg,
-    var(--brand-orange),
-    var(--brand-magenta),
-    var(--brand-violet),
-    var(--brand-blue),
-    var(--brand-cyan)
-  );
+  /* --- jedyny akcent: rampa czerwieni --- */
+  --color-accent: #ec3013;
+  --color-accent-hover: #dd2b0f;
+  --color-accent-light: #ff563c;
+  --color-accent-dark: #7c1405;
 
   /* --- typografia --- */
-  --text-label: 0.6875rem;
+  --font-archivo: "Archivo", system-ui, sans-serif;
+  --text-label: 0.75rem;
   --text-sm: 0.875rem;
-  --text-base: clamp(0.9375rem, 0.9rem + 0.2vw, 1.0625rem);
-  --text-lead: clamp(1rem, 0.95rem + 0.35vw, 1.125rem);
-  --text-h3: clamp(1.25rem, 1.1rem + 0.6vw, 1.6875rem);
-  --text-h2: clamp(2rem, 1.5rem + 2.2vw, 2.875rem);
-  --text-hero: clamp(2.375rem, 1.4rem + 4.2vw, 4rem);
+  --text-base: 1rem;
+  --text-lead: 1.0625rem;
+  --text-h2: clamp(2.5rem, 1.2rem + 5.2vw, 5.5rem);
+  --text-h3-lg: clamp(1.875rem, 1.4rem + 1.6vw, 3.25rem);
+  --text-h3-md: clamp(1.625rem, 1.4rem + 0.8vw, 2.25rem);
+  --text-statement: clamp(2.25rem, 1.2rem + 4.4vw, 6.5rem);
 
-  --leading-tight: 0.98;
-  --leading-body: 1.65;
-  --tracking-display: -0.03em;
+  --tracking-display: -0.045em;
+  --tracking-heading: -0.03em;
   --tracking-label: 0.14em;
+  --leading-display: 0.95;
+  --leading-body: 1.55;
 
-  /* --- rytm: celowo nierowny, nie jednolity padding wszedzie --- */
-  --space-gutter: clamp(1.25rem, 0.5rem + 3vw, 6.25rem);
-  --space-section: clamp(2.75rem, 1.5rem + 4vw, 5.5rem);
-  --space-tile: clamp(1.375rem, 1rem + 1vw, 2rem);
-  --grid-gap: 1rem;
-
-  /* --- promienie: zroznicowane, nie jeden dla wszystkiego --- */
-  --radius-tile: 1rem;
-  --radius-control: 0.5rem;
-  --radius-chip: 0.375rem;
-
-  /* --- glebia --- */
-  --shadow-tile:
-    inset 0 1px 0 rgb(255 255 255 / 0.045),
-    0 1px 2px rgb(0 0 0 / 0.5),
-    0 12px 32px rgb(0 0 0 / 0.28);
+  /* --- rytm --- */
+  --width-page: 1440px;
+  --space-gutter: clamp(1.25rem, 0.6rem + 2.6vw, 3rem);
+  --space-section: clamp(4.5rem, 3rem + 5.5vw, 8rem);
+  --space-tile: clamp(1.75rem, 1.4rem + 1.2vw, 2.75rem);
+  --grid-gap: 0.875rem;
+  --rule: 2px;
+  --header-height: 4.5rem;
 
   /* --- ruch --- */
-  --duration-fast: 150ms;
+  --duration-fast: 200ms;
   --duration-normal: 300ms;
   --duration-slow: 620ms;
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-card: cubic-bezier(0.2, 0.8, 0.2, 1);
 }

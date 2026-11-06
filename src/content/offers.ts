@@ -1,57 +1,59 @@
+export type OfferVisual = "number" | "spinner" | "phone" | "pipeline";
+
 export type Offer = {
   id: string;
+  /** Etykieta nad tytulem, np. „Web” albo „02 · Enterprise”. */
+  kicker: string;
   title: string;
   description: string;
   chips: readonly string[];
-  accent: string;
-  /** Ile kolumn zajmuje kafel w 12-kolumnowej siatce bento. */
-  span: 4 | 5 | 7;
+  /** Szeroki kafel zajmuje 4 z 6 kolumn, waski 2. */
+  size: "wide" | "narrow";
+  /** Wypelniony akcentem — tylko jeden kafel w calej sekcji. */
+  featured?: boolean;
+  visual: OfferVisual;
 };
 
 export const OFFERS: readonly Offer[] = [
   {
-    id: "systemy-dedykowane",
-    title: "Systemy dedykowane — TMS, ERP, panele operacyjne",
-    description:
-      "Gdy gotowe oprogramowanie nie pasuje do procesu, budujemy system wokół procesu. Modelowanie domeny, integracje z systemami księgowymi, panele administracyjne i raportowanie.",
-    chips: ["Spring Boot", "PostgreSQL", "Comarch ERP XT", "Raportowanie"],
-    accent: "var(--brand-cyan)",
-    span: 7,
-  },
-  {
-    id: "gps",
-    title: "GPS i telematyka",
-    description:
-      "Śledzenie pojazdów w czasie rzeczywistym, geofencing, optymalizacja tras i zarządzanie flotą. Obszar, w którym mamy najwięcej wdrożeń.",
-    chips: ["Geofencing", "Optymalizacja tras", "Real-time"],
-    accent: "var(--brand-magenta)",
-    span: 5,
-  },
-  {
     id: "web",
-    title: "Aplikacje webowe",
+    kicker: "Web",
+    title: "Platformy webowe",
     description:
-      "SPA i PWA w Angularze lub Reakcie — z panelem administracyjnym, kontrolą dostępu i trybem offline.",
-    chips: ["Angular", "React", "PWA"],
-    accent: "var(--brand-blue)",
-    span: 4,
+      "Portale klienta, platformy kursowe i panele administracyjne w Angularze lub Reakcie, z kontrolą dostępu i płatnościami.",
+    chips: ["Angular", "React", "Next.js"],
+    size: "wide",
+    featured: true,
+    visual: "number",
+  },
+  {
+    id: "enterprise",
+    kicker: "02 · Enterprise",
+    title: "Systemy dla dużych firm",
+    description:
+      "Rozwój systemów korporacyjnych w zespołach klienta: modelowanie domeny, wydajne backendy i panele operacyjne.",
+    chips: ["Java", "Spring Boot", "Oracle DB"],
+    size: "narrow",
+    visual: "spinner",
   },
   {
     id: "mobile",
+    kicker: "03 · Mobile",
     title: "Aplikacje mobilne",
     description:
       "React Native i natywny Android. Powiadomienia push, praca offline, publikacja w App Store i Google Play.",
     chips: ["React Native", "Android", "Push"],
-    accent: "var(--brand-violet)",
-    span: 4,
+    size: "narrow",
+    visual: "phone",
   },
   {
     id: "integracje",
+    kicker: "04 · Integracje",
     title: "API i integracje",
     description:
-      "Łączymy systemy, które nie były projektowane, by ze sobą rozmawiać — REST, kolejki, ETL, płatności.",
+      "Łączę systemy, które nie były projektowane, by ze sobą rozmawiać: REST, kolejki, ETL, płatności.",
     chips: ["REST", "Kafka", "PayU"],
-    accent: "var(--brand-orange)",
-    span: 4,
+    size: "wide",
+    visual: "pipeline",
   },
 ] as const;

@@ -6,9 +6,7 @@
 @theme inline {
   --color-background: var(--color-bg);
   --color-foreground: var(--color-text);
-  --font-display: var(--font-bricolage);
-  --font-sans: var(--font-plex-sans);
-  --font-mono: var(--font-plex-mono);
+  --font-sans: var(--font-archivo);
 }
 
 *,
@@ -19,15 +17,17 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
 }
 
 body {
   margin: 0;
   background: var(--color-bg);
   color: var(--color-text);
-  font-family: var(--font-plex-sans), ui-sans-serif, system-ui, sans-serif;
+  font-family: var(--font-archivo), system-ui, sans-serif;
   font-size: var(--text-base);
   line-height: var(--leading-body);
+  overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -35,10 +35,8 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: var(--font-bricolage), var(--font-plex-sans), sans-serif;
   font-weight: 800;
-  letter-spacing: var(--tracking-display);
-  line-height: var(--leading-tight);
+  letter-spacing: var(--tracking-heading);
   text-wrap: balance;
 }
 
@@ -52,10 +50,18 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  color: var(--color-accent-light);
+}
+
+::selection {
+  background: var(--color-accent-dark);
+  color: var(--color-text);
+}
+
 :focus-visible {
-  outline: 2px solid var(--color-accent);
+  outline: 2px solid var(--color-text);
   outline-offset: 3px;
-  border-radius: 2px;
 }
 
 /* Kto poprosil o mniej ruchu, dostaje mniej ruchu. Nie jest to opcjonalne. */

@@ -1,164 +1,73 @@
-type StackDiagramProps = {
-  /** Aktywny etap sekwencji, 1..4. Warstwy narastaja od danych do klienta. */
+const STAGE_LABELS = ["Dane", "Domena", "API", "Klienci"] as const;
+
+const CLIENTS = [
+  { name: "Angular", kind: "WEB" },
+  { name: "React Native", kind: "MOBILE" },
+  { name: "Integracje", kind: "B2B" },
+] as const;
+
+const DATA_STORES = ["PostgreSQL", "Kafka", "Redis"] as const;
+
+interface StackDiagramProps {
+  /** Aktywny etap 1..4 — warstwy odslaniaja sie od dolu (dane) do gory (klienci). */
   stage: number;
-};
-
-type NodeBox = { x: number; y: number; w: number; h: number; label: string; caption?: string };
-
-const CLIENT_NODES: NodeBox[] = [
-  { x: 2, y: 2, w: 80, h: 30, label: "Angular", caption: "WEB SPA" },
-  { x: 90, y: 2, w: 80, h: 30, label: "React Native", caption: "MOBILE" },
-  { x: 178, y: 2, w: 80, h: 30, label: "GPS", caption: "TELEMETRIA" },
-];
-
-const DATA_NODES: NodeBox[] = [
-  { x: 2, y: 160, w: 80, h: 32, label: "PostgreSQL" },
-  { x: 90, y: 160, w: 80, h: 32, label: "Kafka" },
-  { x: 178, y: 160, w: 80, h: 32, label: "Redis" },
-];
-
-/** Warstwa gasnie, dopoki scroll do niej nie dojedzie. */
-function layerStyle(stage: number, appearsAt: number): React.CSSProperties {
-  const visible = stage >= appearsAt;
-  return {
-    opacity: visible ? 1 : 0,
-    transform: visible ? "none" : "translateY(14px)",
-    transition:
-      "opacity var(--duration-slow) var(--ease-out-expo), transform var(--duration-slow) var(--ease-out-expo)",
-  };
+  tail: boolean;
 }
 
-function Box({ node, muted }: { node: NodeBox; muted?: boolean }) {
-  const textY = node.caption ? node.y + 19 : node.y + node.h / 2 + 4;
+function Connectors({ columns }: { columns: 1 | 3 }) {
   return (
-    <>
-      <rect
-        x={node.x}
-        y={node.y}
-        width={node.w}
-        height={node.h}
-        rx={6}
-        fill={muted ? "rgba(25,29,34,0.92)" : "rgba(33,38,44,0.92)"}
-        stroke="#4a535d"
-      />
-      <text
-        x={node.x + node.w / 2}
-        y={textY}
-        fill="var(--color-text)"
-        fontFamily="var(--font-plex-sans)"
-        fontSize="9"
-        fontWeight="600"
-        textAnchor="middle"
-      >
-        {node.label}
-      </text>
-      {node.caption ? (
-        <text
-          x={node.x + node.w / 2}
-          y={node.y + node.h - 6}
-          fill="var(--color-text-faint)"
-          fontFamily="var(--font-plex-mono)"
-          fontSize="7"
-          textAnchor="middle"
-        >
-          {node.caption}
-        </text>
-      ) : null}
-    </>
+    <div className={`stack__links stack__links--${columns}`} aria-hidden="true">
+      {Array.from({ length: columns }, (_, index) => (
+        <span key={index} />
+      ))}
+    </div>
   );
 }
 
-export function StackDiagram({ stage }: StackDiagramProps) {
+export function StackDiagram({ stage, tail }: StackDiagramProps) {
+  const label = tail ? "Gotowe" : `0${stage} · ${STAGE_LABELS[stage - 1]}`;
+
   return (
-    <svg
-      viewBox="0 0 260 250"
-      fill="none"
-      role="img"
-      aria-label="Architektura: klienci Angular, React Native i urządzenia GPS łączą się przez REST API z aplikacją Spring Boot, opartą o PostgreSQL, Kafkę i Redis."
-      style={{ display: "block", width: "100%" }}
-    >
-      {/* etap 4 — klienci */}
-      <g style={layerStyle(stage, 4)}>
-        {CLIENT_NODES.map((node) => (
-          <Box key={node.label} node={node} />
+    <aside className="stack" aria-label="Nasz stos technologiczny">
+      <div className="stack__head">
+        <span className="stack__title">Nasz stos</span>
+        <span className="stack__stage">{label}</span>
+      </div>
+
+      <div className="stack__layer stack__clients" data-visible={stage >= 4}>
+        {CLIENTS.map((client) => (
+          <div key={client.name} className="stack__box">
+            <span className="stack__box-name">{client.name}</span>
+            <span className="stack__box-kind">{client.kind}</span>
+          </div>
         ))}
-      </g>
+      </div>
 
-      <path d="M42 32 L42 46 M130 32 L130 46 M218 32 L218 46" stroke="#4a535d" strokeWidth="1" />
+      <Connectors columns={3} />
 
-      {/* etap 3 — bramka API, jedyny pelny gradient marki w hero */}
-      <g style={layerStyle(stage, 3)}>
-        <rect
-          x="2"
-          y="46"
-          width="256"
-          height="34"
-          rx="6"
-          fill="rgba(25,29,34,0.92)"
-          stroke="var(--brand-cyan)"
-          strokeWidth="1.2"
-        />
-        <text
-          x="130"
-          y="67"
-          fill="var(--color-text)"
-          fontFamily="var(--font-plex-sans)"
-          fontSize="9.5"
-          fontWeight="600"
-          textAnchor="middle"
-        >
-          REST API · JWT · OAuth2
-        </text>
-      </g>
+      <div className="stack__layer stack__api" data-visible={stage >= 3}>
+        REST API · JWT · OAuth2
+      </div>
 
-      <path d="M130 80 L130 96" stroke="#4a535d" strokeWidth="1" />
+      <Connectors columns={1} />
 
-      {/* etap 2 — rdzen */}
-      <g style={layerStyle(stage, 2)}>
-        <rect x="46" y="96" width="168" height="48" rx="7" fill="rgba(33,38,44,0.92)" stroke="#4a535d" />
-        <text
-          x="130"
-          y="118"
-          fill="var(--color-text)"
-          fontFamily="var(--font-bricolage)"
-          fontSize="14"
-          fontWeight="700"
-          textAnchor="middle"
-        >
-          Spring Boot
-        </text>
-        <text
-          x="130"
-          y="134"
-          fill="var(--color-text-muted)"
-          fontFamily="var(--font-plex-sans)"
-          fontSize="8.5"
-          textAnchor="middle"
-        >
-          Domena · JPA · Security
-        </text>
-      </g>
+      <div className="stack__layer stack__core" data-visible={stage >= 2}>
+        <span className="stack__core-name">Spring Boot</span>
+        <span className="stack__core-meta">Domena · JPA · Security</span>
+      </div>
 
-      <path d="M80 144 L80 160 M130 144 L130 160 M180 144 L180 160" stroke="#4a535d" strokeWidth="1" />
+      <Connectors columns={3} />
 
-      {/* etap 1 — dane i infrastruktura */}
-      <g style={layerStyle(stage, 1)}>
-        {DATA_NODES.map((node) => (
-          <Box key={node.label} node={node} muted />
-        ))}
-        <rect x="2" y="200" width="256" height="26" rx="6" fill="rgba(19,22,25,0.92)" stroke="#3a434d" />
-        <text
-          x="130"
-          y="217"
-          fill="var(--color-text-faint)"
-          fontFamily="var(--font-plex-mono)"
-          fontSize="7.5"
-          letterSpacing="1"
-          textAnchor="middle"
-        >
-          DOCKER · K8S · NGINX · AWS
-        </text>
-      </g>
-    </svg>
+      <div className="stack__layer stack__data" data-visible={stage >= 1}>
+        <div className="stack__stores">
+          {DATA_STORES.map((store) => (
+            <span key={store} className="stack__store">
+              {store}
+            </span>
+          ))}
+        </div>
+        <span className="stack__infra">DOCKER · K8S · NGINX · AWS</span>
+      </div>
+    </aside>
   );
 }

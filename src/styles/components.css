@@ -1,118 +1,110 @@
-/* Prymitywy wspoldzielone przez sekcje. Jedno zrodlo prawdy dla kafla i chipa. */
-
-.section {
-  padding-block: var(--space-section);
-  padding-inline: var(--space-gutter);
+/* ---------- przyciski: plaskie, bez zaokraglen, etykieta od lewej ---------- */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  border: 0;
+  font: inherit;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background var(--duration-fast),
+    color var(--duration-fast),
+    gap var(--duration-fast);
 }
 
-.section__head {
-  display: flex;
-  flex-direction: column;
+.button svg {
+  flex: none;
+}
+
+.button--primary {
+  background: var(--color-accent);
+  color: var(--color-text);
+}
+
+.button--primary:hover {
+  background: var(--color-accent-hover);
+  color: var(--color-text);
   gap: 0.875rem;
-  margin-bottom: 2.5rem;
 }
 
-@media (min-width: 900px) {
-  .section__head--split {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 2rem;
-  }
+.button--outline {
+  border: var(--rule) solid var(--color-text);
+  color: var(--color-text);
 }
 
-.section__eyebrow {
-  font-family: var(--font-plex-mono);
-  font-size: var(--text-label);
+.button--outline:hover {
+  background: var(--color-text);
+  color: var(--color-bg);
+}
+
+.button--light {
+  background: var(--color-text);
+  color: var(--color-bg);
+  font-weight: 700;
+  padding: 0.75rem 1.125rem;
+}
+
+/* ---------- etykiety ---------- */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.625rem;
+  color: var(--color-accent);
+  font-size: 0.8125rem;
+  font-weight: 700;
   letter-spacing: var(--tracking-label);
   text-transform: uppercase;
-  color: var(--color-text-faint);
 }
 
-.section__title {
-  font-size: var(--text-h2);
+.eyebrow::before {
+  content: "";
+  width: 1.75rem;
+  height: var(--rule);
+  background: currentColor;
+}
+
+.label {
+  color: var(--color-text-muted);
+  font-size: var(--text-label);
   font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
 }
 
-.section__note {
-  max-width: 24rem;
-  font-size: var(--text-sm);
-  color: var(--color-text-muted);
-}
-
-@media (min-width: 900px) {
-  .section__note {
-    text-align: right;
-  }
-}
-
-/* Glebia z warstw i cieni, nigdy z rozmytych kul. */
-.tile {
-  background: var(--color-surface-1);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-tile);
-  box-shadow: var(--shadow-tile);
-  transition:
-    transform var(--duration-normal) var(--ease-out-expo),
-    border-color var(--duration-normal) ease;
-}
-
-.tile--interactive:hover {
-  transform: translateY(-3px);
-  border-color: var(--color-line-strong);
-}
-
-.tile--raised {
-  background: linear-gradient(160deg, #1a1f25, var(--color-surface-1) 60%);
-}
-
-.chip {
-  display: inline-block;
-  padding: 0.3125rem 0.5625rem;
-  font-family: var(--font-plex-mono);
-  font-size: 0.71875rem;
-  letter-spacing: 0.04em;
-  color: var(--color-text-muted);
-  background: var(--color-surface-3);
-  border: 1px solid var(--color-line);
-  border-radius: var(--radius-chip);
-}
-
-.chip-row {
+/* ---------- tagi technologii ---------- */
+.chip-list {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-}
-
-/* Neutralny dzielnik — spektrum zarezerwowane dla jednego miejsca w hero. */
-.hairline {
-  height: 1px;
-  border: 0;
   margin: 0;
-  background: var(--color-line-strong);
+  padding: 0;
+  list-style: none;
 }
 
-/* Widoczna luka na dane, ktorych nie mamy. Lepsza niz zmyslona tresc. */
-.placeholder {
-  display: inline-block;
-  padding: 0 0.375rem;
-  color: #ffb27a;
-  background: rgb(255 120 40 / 0.1);
-  border: 1px dashed rgb(255 140 60 / 0.45);
-  border-radius: 4px;
+.chip {
+  padding: 0.375rem 0.75rem;
+  background: var(--color-line);
   font-size: 0.8125rem;
 }
 
-.bento {
-  display: grid;
-  grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: var(--grid-gap);
+.chip--on-accent {
+  background: var(--color-bg);
+  font-weight: 600;
 }
 
-/* Wjezdza raz, gdy element wchodzi w widok — jeden spojny kierunek ruchu w calej stronie. */
+.chip--dark {
+  background: var(--color-surface);
+  font-size: var(--text-sm);
+}
+
+/* ---------- wejscie przy przewijaniu ---------- */
 .reveal {
   opacity: 0;
-  transform: translateY(18px);
+  transform: translateY(1.5rem);
   transition:
     opacity var(--duration-slow) var(--ease-out-expo),
     transform var(--duration-slow) var(--ease-out-expo);
@@ -123,14 +115,89 @@
   transform: none;
 }
 
-@media (min-width: 700px) {
-  .bento {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+/* ---------- naglowek sekcji ---------- */
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.section-head__title {
+  margin-top: 0.875rem;
+  font-size: var(--text-h2);
+  line-height: var(--leading-display);
+  letter-spacing: var(--tracking-display);
+}
+
+.section-head__aside {
+  max-width: 24rem;
+  color: var(--color-text-muted);
+  font-size: var(--text-lead);
+}
+
+/* ---------- tasmy przewijane ---------- */
+.marquee {
+  overflow: hidden;
+}
+
+.marquee__track {
+  display: flex;
+  width: max-content;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee__track--reverse {
+  animation-direction: reverse;
+  animation-duration: 48s;
+}
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding-right: 1.75rem;
+  margin: 0;
+  list-style: none;
+  white-space: nowrap;
+}
+
+.marquee__item {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+}
+
+.marquee__star,
+.marquee__dot {
+  color: var(--color-accent);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
   }
 }
 
-@media (min-width: 1100px) {
-  .bento {
-    grid-template-columns: repeat(12, minmax(0, 1fr));
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
   }
 }
