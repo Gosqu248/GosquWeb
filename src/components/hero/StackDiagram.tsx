@@ -77,13 +77,6 @@ export function StackDiagram({ stage }: StackDiagramProps) {
       aria-label="Architektura: klienci Angular, React Native i urządzenia GPS łączą się przez REST API z aplikacją Spring Boot, opartą o PostgreSQL, Kafkę i Redis."
       style={{ display: "block", width: "100%" }}
     >
-      <defs>
-        <linearGradient id="gosqu-gateway" x1="0" y1="0" x2="260" y2="0">
-          <stop offset="0" stopColor="var(--brand-magenta)" />
-          <stop offset="1" stopColor="var(--brand-cyan)" />
-        </linearGradient>
-      </defs>
-
       {/* etap 4 — klienci */}
       <g style={layerStyle(stage, 4)}>
         {CLIENT_NODES.map((node) => (
@@ -102,7 +95,7 @@ export function StackDiagram({ stage }: StackDiagramProps) {
           height="34"
           rx="6"
           fill="rgba(25,29,34,0.92)"
-          stroke="url(#gosqu-gateway)"
+          stroke="var(--brand-cyan)"
           strokeWidth="1.2"
         />
         <text

@@ -84,13 +84,12 @@
   gap: 0.5rem;
 }
 
-/* Jedyne miejsce, gdzie gradient marki idzie przez cala szerokosc. */
+/* Neutralny dzielnik — spektrum zarezerwowane dla jednego miejsca w hero. */
 .hairline {
   height: 1px;
   border: 0;
   margin: 0;
-  background: var(--gradient-spectrum);
-  opacity: 0.55;
+  background: var(--color-line-strong);
 }
 
 /* Widoczna luka na dane, ktorych nie mamy. Lepsza niz zmyslona tresc. */
@@ -104,21 +103,24 @@
   font-size: 0.8125rem;
 }
 
-.icon-badge {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 3.25rem;
-  height: 3.25rem;
-  background: var(--color-surface-3);
-  border: 1px solid var(--color-line);
-  border-radius: 0.75rem;
-}
-
 .bento {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: var(--grid-gap);
+}
+
+/* Wjezdza raz, gdy element wchodzi w widok — jeden spojny kierunek ruchu w calej stronie. */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity var(--duration-slow) var(--ease-out-expo),
+    transform var(--duration-slow) var(--ease-out-expo);
+}
+
+.reveal--visible {
+  opacity: 1;
+  transform: none;
 }
 
 @media (min-width: 700px) {

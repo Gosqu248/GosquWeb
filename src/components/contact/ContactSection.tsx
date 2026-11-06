@@ -1,4 +1,5 @@
 import { SITE } from "@/content/site";
+import { Reveal } from "@/components/ui/Reveal";
 
 const DETAILS = [
   { label: "E-mail", value: SITE.email, href: `mailto:${SITE.email}` },
@@ -9,7 +10,7 @@ const DETAILS = [
 export function ContactSection() {
   return (
     <section className="section" id="kontakt" aria-labelledby="kontakt-heading">
-      <div className="tile contact">
+      <Reveal className="tile contact">
         <div className="contact__copy">
           <h2 className="section__title" id="kontakt-heading">
             Masz projekt do zbudowania?
@@ -33,7 +34,7 @@ export function ContactSection() {
             </div>
           ))}
         </dl>
-      </div>
+      </Reveal>
     </section>
   );
 }

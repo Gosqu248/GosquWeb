@@ -1,4 +1,5 @@
 import { TECH_GROUPS } from "@/content/tech";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function TechSection() {
   return (
@@ -10,18 +11,18 @@ export function TechSection() {
         </h2>
       </div>
 
-      <div className="tech-grid">
-        {TECH_GROUPS.map((group) => (
-          <article key={group.id} className="tile tech-group">
-            <h3 className="tech-group__label">{group.label}</h3>
-            <ul className="chip-row">
+      <div className="tile tech-sheet">
+        {TECH_GROUPS.map((group, index) => (
+          <Reveal key={group.id} delay={index * 60} className="tech-sheet__row">
+            <span className="tech-sheet__label">{group.label}</span>
+            <ul className="chip-row tech-sheet__chips">
               {group.items.map((item) => (
                 <li key={item} className="chip">
                   {item}
                 </li>
               ))}
             </ul>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

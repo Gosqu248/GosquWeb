@@ -1,4 +1,5 @@
 import { OFFERS } from "@/content/offers";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function OffersSection() {
   return (
@@ -17,13 +18,15 @@ export function OffersSection() {
 
       <div className="bento">
         {OFFERS.map((offer, index) => (
-          <article
+          <Reveal
+            as="article"
             key={offer.id}
+            delay={index * 70}
             className={`tile tile--interactive offer ${index === 0 ? "tile--raised" : ""}`}
             style={{ ["--span" as string]: offer.span }}
           >
-            <span className="icon-badge" aria-hidden="true">
-              <span className="offer__dot" style={{ background: offer.accent }} />
+            <span className="offer__index" style={{ color: offer.accent }} aria-hidden="true">
+              {String(index + 1).padStart(2, "0")}
             </span>
             <h3 className="offer__title">{offer.title}</h3>
             <p className="offer__text">{offer.description}</p>
@@ -34,7 +37,7 @@ export function OffersSection() {
                 </li>
               ))}
             </ul>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>

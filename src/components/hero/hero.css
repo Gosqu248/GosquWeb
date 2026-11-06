@@ -184,7 +184,7 @@
 .hero__rule {
   width: 28px;
   height: 2px;
-  background: var(--gradient-spectrum);
+  background: var(--color-accent);
 }
 
 .hero__headline {
@@ -212,8 +212,9 @@
   color: #c6cfd8;
 }
 
+/* Jedyny moment na stronie, gdzie spektrum marki gra w pelni — reszta jest jednym akcentem. */
 .hero__line--accent {
-  background: linear-gradient(90deg, #4fa0ff, #c46bff, #ff5fc0);
+  background: var(--gradient-spectrum);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -292,7 +293,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: var(--gradient-spectrum);
+  background: var(--color-accent);
   transform-origin: top;
 }
 

@@ -10,6 +10,9 @@ const PAUSE_STORAGE_KEY = "gosqu:hero-motion-paused";
 const SLOW_CONNECTIONS = new Set(["slow-2g", "2g"]);
 const DESKTOP_QUERY = "(min-width: 768px)";
 
+/** Material z VideoSpec.dc.html jeszcze nie istnieje w public/media — do zmiany po dostawie plikow. */
+const HERO_VIDEO_ASSET_READY = false;
+
 /** Save-Data i wolne lacze zdejmuja material niezaleznie od szerokosci ekranu. */
 function connectionAllowsVideo(): boolean {
   if (typeof navigator === "undefined") return false;
@@ -24,7 +27,8 @@ export function HeroMedia({ prefersReducedMotion }: { prefersReducedMotion: bool
   const isDesktop = useMediaQuery(DESKTOP_QUERY);
   const [paused, setPaused] = usePersistentFlag(PAUSE_STORAGE_KEY);
 
-  const videoEnabled = isDesktop && !prefersReducedMotion && connectionAllowsVideo();
+  const videoEnabled =
+    HERO_VIDEO_ASSET_READY && isDesktop && !prefersReducedMotion && connectionAllowsVideo();
 
   // Poza widokiem material stoi — nie ma powodu dekodowac klatek w tle.
   useEffect(() => {

@@ -1,5 +1,6 @@
 import { PROJECTS } from "@/content/projects";
 import { Placeholder } from "@/components/ui/Placeholder";
+import { Reveal } from "@/components/ui/Reveal";
 
 export function ProjectsSection() {
   return (
@@ -14,9 +15,11 @@ export function ProjectsSection() {
       </div>
 
       <div className="bento">
-        {PROJECTS.map((project) => (
-          <article
+        {PROJECTS.map((project, index) => (
+          <Reveal
+            as="article"
             key={project.id}
+            delay={index * 70}
             className={`tile tile--interactive project ${project.featured ? "project--featured" : ""}`}
           >
             {project.featured ? <div className="project__banner" aria-hidden="true" /> : null}
@@ -43,7 +46,7 @@ export function ProjectsSection() {
                 )}
               </ul>
             </div>
-          </article>
+          </Reveal>
         ))}
       </div>
     </section>
