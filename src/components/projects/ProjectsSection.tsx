@@ -32,7 +32,7 @@ export function ProjectsSection() {
         <SectionHead
           id="realizacje-heading"
           eyebrow="02 — Realizacje"
-          title="Gdzie pracuję teraz."
+          title="Nad czym pracujemy."
           aside={
             <span className="status-pill">
               <span className="status-pill__dot" aria-hidden="true" />

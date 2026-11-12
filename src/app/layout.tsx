@@ -49,7 +49,7 @@ const organizationSchema = {
   "@type": "ProfessionalService",
   name: "Gosqu Software",
   url: SITE_URL,
-  email: "software@gosqu.pl",
+  email: "grzegorz.urban@gosqu-software.pl",
   telephone: "+48730174220",
   address: {
     "@type": "PostalAddress",

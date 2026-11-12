@@ -51,7 +51,7 @@ export const OFFERS: readonly Offer[] = [
     kicker: "04 · Integracje",
     title: "API i integracje",
     description:
-      "Łączę systemy, które nie były projektowane, by ze sobą rozmawiać: REST, kolejki, ETL, płatności.",
+      "Łączymy systemy, które nie były projektowane, by ze sobą rozmawiać: REST, kolejki, ETL, płatności.",
     chips: ["REST", "Kafka", "PayU"],
     size: "wide",
     visual: "pipeline",

@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Gosqu Software",
   city: "Tarnów",
-  email: "software@gosqu.pl",
+  email: "grzegorz.urban@gosqu-software.pl",
   phone: "+48 730 174 220",
   phoneHref: "tel:+48730174220",
   availability: "Pon–sob, 9:00–18:00",
