@@ -1,8 +1,7 @@
 import { SITE } from "@/content/site";
+import { ContactForm } from "@/components/contact/ContactForm";
 import { ArrowRightIcon } from "@/components/ui/Icons";
 import { Reveal } from "@/components/ui/Reveal";
-
-const TOPICS = ["Platforma webowa", "System dla firmy", "Aplikacja mobilna", "API i integracje"] as const;
 
 const LINKS = [
   { label: "E-mail", value: SITE.email, href: `mailto:${SITE.email}` },
@@ -20,7 +19,7 @@ export function ContactSection() {
               Porozmawiajmy o Twojej <span>platformie.</span>
             </h2>
             <p className="contact__lead">
-              Opisz krótko pomysł albo problem. Odpowiem z propozycją kolejnych kroków.
+              Opisz krótko pomysł albo problem. Odpowiemy z propozycją kolejnych kroków.
             </p>
           </div>
 
@@ -39,49 +38,7 @@ export function ContactSection() {
           </ul>
         </div>
 
-        {/* Formularz otwiera klienta poczty — serwis nie ma backendu do odbioru wiadomosci. */}
-        <form
-          className="contact-form"
-          action={`mailto:${SITE.email}`}
-          method="post"
-          encType="text/plain"
-        >
-          <div className="contact-form__pair">
-            <label className="field">
-              <span className="label">Imię i nazwisko</span>
-              <input className="input" type="text" name="imie" placeholder="Jan Kowalski" autoComplete="name" required />
-            </label>
-            <label className="field">
-              <span className="label">E-mail</span>
-              <input className="input" type="email" name="email" placeholder="jan@firma.pl" autoComplete="email" required />
-            </label>
-          </div>
-
-          <fieldset className="field">
-            <legend className="label">Czego dotyczy projekt</legend>
-            <div className="choices">
-              {TOPICS.map((topic, index) => (
-                <label key={topic} className="choice">
-                  <input type="radio" name="temat" value={topic} defaultChecked={index === 0} />
-                  <span>{topic}</span>
-                </label>
-              ))}
-            </div>
-          </fieldset>
-
-          <label className="field">
-            <span className="label">Wiadomość</span>
-            <textarea className="input" name="wiadomosc" rows={5} placeholder="Co chcesz zbudować i na kiedy?" />
-          </label>
-
-          <div className="contact-form__foot">
-            <span>Odpowiadam zwykle w ciągu jednego dnia roboczego.</span>
-            <button type="submit" className="button button--primary">
-              Wyślij wiadomość
-              <ArrowRightIcon size={18} />
-            </button>
-          </div>
-        </form>
+        <ContactForm />
       </Reveal>
     </section>
   );
