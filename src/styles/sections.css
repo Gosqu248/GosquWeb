@@ -633,6 +633,30 @@ textarea.input {
   outline-offset: 2px;
 }
 
+.contact-form__trap {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.contact-form__status {
+  min-height: 1.25rem;
+  margin: 0;
+  color: var(--color-text-soft);
+  font-size: 0.875rem;
+}
+
+.contact-form__status--error {
+  color: #ff8a80;
+}
+
+.contact-form .button:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
 .contact-form__foot {
   display: flex;
   flex-wrap: wrap;
