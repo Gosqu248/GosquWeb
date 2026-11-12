@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import { NAV_LINKS, SITE } from "@/content/site";
 import { ArrowRightIcon } from "@/components/ui/Icons";
@@ -12,7 +13,14 @@ export function SiteHeader() {
     <header className="site-header">
       <div className="site-header__bar">
         <a className="site-header__brand" href="#top">
-          <span className="site-header__mark" aria-hidden="true" />
+          <Image
+            className="site-header__logo"
+            src="/brand/GS.png"
+            alt=""
+            width={261}
+            height={261}
+            priority
+          />
           {SITE.name}
         </a>
 

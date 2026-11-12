@@ -32,13 +32,13 @@ export const PROCESS_STEPS = [
     number: "01",
     title: "Analiza",
     description:
-      "Poznaję proces, który ma wspierać system. Wymagania, ograniczenia i integracje spisuję przed pierwszą linią kodu.",
+      "Poznajemy proces, który ma wspierać system. Wymagania, ograniczenia i integracje spisujemy przed pierwszą linią kodu.",
   },
   {
     number: "02",
     title: "Projekt",
     description:
-      "Architektura, model danych i interfejs. Dostajesz makiety do akceptacji, zanim zacznę budować.",
+      "Architektura, model danych i interfejs. Dostajesz makiety do akceptacji, zanim zaczniemy budować.",
   },
   {
     number: "03",

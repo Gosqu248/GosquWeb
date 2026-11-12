@@ -8,7 +8,7 @@ export function ProcessSection() {
       <SectionHead
         id="proces-heading"
         eyebrow="03 — Proces"
-        title="Jak pracuję."
+        title="Jak pracujemy."
         aside={
           <p className="section-head__aside">
             Cztery etapy, za każdym razem z czymś konkretnym do obejrzenia.
