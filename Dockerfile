@@ -1,21 +1,39 @@
-# Etap 1 - Budowanie aplikacji Angular
-FROM node:22.12.0 AS build
+# syntax=docker/dockerfile:1
 
+# ---------- baza ----------
+FROM node:22-alpine AS base
+RUN apk add --no-cache libc6-compat
+ENV NEXT_TELEMETRY_DISABLED=1
+
+# ---------- zaleznosci ----------
+FROM base AS deps
 WORKDIR /app
-
 COPY package.json package-lock.json ./
-RUN npm install
+RUN npm ci
 
+# ---------- build ----------
+FROM base AS builder
+WORKDIR /app
+COPY --from=deps /app/node_modules ./node_modules
 COPY . .
 RUN npm run build
 
-# Etap 2 - Serwowanie aplikacji
-FROM node:22.12.0-alpine
-
+# ---------- runtime ----------
+FROM base AS runner
 WORKDIR /app
+ENV NODE_ENV=production
 
-COPY --from=build /app/dist/gosqu-web/browser ./dist
+RUN addgroup --system --gid 1001 nodejs \
+ && adduser --system --uid 1001 nextjs
 
-RUN npm install -g serve
+# standalone nie zabiera tych dwoch katalogow — kopiujemy je osobno
+COPY --from=builder --chown=nextjs:nodejs /app/public ./public
+COPY --from=builder --chown=nextjs:nodejs /app/.next/standalone ./
+COPY --from=builder --chown=nextjs:nodejs /app/.next/static ./.next/static
 
-CMD ["serve", "-s", "dist", "-l", "3000"]
+USER nextjs
+EXPOSE 3000
+ENV PORT=3000
+ENV HOSTNAME=0.0.0.0
+
+CMD ["node", "server.js"]

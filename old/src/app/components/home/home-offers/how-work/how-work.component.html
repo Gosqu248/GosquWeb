@@ -1,0 +1,31 @@
+<div class="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-2 md:p-5 border border-slate-700/50 fade-in">
+  <div class="text-center mb-7">
+    <h3 class="text-3xl font-bold text-white mb-4 main-title">
+      {{getTranslation('how')}} <span class="text-purple-400">{{getTranslation('work')}}</span>?
+    </h3>
+    <p class="text-gray-300 text-lg main-description">
+      Sprawdzony proces realizacji projektów krok po kroku
+    </p>
+  </div>
+
+  <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div *ngFor="let step of processSteps; let i = index"
+         class="relative text-center step-item step-container">
+
+      <!-- Step Number -->
+      <div class="w-16 h-16 bg-gradient-to-br from-purple-500 to-blue-500 rounded-full flex items-center justify-center mx-auto mb-4 text-white font-bold text-xl step-number"
+           [class.animate-pulse]="animateNumbers">
+        {{ i + 1 }}
+      </div>
+
+      <!-- Connector Line -->
+      <div *ngIf="i < processSteps.length - 1"
+           class="hidden lg:block absolute top-8 left-1/2 w-full h-0.5 bg-gradient-to-r from-purple-500 to-blue-500 transform translate-x-8 connector-line"
+           [class.animate]="animateLines"></div>
+
+      <!-- Step Content -->
+      <h4 class="text-lg font-semibold text-white mb-2 step-title">{{ step.title }}</h4>
+      <p class="text-gray-400 text-sm step-description">{{ step.description }}</p>
+    </div>
+  </div>
+</div>

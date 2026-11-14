@@ -1,0 +1,58 @@
+/**
+ * Modernist — ciemna wersja.
+ * Wartosci przeniesione z design systemu Modernist (gosqu-site/_ds) oraz z "Gosqu Site v2".
+ * Plasko, siatka, zero zaokraglen, mocne 2px linie, jeden akcent.
+ */
+:root {
+  /* --- powierzchnie --- */
+  --color-bg: #201e1d;
+  --color-bg-deep: #171515;
+  --color-surface: #2b2827;
+  --color-line: #444141;
+  --color-line-strong: #f3f2f2;
+
+  /* --- tekst --- */
+  --color-text: #f3f2f2;
+  --color-text-soft: #d7d3d3;
+  --color-text-muted: #9b9797;
+  --color-text-faint: #6b6464;
+
+  /* --- jedyny akcent: rampa czerwieni --- */
+  --color-accent: #ec3013;
+  --color-accent-hover: #dd2b0f;
+  --color-accent-light: #ff563c;
+  --color-accent-dark: #7c1405;
+
+  /* --- typografia --- */
+  --font-archivo: "Archivo", system-ui, sans-serif;
+  --text-label: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lead: 1.0625rem;
+  --text-h2: clamp(2.5rem, 1.2rem + 5.2vw, 5.5rem);
+  --text-h3-lg: clamp(1.875rem, 1.4rem + 1.6vw, 3.25rem);
+  --text-h3-md: clamp(1.625rem, 1.4rem + 0.8vw, 2.25rem);
+  --text-statement: clamp(2.25rem, 1.2rem + 4.4vw, 6.5rem);
+
+  --tracking-display: -0.045em;
+  --tracking-heading: -0.03em;
+  --tracking-label: 0.14em;
+  --leading-display: 0.95;
+  --leading-body: 1.55;
+
+  /* --- rytm --- */
+  --width-page: 1440px;
+  --space-gutter: clamp(1.25rem, 0.6rem + 2.6vw, 3rem);
+  --space-section: clamp(4.5rem, 3rem + 5.5vw, 8rem);
+  --space-tile: clamp(1.75rem, 1.4rem + 1.2vw, 2.75rem);
+  --grid-gap: 0.875rem;
+  --rule: 2px;
+  --header-height: 4.5rem;
+
+  /* --- ruch --- */
+  --duration-fast: 200ms;
+  --duration-normal: 300ms;
+  --duration-slow: 620ms;
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-card: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
