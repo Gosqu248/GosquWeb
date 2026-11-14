@@ -1,0 +1,362 @@
+/* Tor przewijania 320vh; lepka scena zostaje na ekranie, a etapy odslaniaja sie z postepem. */
+.hero {
+  position: relative;
+  height: 320vh;
+  /* Naglowek jest lepki i lezy na hero — scena zaczyna sie pod nim. */
+  margin-top: calc(-1 * var(--header-height));
+  background: var(--color-bg-deep);
+}
+
+.hero--static {
+  height: auto;
+}
+
+.hero__viewport {
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  height: 100svh;
+  min-height: 32.5rem;
+  padding-top: 5.25rem;
+  overflow: hidden;
+}
+
+.hero--static .hero__viewport {
+  position: relative;
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__veil {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    100deg,
+    rgb(23 21 21 / 0.94) 0%,
+    rgb(23 21 21 / 0.8) 36%,
+    rgb(23 21 21 / 0.22) 68%,
+    rgb(23 21 21 / 0.55) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21.25rem), 1fr));
+  gap: min(2rem, 4vh) 3.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: var(--width-page);
+  margin: 0 auto;
+  padding: min(1rem, 2vh) clamp(1.25rem, 5vw, 4.5rem) min(2.5rem, 6vh);
+}
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.5rem, 3vh);
+  max-width: 45rem;
+}
+
+.hero__eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #c9c5c5;
+  font-size: 0.8125rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.hero__rule {
+  flex: none;
+  width: 2rem;
+  height: var(--rule);
+  background: var(--color-accent);
+}
+
+.hero__headline {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: clamp(1.625rem, min(5vw, 6.6vh), 5.5rem);
+  line-height: 1;
+  letter-spacing: var(--tracking-display);
+}
+
+.hero__line,
+.hero__tail {
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+}
+
+.hero__line[data-visible="true"],
+.hero__tail[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.hero__line--lead {
+  color: var(--color-text);
+}
+
+.hero__line--muted {
+  color: var(--color-text-muted);
+}
+
+.hero__line--accent {
+  color: var(--color-accent);
+}
+
+.hero__tail {
+  display: flex;
+  flex-direction: column;
+  gap: min(1.25rem, 2.6vh);
+}
+
+.hero__lead {
+  max-width: 32.5rem;
+  color: var(--color-text-soft);
+  font-size: clamp(0.9375rem, min(1.4vw, 2.6vh), 1.25rem);
+  line-height: 1.45;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+/* Bez ruchu nic nie czeka na przewijanie. */
+.hero--static .hero__line,
+.hero--static .hero__tail {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- diagram stosu ---------- */
+.stack {
+  justify-self: end;
+  display: flex;
+  flex-direction: column;
+  width: min(25rem, 100%);
+  padding: min(1.125rem, 2.4vh);
+  border: var(--rule) solid var(--color-text);
+  background: rgb(23 21 21 / 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.stack__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: min(0.75rem, 1.6vh);
+  padding-bottom: min(0.625rem, 1.4vh);
+  border-bottom: var(--rule) solid var(--color-line);
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.stack__title {
+  font-weight: 800;
+}
+
+.stack__stage {
+  color: var(--color-text-muted);
+}
+
+.stack__layer {
+  opacity: 0;
+  transform: translateY(0.875rem);
+  transition:
+    opacity 0.6s var(--ease-out-expo),
+    transform 0.6s var(--ease-out-expo);
+}
+
+.stack__layer[data-visible="true"] {
+  opacity: 1;
+  transform: none;
+}
+
+.stack__clients {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.stack__box {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: min(0.4375rem, 1vh) 0.625rem;
+  border: var(--rule) solid var(--color-text);
+}
+
+.stack__box-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.stack__box-kind {
+  color: var(--color-text-muted);
+  font-size: 0.625rem;
+  letter-spacing: 0.1em;
+}
+
+.stack__links {
+  display: grid;
+  height: min(0.625rem, 1.4vh);
+}
+
+.stack__links--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.stack__links--1 {
+  justify-items: center;
+}
+
+.stack__links span {
+  justify-self: center;
+  width: var(--rule);
+  background: var(--color-line);
+}
+
+.stack__api {
+  padding: min(0.5625rem, 1.2vh) 0.75rem;
+  border: var(--rule) solid var(--color-accent);
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.stack__core {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin: 0 12%;
+  padding: min(0.625rem, 1.4vh) 0.875rem;
+  border: var(--rule) solid var(--color-text);
+  background: var(--color-bg);
+}
+
+.stack__core-name {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.stack__core-meta {
+  color: var(--color-text-muted);
+  font-size: 0.75rem;
+}
+
+.stack__data {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.stack__stores {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.stack__store,
+.stack__infra {
+  padding: min(0.4375rem, 1vh) 0.625rem;
+  border: var(--rule) solid var(--color-line);
+}
+
+.stack__store {
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.stack__infra {
+  color: var(--color-text-muted);
+  font-size: 0.6875rem;
+  letter-spacing: 0.12em;
+}
+
+.hero--static .stack__layer {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- pasek postepu i pauza ---------- */
+.hero__progress {
+  position: absolute;
+  top: 30%;
+  left: clamp(0.5rem, 1.6vw, 1.5rem);
+  width: 3px;
+  height: 40%;
+  background: var(--color-line);
+}
+
+.hero__progress span {
+  position: absolute;
+  inset: 0;
+  background: var(--color-accent);
+  transform: scaleY(0);
+  transform-origin: top;
+}
+
+.hero--static .hero__progress span {
+  transform: scaleY(1);
+}
+
+.hero__pause {
+  position: absolute;
+  bottom: 0.75rem;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: var(--rule) solid var(--color-line);
+  background: rgb(23 21 21 / 0.7);
+  color: var(--color-text);
+  cursor: pointer;
+}
+
+.hero__pause:hover {
+  border-color: var(--color-text);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* Na waskim ekranie diagram wypchnalby tresc poza lepka scene. */
+@media (max-width: 760px) {
+  .stack {
+    display: none;
+  }
+
+  .hero__progress {
+    display: none;
+  }
+}

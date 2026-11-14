@@ -1,5 +1,14 @@
 node_modules
-dist
+.next
 .git
 .gitignore
+.idea
+.vscode
+.token-optimizer
+npm-debug.log*
 .DS_Store
+.env*
+
+# stary frontend Angular i makiety — nie naleza do obrazu
+old
+design
