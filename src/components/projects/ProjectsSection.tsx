@@ -1,10 +1,15 @@
+"use client";
+
+import { useState } from "react";
 import {
   FEATURED_PROJECT,
   NDA_PROJECTS,
   PAST_PROJECTS,
+  PROJECT_DETAILS,
   type CurrentProject,
 } from "@/content/projects";
-import { ArrowUpRightIcon } from "@/components/ui/Icons";
+import { ArrowRightIcon } from "@/components/ui/Icons";
+import { ProjectDialog, type ProjectView } from "@/components/projects/ProjectDialog";
 import { Reveal } from "@/components/ui/Reveal";
 import { SectionHead } from "@/components/ui/SectionHead";
 
@@ -25,7 +30,19 @@ function ProjectIcon({ icon }: { icon: CurrentProject["icon"] }) {
   );
 }
 
+/** Jedna lista dla okna szczegolow: wyrozniony, NDA, potem wczesniejsze — w kolejnosci z sekcji. */
+const ALL_PROJECTS: readonly ProjectView[] = [
+  FEATURED_PROJECT,
+  ...NDA_PROJECTS,
+  ...PAST_PROJECTS.map((project) => ({ ...project, kicker: project.kind })),
+].map((project) => ({ ...project, details: PROJECT_DETAILS[project.id] }));
+
+const indexOf = (id: string) => ALL_PROJECTS.findIndex((project) => project.id === id);
+
 export function ProjectsSection() {
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
+  const open = (id: string) => setActiveIndex(indexOf(id));
+
   return (
     <section className="section" id="realizacje" aria-labelledby="realizacje-heading">
       <div className="projects__head">
@@ -44,34 +61,45 @@ export function ProjectsSection() {
 
       <div className="bento">
         <Reveal className="bento__wide">
-          <a
-            className="card featured-project"
-            href={FEATURED_PROJECT.href}
-            rel="noopener noreferrer"
-            target="_blank"
-          >
+          <article className="card featured-project">
+            <button
+              type="button"
+              className="card__hit"
+              onClick={() => open(FEATURED_PROJECT.id)}
+              aria-label={`Szczegóły projektu ${FEATURED_PROJECT.title}`}
+            />
             <span className="featured-project__disc" aria-hidden="true" />
             <span className="featured-project__ring" aria-hidden="true" />
             <span className="label">{FEATURED_PROJECT.kicker}</span>
             <h3 className="featured-project__title">{FEATURED_PROJECT.title}</h3>
             <p className="featured-project__text">{FEATURED_PROJECT.description}</p>
             <span className="button button--light">
-              {FEATURED_PROJECT.linkLabel}
-              <ArrowUpRightIcon />
+              Szczegóły projektu
+              <ArrowRightIcon />
             </span>
-          </a>
+          </article>
         </Reveal>
 
         <div className="bento__narrow nda-stack">
           {NDA_PROJECTS.map((project, index) => (
             <Reveal as="article" key={project.id} className="card nda-card" delay={index * 90}>
+              <button
+                type="button"
+                className="card__hit"
+                onClick={() => open(project.id)}
+                aria-label={`Szczegóły projektu ${project.title}`}
+              />
               <div className="nda-card__top">
                 <span className="label">{project.kicker}</span>
                 <ProjectIcon icon={project.icon} />
               </div>
               <h3 className="nda-card__title">{project.title}</h3>
               <p className="nda-card__text">{project.description}</p>
-              <span className="label">Szczegóły objęte NDA</span>
+              <span className="label">Objęte NDA</span>
+              <span className="card__more">
+                Zobacz zakres
+                <ArrowRightIcon size={14} />
+              </span>
             </Reveal>
           ))}
         </div>
@@ -81,15 +109,17 @@ export function ProjectsSection() {
       <ul className="past-list">
         {PAST_PROJECTS.map((project, index) => (
           <li key={project.id}>
-            <a className="past-row" href="#kontakt">
+            <button type="button" className="past-row" onClick={() => open(project.id)}>
               <span className="past-row__index">{String(index + 1).padStart(2, "0")}</span>
               <span className="past-row__name">{project.title}</span>
               <span className="past-row__text">{project.description}</span>
               <span className="past-row__kind">{project.kind}</span>
-            </a>
+            </button>
           </li>
         ))}
       </ul>
+
+      <ProjectDialog projects={ALL_PROJECTS} activeIndex={activeIndex} onChange={setActiveIndex} />
     </section>
   );
 }
